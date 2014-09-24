@@ -31,16 +31,25 @@ public class MusicPlayer extends Thread{
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
 		}catch (IOException e) {
+			e.printStackTrace();
 		}catch(JavaLayerException e) {
+			e.printStackTrace();
 		}
 		
 		
 	}
 	
+	@Override
 	public void run() {
 		try {
 			player.play();
 		} catch (JavaLayerException e) {
+			e.printStackTrace();
 		}
     }
+	
+	public static void main(String[] args) {
+		MusicPlayer mp = new MusicPlayer(false);
+		mp.run();
+	}
 }

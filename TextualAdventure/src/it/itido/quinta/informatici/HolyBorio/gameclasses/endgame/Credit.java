@@ -63,7 +63,7 @@ public class Credit {
 	public void show() {
 		for(int i = 0; i < credit.length(); i++) {
 			char c = credit.charAt(i);
-			if(c=='\n') {
+			if(c == '\n') {
 				try {
 					Thread.sleep(waitTime);
 				} catch (InterruptedException e) {
