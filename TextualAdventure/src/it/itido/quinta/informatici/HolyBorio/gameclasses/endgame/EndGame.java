@@ -1,0 +1,36 @@
+package it.itido.quinta.informatici.HolyBorio.gameclasses.endgame;
+
+/**
+ * 
+ * @author LeaX
+ *
+ */
+public class EndGame {
+	
+	private boolean finishedWithoutDeath;
+	
+	public EndGame(boolean finished) {
+		finishedWithoutDeath = finished;
+	}
+	
+	public void run() {
+		Credit c = new Credit();
+		MusicPlayer mp = new MusicPlayer(false);
+		
+		c.show();
+		mp.start();
+		
+		if(finishedWithoutDeath) {
+			System.out.print("\t\t\t\t\t\t\t\t\t    Fine");
+		}
+		else {
+			new Continue();
+		}
+				
+		System.exit(0);
+	}
+	
+	public static void main(String[] args) {
+		new EndGame(false).run();
+	}
+}
