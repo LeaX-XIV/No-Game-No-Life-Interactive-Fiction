@@ -11,7 +11,7 @@ import it.univpm.deit.semedia.gameclasses.persons.Person;
  */
 public class GameObject implements Serializable{
 	
-	private String description = "";
+	protected String description = "";
 	private String name;
 	private int size;
 	private IContainer containedin;

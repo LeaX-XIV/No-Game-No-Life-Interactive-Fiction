@@ -47,14 +47,21 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori citt\u00e0.");
-		Room elchea = new Room("Piazza di Elchea");
+		Room elchea = new Room("Piazza di Elchea") {
+			
+			@Override
+			public String getDescription() {
+				
+			       DateFormat ora = new SimpleDateFormat("hh:mm"); 				
+			       
+				return super.description + ora.format(new Date()) + "\n" + getContentDescription() ;
+			}
+		};
 		
-		// Codice per orologio
-	       DateFormat ora = new SimpleDateFormat("hh:mm"); 
-		//Fine codice per orologio
+		
 		
 	    elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
-							+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " + ora.format(new Date()));
+							+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
 		
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
