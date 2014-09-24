@@ -31,6 +31,13 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo fantastico.");
+		
+		ContainerImpl closet = new ContainerImpl("closet");
+		GameObject dagger = new Weapon("dagger", 25);
+		dagger.setDescription("old, but likely to work");
+		closet.add(dagger);
+		mountainPass.add(closet);
+		
 		Room inn = new Room("Locanda");
 		// XXX:
 		inn.setDescription("Una locanda fuori citt\u00e0.");
@@ -38,7 +45,7 @@ public class Game extends GenericConsole implements Serializable {
 		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
 				// TODO: INSERIRE OROLOGIO
 				// TODO: X LIPPUZ: FAI STAMPARE L'ORA
-				+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " + );
+/*			+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " +*/ );
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
@@ -190,8 +197,29 @@ public class Game extends GenericConsole implements Serializable {
 					if (object != null) {
 						// if so place it in the hem.. hero
 						object.getContainedIn().moveContainedTo(object, mc);
-//						object.getContainedIn().remove(object);
 						out.println("Metti " + object + " nella tua borsa.");
+					}
+					else {
+						out.println("Non riesci a trovare l'oggetto " + args[0]);
+					}
+				}
+				if(args.length == 2) {
+					GameObject object = mc.getContainedIn().objectByName((String) args[0]);
+					if(object != null) {
+						if(object instanceof ContainerImpl) {
+							ContainerImpl container = (ContainerImpl) object;
+							GameObject target = container.objectByNameRecursive((String) args[1]);
+							if(target != null) {
+								target.getContainedIn().moveContainedTo(target, mc);
+								out.println("Metti " + target + " nella tua borsa.");
+							}
+							else {
+								out.println("Non riesci a trovare l'oggetto " + args[1]);
+							}
+						}
+						else {
+							out.println("L'oggetto " + args[0] + " non è un contenitore.");
+						}
 					}
 					else {
 						out.println("Non riesci a trovare l'oggetto " + args[0]);
