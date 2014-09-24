@@ -342,7 +342,9 @@ public class Game extends GenericConsole implements Serializable {
 
 		});
 
-		/*game.registerCommand(new ConsoleCommand("save") {
+		// FIXME: NON FUNZIONA UN CAZZO
+		
+		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
@@ -354,6 +356,11 @@ public class Game extends GenericConsole implements Serializable {
 					int returnVal = fc.showSaveDialog(new JFrame());
 					if (returnVal == JFileChooser.APPROVE_OPTION) {
 						String path = fc.getSelectedFile().getAbsolutePath();
+						FileNameExtensionFilter f = (FileNameExtensionFilter) fc.getFileFilter();
+						String[] s = f.getExtensions();
+						if(!path.endsWith(s[0])){
+							path += "." + s[0];
+						}
 						game.executeLine("save " + path);
 					}
 				}
@@ -366,7 +373,7 @@ public class Game extends GenericConsole implements Serializable {
 						ObjectOutputStream stream = null;
 						try {
 							stream = new ObjectOutputStream(new FileOutputStream(f));
-							// FIXME: IN QUESTO MODO SALVA IL COMANDO, MA DEVE SALVARE IL GIOCO
+							// FIXME: NON SALVA NIENTE (FORSE)
 							stream.writeObject(game);
 						} catch (IOException e) {
 						}finally {
@@ -445,7 +452,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "[PATH]\n\n"
 						+ "PATH = il percorso del file da caricare";
 			}
-		});*/
+		});
 
 		game.run();
 	}
