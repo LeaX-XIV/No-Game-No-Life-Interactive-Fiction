@@ -18,8 +18,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.io.Serializable;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -45,10 +51,18 @@ public class Game extends GenericConsole implements Serializable {
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori citt\u00e0.");
 		Room elchea = new Room("Piazza di Elchea");
-		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
+		
+		// Codice per orologio
+	       long data = System.currentTimeMillis();
+	       Date orario = new Date(data);
+	       DateFormat ora = new SimpleDateFormat("HH:mm"); 
+		//Fine codice per orologio
+		
+	       elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
 				// TODO: INSERIRE OROLOGIO
 				// TODO: X LIPPUZ: FAI STAMPARE L'ORA
-				/*			+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " +*/ );
+							+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " + ora.format(orario));
+		
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
