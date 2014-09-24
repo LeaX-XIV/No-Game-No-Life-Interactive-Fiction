@@ -9,9 +9,12 @@ import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.io.Serializable;
@@ -29,7 +32,7 @@ public class Game extends GenericConsole implements Serializable {
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
-		
+
 		// TODO: INSERIRE FORZIERE
 		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
 		mc = new Person("Sora", 100);
@@ -38,14 +41,14 @@ public class Game extends GenericConsole implements Serializable {
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
 		mountainPass.add(new Banana());
-		
+
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori citt\u00e0.");
 		Room elchea = new Room("Piazza di Elchea");
 		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
 				// TODO: INSERIRE OROLOGIO
 				// TODO: X LIPPUZ: FAI STAMPARE L'ORA
-/*			+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " +*/ );
+				/*			+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le " +*/ );
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
@@ -184,7 +187,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
-		
+
 		game.registerCommand(new ConsoleCommand("get") {
 
 			// FIXME: CAMBIARE GameObject IN Item
@@ -237,10 +240,10 @@ public class Game extends GenericConsole implements Serializable {
 						+ "CONTENITORE = il contenitore dell'oggetto (es. armadio)";
 			}
 		});
-		
-		
+
+
 		game.registerCommand(new ConsoleCommand("drop") {
-			
+
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {				
 				if(args.length == 0) {
@@ -260,15 +263,15 @@ public class Game extends GenericConsole implements Serializable {
 				else {
 					out.println("Valore parametri errato.");
 				}
-				
+
 			}
-			
+
 			@Override
 			public String description() {
 				return "Rimuove dalla borsa l'oggetto specificato.";
 			}
 		});
-		
+
 		game.registerCommand(new ConsoleCommand("go"){
 
 			@Override
@@ -338,9 +341,9 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
-		
-		game.registerCommand(new ConsoleCommand("save") {
-			
+
+		/*game.registerCommand(new ConsoleCommand("save") {
+
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if(args.length == 0) {
@@ -349,22 +352,22 @@ public class Game extends GenericConsole implements Serializable {
 					FileNameExtensionFilter filter = new FileNameExtensionFilter("NGNL Save (*.ngnl)", "ngnl");
 					fc.setFileFilter(filter);
 					int returnVal = fc.showSaveDialog(new JFrame());
-		            if (returnVal == JFileChooser.APPROVE_OPTION) {
-		            	String path = fc.getSelectedFile().getAbsolutePath();
-		            	game.executeLine("save " + path);
-		            }
+					if (returnVal == JFileChooser.APPROVE_OPTION) {
+						String path = fc.getSelectedFile().getAbsolutePath();
+						game.executeLine("save " + path);
+					}
 				}
-				
+
 				if(args.length == 1) {
 					String path = (String) args[0];
-					
+
 					if(path.toLowerCase().endsWith(".ngnl")) {
 						File f = new File(path);
 						ObjectOutputStream stream = null;
 						try {
 							stream = new ObjectOutputStream(new FileOutputStream(f));
 							// FIXME: IN QUESTO MODO SALVA IL COMANDO, MA DEVE SALVARE IL GIOCO
-							stream.writeObject(this);
+							stream.writeObject(game);
 						} catch (IOException e) {
 						}finally {
 							try {
@@ -374,15 +377,15 @@ public class Game extends GenericConsole implements Serializable {
 							} catch (IOException e) {
 							}
 						}
-						
+
 					}
 					else {
 						out.println("Il file di destinazione ha qualche problemino.");
 					}
 				}
-				
+
 			}
-			
+
 			public String getUsage() {
 				return "[PATH]\n\n"
 						+ "PATH = il percorso del file da salvare";
@@ -393,11 +396,59 @@ public class Game extends GenericConsole implements Serializable {
 				return "Salva i progressi del gioco.";
 			}
 		});
-		
+
+		game.registerCommand(new ConsoleCommand("load") {
+
+			@Override
+			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
+				if(args.length == 0) {
+					JFileChooser choose = new JFileChooser();
+					FileNameExtensionFilter filter = new FileNameExtensionFilter("NGNL Save (*.ngnl)", "ngnl");
+					choose.setFileFilter(filter);
+					int returnVal = choose.showOpenDialog(new JFrame());
+				    if(returnVal == JFileChooser.APPROVE_OPTION) {
+				    	String path = choose.getSelectedFile().getAbsolutePath();
+				    	game.executeLine("load " + path);
+				    }
+				}
+				
+				if(args.length == 1) {
+					String path = (String) args[0];
+					if(path.toLowerCase().endsWith(".ngnl")) {
+						ObjectInputStream stream = null;
+						try {
+							 stream = new ObjectInputStream(new FileInputStream(path));
+							 game = (Game) stream.readObject();
+						} catch (FileNotFoundException e) {
+							out.println("I nostri gnometti da giardino non riescono a trovare il file.");
+						} catch (IOException e) {
+						} catch (ClassNotFoundException e) {
+						}finally {
+							if(stream != null) {
+								try {
+									stream.close();
+								} catch (IOException e) {
+								}
+							}
+						}
+					}
+				}
+
+			}
+
+			@Override
+			public String description() {
+				return "Riprende il gioco da un punto salvato.";
+			}
+			
+			public String getUsage() {
+				return "[PATH]\n\n"
+						+ "PATH = il percorso del file da caricare";
+			}
+		});*/
+
 		game.run();
 	}
-	
-	// TODO: AGGIUNGERE COMANDI SAVE E LOAD
 
 	@Override
 	protected String welcomeMsg() {
