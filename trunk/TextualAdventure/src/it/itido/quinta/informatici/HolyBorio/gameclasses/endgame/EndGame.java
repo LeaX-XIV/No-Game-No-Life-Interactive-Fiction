@@ -16,9 +16,9 @@ public class EndGame {
 	public void run() {
 		Credit c = new Credit();
 		MusicPlayer mp = new MusicPlayer(false);
-		
-		c.show();
+
 		mp.start();
+		c.show();
 		
 		if(finishedWithoutDeath) {
 			System.out.print("\t\t\t\t\t\t\t\t\t    Fine");
@@ -31,6 +31,7 @@ public class EndGame {
 	}
 	
 	public static void main(String[] args) {
-		new EndGame(false).run();
+		EndGame eg = new EndGame(false);
+		eg.run();
 	}
 }

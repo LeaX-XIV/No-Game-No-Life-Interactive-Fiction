@@ -177,8 +177,8 @@ public class Game extends GenericConsole implements Serializable {
 			@Override
 			public String getUsage() {
 				return "[OBJECTNAME] \n\n" +
-						"OBJECTNAME (optional) = the name of the object to look at\n\nNote that " +
-						"look will only show you the most direct objects, e.g. looking at a room wil tell you about its furniture but not the content of each of its pieces";
+						"OBJECTNAME = Il nome dell'oggetto da guardare.\nDa notare che " +
+						"guardando una stanza, verrano mostrati i mobili, ma non ciò che è contenuto in essi.";
 			}
 
 			@Override

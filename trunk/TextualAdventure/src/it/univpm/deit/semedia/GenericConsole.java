@@ -41,7 +41,7 @@ public class GenericConsole implements Runnable {
 
 		registerCommand(new ConsoleCommand("help") {
 			public String description() {
-				return "Questa schermata - HELP \"COMMAND\" descrive il comand.";
+				return "Questa schermata - HELP \"COMMAND\" descrive il comando.";
 			}
 			public String getUsage() {
 				return "[commandname]\n\ncommandname = il nome del comando su cui vuoi spiegazioni.";
