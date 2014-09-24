@@ -8,13 +8,19 @@ import it.univpm.deit.semedia.gameclasses.objects.Weapon;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import com.sun.jmx.snmp.Timestamp;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Game extends GenericConsole implements Serializable {
 
@@ -30,7 +36,8 @@ public class Game extends GenericConsole implements Serializable {
 		mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
 
 		Room mountainPass = new Room("Sentiero Montano");
-		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo fantastico.");
+		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
+		mountainPass.add(new Banana());
 		
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori citt\u00e0.");
@@ -225,9 +232,9 @@ public class Game extends GenericConsole implements Serializable {
 			}
 			@Override
 			public String getUsage() {
-				return "OBJECT [CONTAINER]\n\n"
-						+ "OBJECT = l'oggetto da prendere\n"
-						+ "CONTAINER = il contenitore dell'oggetto (es. armadio)";
+				return "OGGETTO [CONTENITORE]\n\n"
+						+ "OGGETTO = l'oggetto da prendere\n"
+						+ "CONTENITORE = il contenitore dell'oggetto (es. armadio)";
 			}
 		});
 		
@@ -235,9 +242,7 @@ public class Game extends GenericConsole implements Serializable {
 		game.registerCommand(new ConsoleCommand("drop") {
 			
 			@Override
-			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
-				// TODO Auto-generated method stub
-				
+			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {				
 				if(args.length == 0) {
 					out.println("Devi lasciar cadere qualcosa");
 				}
@@ -245,7 +250,8 @@ public class Game extends GenericConsole implements Serializable {
 					String objectName = args[0].toString();
 					GameObject object = mc.objectByName(objectName);
 					if(object != null) {
-						object.getContainedIn().remove(object);
+						object.getContainedIn().moveContainedTo(object, mc.getContainedIn());
+						out.println("Hai lasciato cadere " + args[0]);
 					}
 					else {
 						out.println("Nessun oggetto " + objectName);
@@ -254,7 +260,6 @@ public class Game extends GenericConsole implements Serializable {
 				else {
 					out.println("Valore parametri errato.");
 				}
-				
 				
 			}
 			
@@ -268,21 +273,21 @@ public class Game extends GenericConsole implements Serializable {
 
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
-				if (args.length==1) {
+				if (args.length == 1) {
 					IContainer container = mc.getContainedIn();
 					if (container instanceof Room) {
 						Room room = ((Room)container);
 						HashMap<String, Room> doors = room.getDoors();
 						if (doors.containsKey(args[0].toString())) {
-							//moves ourhere to the room with the specified name
-							room.moveContainedTo(mc,(IContainer)doors.get(args[0].toString()));
+							//moves mc to the room with the specified name
+							room.moveContainedTo(mc,(IContainer) doors.get(args[0].toString()));
 						}
 						else {
 							out.println("Uscita inesistente.");
 						}
 					}
 					else {
-						out.println("wrong parameter count");
+						out.println("Numero parametri errato.");
 					}
 				}
 			}
@@ -323,9 +328,9 @@ public class Game extends GenericConsole implements Serializable {
 			}
 			@Override
 			public String getUsage() {
-				return "OBJECT [TARGET]\n\n" +
-						"OBJECT = l'oggetto da usare, deve essere nella borsa o nella stessa stanza\n" +
-						"TARGET = alcuni oggetti richiedono obiettivi(chiavi)";
+				return "OGGETTO [BERSAGLIO]\n\n" +
+						"OGGETTO = l'oggetto da usare, deve essere nella borsa o nella stessa stanza\n" +
+						"BERSAGLIO = alcuni oggetti richiedono obiettivi(chiavi)";
 			}
 			@Override
 			public String description() {
@@ -333,10 +338,66 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
+		
+		game.registerCommand(new ConsoleCommand("save") {
+			
+			@Override
+			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
+				if(args.length == 0) {
+
+					JFileChooser fc = new JFileChooser();
+					FileNameExtensionFilter filter = new FileNameExtensionFilter("NGNL Save (*.ngnl)", "ngnl");
+					fc.setFileFilter(filter);
+					int returnVal = fc.showSaveDialog(new JFrame());
+		            if (returnVal == JFileChooser.APPROVE_OPTION) {
+		            	String path = fc.getSelectedFile().getAbsolutePath();
+		            	game.executeLine("save " + path);
+		            }
+				}
+				
+				if(args.length == 1) {
+					String path = (String) args[0];
+					
+					if(path.toLowerCase().endsWith(".ngnl")) {
+						File f = new File(path);
+						ObjectOutputStream stream = null;
+						try {
+							stream = new ObjectOutputStream(new FileOutputStream(f));
+							// FIXME: IN QUESTO MODO SALVA IL COMANDO, MA DEVE SALVARE IL GIOCO
+							stream.writeObject(this);
+						} catch (IOException e) {
+						}finally {
+							try {
+								if(stream != null) {
+									stream.close();
+								}
+							} catch (IOException e) {
+							}
+						}
+						
+					}
+					else {
+						out.println("Il file di destinazione ha qualche problemino.");
+					}
+				}
+				
+			}
+			
+			public String getUsage() {
+				return "[PATH]\n\n"
+						+ "PATH = il percorso del file da salvare";
+			}
+
+			@Override
+			public String description() {
+				return "Salva i progressi del gioco.";
+			}
+		});
+		
 		game.run();
 	}
 	
-	// XXX: AGGIUNGERE COMANDI SAVE E LOAD
+	// TODO: AGGIUNGERE COMANDI SAVE E LOAD
 
 	@Override
 	protected String welcomeMsg() {
