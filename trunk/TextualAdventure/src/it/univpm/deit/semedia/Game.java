@@ -32,14 +32,7 @@ public class Game extends GenericConsole implements Serializable {
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo fantastico.");
 		
-		ContainerImpl closet = new ContainerImpl("closet");
-		GameObject dagger = new Weapon("dagger", 25);
-		dagger.setDescription("old, but likely to work");
-		closet.add(dagger);
-		mountainPass.add(closet);
-		
 		Room inn = new Room("Locanda");
-		// XXX:
 		inn.setDescription("Una locanda fuori citt\u00e0.");
 		Room elchea = new Room("Piazza di Elchea");
 		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
@@ -55,8 +48,7 @@ public class Game extends GenericConsole implements Serializable {
 		Room secretRoom = new Room("???");
 		secretRoom.setDescription("Una stanza misteriosa nascosta dietro la libreria nella camera del re.");
 		Room library = new Room("Biblioteca Nazionale di Elchea");
-		// XXX:
-		library.setDescription("La biblioteca pi\u00f9 grande di Elchea. Contiene migliaia di libri provenienti da altri paesi.");
+		library.setDescription("La biblioteca pi\u00f9 grande di Elchea.\nContiene migliaia di libri provenienti da altri paesi.");
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
 
@@ -204,25 +196,25 @@ public class Game extends GenericConsole implements Serializable {
 					}
 				}
 				if(args.length == 2) {
-					GameObject object = mc.getContainedIn().objectByName((String) args[0]);
+					GameObject object = mc.getContainedIn().objectByName((String) args[1]);
 					if(object != null) {
 						if(object instanceof ContainerImpl) {
 							ContainerImpl container = (ContainerImpl) object;
-							GameObject target = container.objectByNameRecursive((String) args[1]);
+							GameObject target = container.objectByNameRecursive((String) args[0]);
 							if(target != null) {
 								target.getContainedIn().moveContainedTo(target, mc);
 								out.println("Metti " + target + " nella tua borsa.");
 							}
 							else {
-								out.println("Non riesci a trovare l'oggetto " + args[1]);
+								out.println("Non riesci a trovare l'oggetto " + args[0]);
 							}
 						}
 						else {
-							out.println("L'oggetto " + args[0] + " non è un contenitore.");
+							out.println("L'oggetto " + args[1] + " non è un contenitore.");
 						}
 					}
 					else {
-						out.println("Non riesci a trovare l'oggetto " + args[0]);
+						out.println("Non riesci a trovare l'oggetto " + args[1]);
 					}
 				}
 			}
@@ -233,7 +225,9 @@ public class Game extends GenericConsole implements Serializable {
 			}
 			@Override
 			public String getUsage() {
-				return "OBJECTNAME = l'oggetto da prendere";
+				return "OBJECT [CONTAINER]\n\n"
+						+ "OBJECT = l'oggetto da prendere\n"
+						+ "CONTAINER = il contenitore dell'oggetto (es. armadio)";
 			}
 		});
 		
