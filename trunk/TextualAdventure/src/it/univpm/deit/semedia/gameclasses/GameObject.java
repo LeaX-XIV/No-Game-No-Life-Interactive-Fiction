@@ -1,5 +1,7 @@
 package it.univpm.deit.semedia.gameclasses;
 
+import java.io.Serializable;
+
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 
 /**
@@ -7,7 +9,7 @@ import it.univpm.deit.semedia.gameclasses.persons.Person;
  * @author Andrea Primavera
  *
  */
-public class GameObject {
+public class GameObject implements Serializable{
 	
 	private String description = "";
 	private String name;
@@ -71,7 +73,7 @@ public class GameObject {
 	 * @return
 	 */
 	public String use(Person who) {
-		return "It doesn't make sense";
+		return "Che vuoi fare?";
 	}
 	
 	/**
@@ -79,6 +81,6 @@ public class GameObject {
 	 * @return
 	 */
 	public String use(Person who, GameObject target) {
-		return "It doesn't make sense to use " + getName() + " on " + target.getName();
+		return "Non ha senso usare " + getName() + " su " + target.getName();
 	}
 }
