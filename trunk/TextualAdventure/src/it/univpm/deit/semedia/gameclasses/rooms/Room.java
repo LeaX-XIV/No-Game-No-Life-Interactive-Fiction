@@ -2,11 +2,14 @@ package it.univpm.deit.semedia.gameclasses.rooms;
 
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl {
+public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	
-	// FIXME: NON USARE STRINGHE MA ENUM
+	// XXX: NON USARE STRINGHE MA ENUM
 	HashMap<String, Room> doors = new HashMap<String, Room>();
 	
 	public Room(String description) {

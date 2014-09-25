@@ -1,6 +1,8 @@
 package it.univpm.deit.semedia.gameclasses;
 
-public class LivingStatusIml implements ILivingStatus {
+import java.io.Serializable;
+
+public class LivingStatusIml implements ILivingStatus, Serializable {
 	
 	private int energy;
 	
