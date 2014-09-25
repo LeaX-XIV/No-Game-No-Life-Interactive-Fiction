@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,7 +21,7 @@ import it.univpm.deit.semedia.GenericConsole;
 public class ConnectedWords extends GenericConsole{
 
 	private final File xmlFile = new File(ConnectedWords.class.getResource("/resources/words.xml").getFile());
-	private HashMap<String, String> words = new HashMap<String, String>();
+	private LinkedHashMap<String, String> words = new LinkedHashMap<String, String>();
 
 
 	private String lastSyllabe = null;
@@ -33,7 +34,7 @@ public class ConnectedWords extends GenericConsole{
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if(args.length == 0) {
-					out.println("D\u00ec qualcosa!");
+					out.println("Dì qualcosa!");
 				}
 
 				if(args.length == 1) {
@@ -45,6 +46,11 @@ public class ConnectedWords extends GenericConsole{
 			@Override
 			public String description() {
 				return "Dici la parola specificata (deve iniziare con l'ultima sillaba della parola precedente).";
+			}
+			
+			public String getUsage() {
+				return "WORD\n\n"
+						+ "WORD: la parola da dire da collegare alla precedente";
 			}
 		});
 
@@ -83,6 +89,7 @@ public class ConnectedWords extends GenericConsole{
 								String unita = uniteStringArray(sillabe.split("-"));
 
 								words.put(sillabe, unita);
+								System.out.println(words.toString());
 								k++;
 							}
 						} catch(NullPointerException ex) {
