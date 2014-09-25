@@ -3,6 +3,7 @@ package it.itido.quinta.informatici.HolyBorio.gameclasses.giochi;
 import java.io.File;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -19,7 +20,7 @@ import it.univpm.deit.semedia.GenericConsole;
 public class ConnectedWords extends GenericConsole{
 
 	private final File xmlFile = new File(ConnectedWords.class.getResource("/resources/words.xml").getFile());
-	private LinkedHashMap<String, String> words = new LinkedHashMap<String, String>();
+	private ArrayList<LinkedHashMap<String, String>> words = new ArrayList<LinkedHashMap<String, String>>();
 
 
 	private String lastSyllabe = null;
@@ -73,6 +74,8 @@ public class ConnectedWords extends GenericConsole{
 
 				for(int j = 0; j < list.getLength(); j++) {
 
+					LinkedHashMap<String, String> temp = new LinkedHashMap<String, String>();
+					
 					Node node = list.item(j);
 
 					if(node.getNodeType() == Node.ELEMENT_NODE) {
@@ -86,11 +89,12 @@ public class ConnectedWords extends GenericConsole{
 								String sillabe = eElement.getElementsByTagName("parola").item(k).getTextContent();
 								String unita = uniteStringArray(sillabe.split("-"));
 
-								words.put(sillabe, unita);
+								temp.put(sillabe, unita);
 								System.out.println(words.toString());
 								k++;
 							}
 						} catch(NullPointerException ex) {
+							words.add(temp);
 						}
 
 
