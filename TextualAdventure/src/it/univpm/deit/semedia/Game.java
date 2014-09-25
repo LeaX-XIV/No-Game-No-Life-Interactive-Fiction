@@ -21,6 +21,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -30,13 +31,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Game extends GenericConsole implements Serializable {
 
-	static Person mc;
-	static Game game;
+	private static Person mc;
+	private static Game game;
+	private static ArrayList<Room> world;
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
 
-		// TODO: INSERIRE FORZIERE
+		// TODO: X LIPPUZ O PAGNO: CREARE CLASSI Chiave E Serratura NEL PACKAGE DI Room
+		// SPECIFICHE: ENTRAMBI DOVRANNO AVERE UN CODICE DI RICONOSCIMENTO A 4 BYTE (COME UN IP),
+		// SE IL CODICE CORRISPONDE QUANDO LA CHIAVE VIENE UTILIZZATA SULLA SERRATURA SI APRE
+		
 		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
 		mc = new Person("Sora", 100);
 		mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
@@ -44,7 +49,6 @@ public class Game extends GenericConsole implements Serializable {
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
 		mountainPass.add(new Banana());
-
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori citt\u00e0.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -56,13 +60,9 @@ public class Game extends GenericConsole implements Serializable {
 			       
 				return super.description + ora.format(new Date()) + "\n" + getContentDescription() ;
 			}
-		};
-		
-		
-		
+		};		
 	    elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
 							+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
-		
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
@@ -94,6 +94,17 @@ public class Game extends GenericConsole implements Serializable {
 		easternUnion.addDoor("est", elchea);
 
 		mountainPass.add(mc);
+		
+		world = new ArrayList<Room>();
+		world.add(mountainPass);
+		world.add(inn);
+		world.add(elchea);
+		world.add(elcheaStreets);
+		world.add(library);
+		world.add(elcheaPalace);
+		world.add(kingRoom);
+		world.add(secretRoom);
+		world.add(easternUnion);
 	}
 
 	/**
@@ -356,8 +367,6 @@ public class Game extends GenericConsole implements Serializable {
 
 		});
 
-		// FIXME: NON FUNZIONA UN CAZZO
-		
 		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
@@ -388,7 +397,8 @@ public class Game extends GenericConsole implements Serializable {
 						try {
 							stream = new ObjectOutputStream(new FileOutputStream(f));
 							// FIXME: NON SALVA NIENTE (FORSE)
-							stream.writeObject(game);
+							stream.writeObject(world);
+							stream.writeObject(mc);
 						} catch (IOException e) {
 						}finally {
 							try {
@@ -417,9 +427,12 @@ public class Game extends GenericConsole implements Serializable {
 				return "Salva i progressi del gioco.";
 			}
 		});
-
+		
+		// FIXME: NON FUNZIONA UN CAZZO
+/*
 		game.registerCommand(new ConsoleCommand("load") {
 
+			@SuppressWarnings("unchecked")
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if(args.length == 0) {
@@ -439,11 +452,17 @@ public class Game extends GenericConsole implements Serializable {
 						ObjectInputStream stream = null;
 						try {
 							 stream = new ObjectInputStream(new FileInputStream(path));
-							 game = (Game) stream.readObject();
+							 // SI BLOCCA QUI
+							 world = (ArrayList<Room>) stream.readObject();
+							 mc = (Person) stream.readObject();
 						} catch (FileNotFoundException e) {
 							out.println("I nostri gnometti da giardino non riescono a trovare il file.");
 						} catch (IOException e) {
+							e.printStackTrace();
 						} catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}catch(Exception e) {
+							e.printStackTrace();
 						}finally {
 							if(stream != null) {
 								try {
@@ -467,6 +486,7 @@ public class Game extends GenericConsole implements Serializable {
 						+ "PATH = il percorso del file da caricare";
 			}
 		});
+*/
 
 		game.run();
 	}
