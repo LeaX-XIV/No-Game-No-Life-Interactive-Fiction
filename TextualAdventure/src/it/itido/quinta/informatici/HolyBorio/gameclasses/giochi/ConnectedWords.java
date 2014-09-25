@@ -3,8 +3,6 @@ package it.itido.quinta.informatici.HolyBorio.gameclasses.giochi;
 import java.io.File;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 import javax.xml.parsers.DocumentBuilder;
