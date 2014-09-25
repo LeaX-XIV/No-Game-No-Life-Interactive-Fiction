@@ -32,15 +32,15 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 		return doors;
 	}
 	
-	public void Enter(Person person) {
+	public void enter(Person person) {
 		add(person);
 	}
 	
-	public boolean personExits(Person person,String doorname) {
+	public boolean personExits(Person person, String doorname) {
 		if(doors.containsKey(doorname) && contains(person)) {
 			Room nextRoom = (Room)doors.get(doorname);
 			remove(person);
-			nextRoom.Enter(person);
+			nextRoom.enter(person);
 		}
 		else {
 			return false;

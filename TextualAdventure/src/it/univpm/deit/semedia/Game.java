@@ -37,10 +37,6 @@ public class Game extends GenericConsole implements Serializable {
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
-
-		// TODO: X LIPPUZ O PAGNO: CREARE CLASSI Chiave E Serratura NEL PACKAGE DI Room
-		// SPECIFICHE: ENTRAMBI DOVRANNO AVERE UN CODICE DI RICONOSCIMENTO A 4 BYTE (COME UN IP),
-		// SE IL CODICE CORRISPONDE QUANDO LA CHIAVE VIENE UTILIZZATA SULLA SERRATURA SI APRE
 		
 		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
 		mc = new Person("Sora", 100);
@@ -67,7 +63,39 @@ public class Game extends GenericConsole implements Serializable {
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
 		elcheaPalace.setDescription("Il palazzo dove risiede il re degli umani.");
-		Room kingRoom = new Room("Stanza del re");
+		Room kingRoom = new Room("Stanza del re") {
+			// TODO: X LIPPUZ O PAGNO: CREARE CLASSI Key E Lock NEL PACKAGE DI Room
+			// SPECIFICHE: ENTRAMBI DOVRANNO AVERE UN CODICE DI RICONOSCIMENTO A 4 BYTE (COME UN IP),
+			// SE IL CODICE CORRISPONDE QUANDO LA CHIAVE VIENE UTILIZZATA SULLA SERRATURA SI APRE
+			private Lock lock = new Lock();
+			private boolean open = false;
+			
+			public boolean isOpen() {
+				return open;
+			}
+			
+			public Lock getLock() {
+				return this.lock;
+			}
+			
+			@Override
+			public void enter(Person who) {
+				if(!open) {
+					System.out.println("La porta è chiusa.\nHai bisogno della chiave corrispondente.");
+				}
+				else {
+					super.enter(who);
+				}
+			}
+			
+			public boolean unlock(Key key) {
+				if(key.getCode().equals(this.lock.getCode())) {
+					open = true;
+				}
+				
+				return open;
+			}
+		};
 		kingRoom.setDescription("Camera da letto del re di Elchea.");
 		Room secretRoom = new Room("???");
 		secretRoom.setDescription("Una stanza misteriosa nascosta dietro la libreria nella camera del re.");
@@ -428,8 +456,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		
-		// FIXME: NON FUNZIONA UN CAZZO
-/*
+		/* FIXME: NON FUNZIONA UN CAZZO
 		game.registerCommand(new ConsoleCommand("load") {
 
 			@SuppressWarnings("unchecked")
