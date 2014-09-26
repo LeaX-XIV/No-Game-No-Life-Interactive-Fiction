@@ -6,6 +6,8 @@ import it.univpm.deit.semedia.gameclasses.IContainer;
 import it.univpm.deit.semedia.gameclasses.objects.Banana;
 import it.univpm.deit.semedia.gameclasses.objects.Weapon;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
+import it.univpm.deit.semedia.gameclasses.rooms.Key;
+import it.univpm.deit.semedia.gameclasses.rooms.Lock;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
 
 import java.io.File;
