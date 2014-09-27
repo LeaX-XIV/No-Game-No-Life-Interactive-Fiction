@@ -53,5 +53,10 @@ public class Key extends GameObject{
 		
 		return "Nessuna porta da aprire con questa chiave.";
 	}
+	
+	@Override
+	public String toString() {
+		return denti.toString().replace("[", "").replace("]", "").replace(", ", ".");
+	}
 
 }

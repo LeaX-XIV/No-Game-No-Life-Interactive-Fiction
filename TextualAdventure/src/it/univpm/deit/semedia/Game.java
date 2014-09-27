@@ -49,7 +49,9 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		mountainPass.add(new Key(new ArrayList<Byte>(Arrays.asList(code))));
+		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code)));
+		secretKey.setDescription("Una chiave con una dentatura \"già vista prima\".");
+		mountainPass.add(secretKey);
 		mountainPass.add(new Banana());
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
@@ -78,20 +80,14 @@ public class Game extends GenericConsole implements Serializable {
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
 
-		Door d1 = new Door();
-		d1.open();
-		Door d2 = new Door();
-		d2.open();
-		Door d3 = new Door();
-		d3.open();
-		Door d4 = new Door();
-		d4.open();
-		Door d5 = new Door();
-		d5.open();
-		Door d6 = new Door();
-		d6.open();
+		Door d1 = new Door(true);
+		Door d2 = new Door(true);
+		Door d3 = new Door(true);
+		Door d4 = new Door(true);
+		Door d5 = new Door(true);
+		Door d6 = new Door(true);
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(code))));
-		Door d8 = new Door(new Lock());
+		Door d8 = new Door();
 		
 		d1.addLink("nord", "sud", mountainPass, inn);
 		d2.addLink("nord", "sud", inn, elchea);
@@ -224,7 +220,7 @@ public class Game extends GenericConsole implements Serializable {
 					if (object != null) {
 						// if so place it in the hem.. hero
 						object.getContainedIn().moveContainedTo(object, mc);
-						out.println("Metti " + object + " nella tua borsa.");
+						out.println("Metti " + object.getName() + " nella tua borsa.");
 					}
 					else {
 						out.println("Non riesci a trovare l'oggetto " + args[0]);
@@ -238,7 +234,7 @@ public class Game extends GenericConsole implements Serializable {
 							GameObject target = container.objectByNameRecursive((String) args[0]);
 							if(target != null) {
 								target.getContainedIn().moveContainedTo(target, mc);
-								out.println("Metti " + target + " nella tua borsa.");
+								out.println("Metti " + target.getName() + " nella tua borsa.");
 							}
 							else {
 								out.println("Non riesci a trovare l'oggetto " + args[0]);

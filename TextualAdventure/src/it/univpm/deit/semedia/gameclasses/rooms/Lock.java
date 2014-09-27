@@ -30,6 +30,27 @@ public class Lock {
 		throw new InvalidParameterException();
 	}
 
+	public Lock(boolean open) {
+		this.open = open;
+		cilindro = new ArrayList<Byte>();
+		Random r = new Random();
+		for (int i = 0; i < 4; i++) {
+			cilindro.add((byte) r.nextInt(256));			
+		}
+	}
+	
+	public Lock(ArrayList<Byte> cilindro, boolean open) {
+		this.open = open;
+		if(cilindro != null) {
+			if(cilindro.size() == 4) {
+				this.cilindro = cilindro;
+				return;
+			}
+		}
+
+		throw new InvalidParameterException();
+	}
+
 	public ArrayList<Byte> getCode() {
 		return this.cilindro;
 	}
