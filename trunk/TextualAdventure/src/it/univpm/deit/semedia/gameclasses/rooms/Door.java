@@ -15,6 +15,11 @@ public class Door{
 		this.link = new HashMap<String, Room>();
 	}
 	
+	public Door(boolean open) {
+		this.lock = new Lock(open);
+		this.link = new HashMap<String, Room>();
+	}
+	
 	public Door(Lock lock) {
 		this.lock = lock;
 		this.link = new HashMap<String, Room>();
