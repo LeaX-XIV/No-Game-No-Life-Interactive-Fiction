@@ -6,6 +6,7 @@ import it.univpm.deit.semedia.gameclasses.IContainer;
 import it.univpm.deit.semedia.gameclasses.objects.Banana;
 import it.univpm.deit.semedia.gameclasses.objects.Weapon;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
+import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Key;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
@@ -24,6 +25,7 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -36,6 +38,7 @@ public class Game extends GenericConsole implements Serializable {
 	private static Person mc;
 	private static Game game;
 	private static ArrayList<Room> world;
+	Byte[] code = {31, (byte) 192, 116, 24};
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
@@ -46,9 +49,10 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
+		mountainPass.add(new Key(new ArrayList<Byte>(Arrays.asList(code))));
 		mountainPass.add(new Banana());
 		Room inn = new Room("Locanda");
-		inn.setDescription("Una locanda fuori citt\u00e0.");
+		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
 			
 			@Override
@@ -65,39 +69,7 @@ public class Game extends GenericConsole implements Serializable {
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
 		elcheaPalace.setDescription("Il palazzo dove risiede il re degli umani.");
-		Room kingRoom = new Room("Stanza del re") {
-			// TODO: X LIPPUZ O PAGNO: CREARE CLASSI Key E Lock NEL PACKAGE DI Room
-			// SPECIFICHE: ENTRAMBI DOVRANNO AVERE UN CODICE DI RICONOSCIMENTO A 4 BYTE (COME UN IP),
-			// SE IL CODICE CORRISPONDE QUANDO LA CHIAVE VIENE UTILIZZATA SULLA SERRATURA SI APRE
-			private Lock lock = new Lock();
-			private boolean open = false;
-			
-			public boolean isOpen() {
-				return open;
-			}
-			
-			public Lock getLock() {
-				return this.lock;
-			}
-			
-			@Override
-			public void enter(Person who) {
-				if(!open) {
-					System.out.println("La porta è chiusa.\nHai bisogno della chiave corrispondente.");
-				}
-				else {
-					super.enter(who);
-				}
-			}
-			
-			public boolean unlock(Key key) {
-				if(key.getCode().equals(this.lock.getCode())) {
-					open = true;
-				}
-				
-				return open;
-			}
-		};
+		Room kingRoom = new Room("Stanza del re");
 		kingRoom.setDescription("Camera da letto del re di Elchea.");
 		Room secretRoom = new Room("???");
 		secretRoom.setDescription("Una stanza misteriosa nascosta dietro la libreria nella camera del re.");
@@ -106,22 +78,29 @@ public class Game extends GenericConsole implements Serializable {
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
 
-		mountainPass.addDoor("nord", inn);
-		inn.addDoor("sud", mountainPass);
-		inn.addDoor("nord", elchea);
-		elchea.addDoor("sud", inn);
-		elchea.addDoor("nord", elcheaStreets);
-		elcheaStreets.addDoor("sud", elchea);
-		elcheaStreets.addDoor("est", library);
-		library.addDoor("ovest", elcheaStreets);
-		elcheaStreets.addDoor("nord", elcheaPalace);
-		elcheaPalace.addDoor("sud", elcheaStreets);
-		elcheaPalace.addDoor("ovest", kingRoom);
-		kingRoom.addDoor("est", elcheaPalace);
-		//		XXX: kingRoom.addDoor("sud", secretRoom);
-		secretRoom.addDoor("nord", kingRoom);
-		//		XXX: elchea.addDoor("ovest", easternUnion);
-		easternUnion.addDoor("est", elchea);
+		Door d1 = new Door();
+		d1.open();
+		Door d2 = new Door();
+		d2.open();
+		Door d3 = new Door();
+		d3.open();
+		Door d4 = new Door();
+		d4.open();
+		Door d5 = new Door();
+		d5.open();
+		Door d6 = new Door();
+		d6.open();
+		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(code))));
+		Door d8 = new Door(new Lock());
+		
+		d1.addLink("nord", "sud", mountainPass, inn);
+		d2.addLink("nord", "sud", inn, elchea);
+		d3.addLink("nord", "sud", elchea, elcheaStreets);
+		d4.addLink("est", "ovest", elcheaStreets, library);
+		d5.addLink("nord", "sud", elcheaStreets, elcheaPalace);
+		d6.addLink("ovest", "est", elcheaPalace, kingRoom);
+		d7.addLink("sud", "nord", kingRoom, secretRoom);
+		d8.addLink("ovest", "est", elchea, easternUnion);
 
 		mountainPass.add(mc);
 		
@@ -149,12 +128,7 @@ public class Game extends GenericConsole implements Serializable {
 				Room room1 = new Room("the white room");
 				room1.setDescription("Its a white room, with black curtains, near the station.");
 				Room room2 = new Room("a corridor");
-				room1.addDoor("north", room2);
-				room2.addDoor("south", room1);
-
 				Room room3 = new Room("the armery");
-				room2.addDoor("north", room3);
-				room3.addDoor("south", room2);
 
 				ContainerImpl closet = new ContainerImpl("closet");
 				GameObject dagger = new Weapon("dagger", 25);
@@ -164,10 +138,6 @@ public class Game extends GenericConsole implements Serializable {
 
 				Room room4 = new Room("King's bedroom");
 				Room room5 = new Room("Queen's bedroom");
-				room3.addDoor("east", room4);
-				room4.addDoor("west", room3);
-				room3.addDoor("west", room5);
-				room5.addDoor("east", room3);
 				GameObject mirror = new GameObject("mirror") {
 					@Override
 					public String use(Person who) {

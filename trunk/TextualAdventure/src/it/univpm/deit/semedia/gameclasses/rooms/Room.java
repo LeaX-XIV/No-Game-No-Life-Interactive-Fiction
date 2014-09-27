@@ -3,14 +3,14 @@ package it.univpm.deit.semedia.gameclasses.rooms;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl implements Serializable {
-
-	private static final long serialVersionUID = 1L;
 	
 	// XXX: NON USARE STRINGHE MA ENUM
-	HashMap<String, Room> doors = new HashMap<String, Room>();
+	ArrayList<Door> doors = new ArrayList<Door>();
 	
 	public Room(String description) {
 		super(description);
@@ -21,31 +21,71 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 	 * @param doorname the door name e.g. "north" "south"
 	 * @param room the room that this door will lead to
 	 */
-	public void addDoor(String doorname, Room room) {
-		doors.put(doorname,  room);
+	protected void addDoor(Door door) {
+		if(door.getRooms().contains(this)) {
+			doors.add(door);
+		}
 	}
 	
-	/**
-	 * @return the hashmap doorname->newroom
-	 */
+//	/**
+//	 * @return the hashmap doorname->newroom
+//	 */
+//	public HashMap<String, Room> getDoors() {
+//		return doors;
+//	}
+	
+
 	public HashMap<String, Room> getDoors() {
-		return doors;
+		HashMap<String, Room> doorList = new HashMap<String, Room>();
+		
+		Iterator<Door> it = doors.iterator();
+		while(it.hasNext()) {
+			Door door = it.next();
+			if(door.isOpen()) {
+				HashMap<String, Room> temp = door.getOtherEnd(this);
+				if(temp != null) {
+					doorList.putAll(temp);
+				}
+			}
+		}
+		
+		return doorList;
 	}
 	
 	public void enter(Person person) {
 		add(person);
 	}
 	
-	public boolean personExits(Person person, String doorname) {
-		if(doors.containsKey(doorname) && contains(person)) {
-			Room nextRoom = (Room)doors.get(doorname);
-			remove(person);
-			nextRoom.enter(person);
-		}
-		else {
-			return false;
+	public boolean hasClosedDoor() {
+		return !getClosedDoor().isEmpty();
+	}
+	
+	public ArrayList<Door> getClosedDoor() {
+		ArrayList<Door> closed = new ArrayList<Door>();
+		Iterator<Door> it = doors.iterator();
+		while(it.hasNext()) {
+			Door d = it.next();
+			if(!d.isOpen()) {
+				closed.add(d);
+			}
 		}
 		
-		return true;
+		return closed;
+	}
+	
+	public boolean personExits(Person person, String doorname) {
+		if(contains(person)) {
+			HashMap<String, Room> porte = getDoors();
+			if(porte.containsKey(doorname)) {
+				Room nextRoom = porte.get(doorname);
+				remove(person);
+				nextRoom.enter(person);
+				
+				return true;
+			}
+			
+		}
+		
+		return false;
 	}
 }
