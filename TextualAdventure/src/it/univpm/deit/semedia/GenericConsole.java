@@ -128,7 +128,7 @@ public class GenericConsole implements Runnable {
 	private final Object[] narrow(String argstrings[], int startIndex) {
 		Object narrowed[] =	new Object[argstrings.length - startIndex];
 
-		for (int i=0; i<narrowed.length; ++i) {
+		for (int i = 0; i < narrowed.length; ++i) {
 			narrowed[i] = narrow(argstrings[startIndex + i]);
 		}
 

@@ -1,6 +1,7 @@
 package it.univpm.deit.semedia;
 
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
@@ -58,7 +59,13 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code)));
+		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) {
+			@Override
+			public String use(Person who) {
+				new ConnectedWords(in, out).run();
+				return super.use(who);
+			}
+		};
 		secretKey.setDescription("Una chiave con una dentatura \"già vista prima\".");
 		mountainPass.add(secretKey);
 		Room inn = new Room("Locanda");
@@ -156,7 +163,7 @@ public class Game extends GenericConsole implements Serializable {
 				
 				world.get(0).add(mc);
 				
-				ScrollableText.showSclollTextFromXml("prologue");
+//				ScrollableText.showSclollTextFromXml("prologue");
 				
 				// the look command is executed
 				game.executeLine("look");

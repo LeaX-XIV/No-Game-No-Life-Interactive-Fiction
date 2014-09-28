@@ -68,7 +68,7 @@ public class Door implements Serializable {
 		return lock.unlock(key);
 	}
 	
-	public static <K, V> K getKeyByValue(HashMap<K, V> map, Room value) {
+	public static <K, V> K getKeyByValue(HashMap<K, V> map, V value) {
 		 for (Entry<K, V> entry : map.entrySet()) {
 		        if (value.equals(entry.getValue())) {
 		            return entry.getKey();
