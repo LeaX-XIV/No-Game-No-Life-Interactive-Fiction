@@ -1,5 +1,6 @@
 package it.univpm.deit.semedia;
 
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
@@ -32,6 +33,15 @@ import java.util.Iterator;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class Game extends GenericConsole implements Serializable {
 
@@ -44,15 +54,13 @@ public class Game extends GenericConsole implements Serializable {
 		super(in, out);
 		
 		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
-		mc = new Person("Sora", 100);
-		mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
+		
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
 		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code)));
 		secretKey.setDescription("Una chiave con una dentatura \"già vista prima\".");
 		mountainPass.add(secretKey);
-		mountainPass.add(new Banana());
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -97,8 +105,6 @@ public class Game extends GenericConsole implements Serializable {
 		d6.addLink("ovest", "est", elcheaPalace, kingRoom);
 		d7.addLink("sud", "nord", kingRoom, secretRoom);
 		d8.addLink("ovest", "est", elchea, easternUnion);
-
-		mountainPass.add(mc);
 		
 		world = new ArrayList<Room>();
 		world.add(mountainPass);
@@ -117,41 +123,41 @@ public class Game extends GenericConsole implements Serializable {
 	 */
 	public static void main(String[] args) {
 		game = new Game(System.in, System.out);
-		game.registerCommand(new ConsoleCommand("startnew") {
+		game.registerCommand(new ConsoleCommand("start") {
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 
-				Room room1 = new Room("the white room");
-				room1.setDescription("Its a white room, with black curtains, near the station.");
-				Room room2 = new Room("a corridor");
-				Room room3 = new Room("the armery");
-
-				ContainerImpl closet = new ContainerImpl("closet");
-				GameObject dagger = new Weapon("dagger", 25);
-				dagger.setDescription("old, but likely to work");
-				closet.add(dagger);
-				room3.add(closet);
-
-				Room room4 = new Room("King's bedroom");
-				Room room5 = new Room("Queen's bedroom");
-				GameObject mirror = new GameObject("mirror") {
-					@Override
-					public String use(Person who) {
-						return "you see " + who.getDescription() + ". Hey he's reversed!";
-					}
-				};
-				mirror.setDescription("A gold encrusted mirror, unfortunately the glass is broken");
-				room5.add(mirror);		
-				room5.add(new Banana());
-				room5.add(new Banana());
-
-
-
-				out.println("New game started!\n" +
-						"\n " +
-						"Ops, it happened again. You try to recall the last time you promised yourself " +
-						"no more \"happy mushrooms\" but you miserably fail. You wake up and you're somewhere you dont know but somehow not so unfamiliar.\n");
-
+//				Room room1 = new Room("the white room");
+//				room1.setDescription("Its a white room, with black curtains, near the station.");
+//				Room room2 = new Room("a corridor");
+//				Room room3 = new Room("the armery");
+//
+//				ContainerImpl closet = new ContainerImpl("closet");
+//				GameObject dagger = new Weapon("dagger", 25);
+//				dagger.setDescription("old, but likely to work");
+//				closet.add(dagger);
+//				room3.add(closet);
+//
+//				Room room4 = new Room("King's bedroom");
+//				Room room5 = new Room("Queen's bedroom");
+//				GameObject mirror = new GameObject("mirror") {
+//					@Override
+//					public String use(Person who) {
+//						return "you see " + who.getDescription() + ". Hey he's reversed!";
+//					}
+//				};
+//				mirror.setDescription("A gold encrusted mirror, unfortunately the glass is broken");
+//				room5.add(mirror);		
+//				room5.add(new Banana());
+//				room5.add(new Banana());
+				
+				mc = new Person("Sora", 100);
+				mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
+				
+				world.get(0).add(mc);
+				
+				ScrollableText.showSclollTextFromXml("prologue");
+				
 				// the look command is executed
 				game.executeLine("look");
 			}
@@ -424,7 +430,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		
-		/* FIXME: NON FUNZIONA UN CAZZO
+		// FIXME: NON FUNZIONA UN CAZZO
 		game.registerCommand(new ConsoleCommand("load") {
 
 			@SuppressWarnings("unchecked")
@@ -481,7 +487,7 @@ public class Game extends GenericConsole implements Serializable {
 						+ "PATH = il percorso del file da caricare";
 			}
 		});
-*/
+//*/
 
 		game.run();
 	}
@@ -509,5 +515,4 @@ public class Game extends GenericConsole implements Serializable {
 		}
 		return herostring + "> ";
 	}
-
 }

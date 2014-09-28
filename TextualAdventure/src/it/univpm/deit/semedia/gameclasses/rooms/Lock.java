@@ -1,10 +1,11 @@
 package it.univpm.deit.semedia.gameclasses.rooms;
 
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Lock {
+public class Lock implements Serializable {
 
 	private ArrayList<Byte> cilindro;
 	private boolean open;
