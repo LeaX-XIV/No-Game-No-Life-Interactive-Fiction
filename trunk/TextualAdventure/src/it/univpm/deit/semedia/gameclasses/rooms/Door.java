@@ -1,11 +1,12 @@
 package it.univpm.deit.semedia.gameclasses.rooms;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-public class Door{
+public class Door implements Serializable {
 
 	private Lock lock;
 	private HashMap<String, Room> link;

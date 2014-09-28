@@ -16,6 +16,8 @@ public class EndGame {
 	public void run() {
 		Credit c = new Credit();
 		MusicPlayer mp = new MusicPlayer(false);
+		
+		c.setWaitTime((int) (mp.getDurationAudioFile() / c.getReturns()));
 
 		mp.start();
 		c.show();

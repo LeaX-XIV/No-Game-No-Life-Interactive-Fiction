@@ -73,8 +73,8 @@ public class ContainerImpl extends GameObject implements IContainer{
 	public String getContentDescription() {
 		String result = "";
 		if(listItems().hasNext()) {;
-			for(Iterator iter = listItems(); iter.hasNext();) {
-				result += "* " + iter.next() + "\n"; 
+			for(Iterator<GameObject> iter = listItems(); iter.hasNext();) {
+				result += "* " + iter.next().getName() + "\n"; 
 			}
 		}
 		else {

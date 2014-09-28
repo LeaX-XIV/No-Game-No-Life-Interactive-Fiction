@@ -3,12 +3,13 @@ package it.univpm.deit.semedia.gameclasses.rooms;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-public class Key extends GameObject{
+public class Key extends GameObject implements Serializable {
 	
 	private ArrayList<Byte> denti;
 	
