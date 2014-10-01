@@ -163,6 +163,10 @@ public class ConnectedWords extends GenericConsole{
 			e.printStackTrace();
 		}
 	}
+	
+	private String getLastSyllabe() {
+		return lastSyllabe.replaceAll("à|á", "a").replaceAll("ì|í", "i").replaceAll("ù|ú", "u").replaceAll("è|é", "e").replaceAll("ò|ó", "o");
+	}
 
 	private static String uniteStringArray(String[] str) {
 		String finale = "";
