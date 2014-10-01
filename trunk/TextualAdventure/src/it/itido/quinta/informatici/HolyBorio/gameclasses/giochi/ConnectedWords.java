@@ -75,7 +75,7 @@ public class ConnectedWords extends GenericConsole{
 						}
 					}
 					else {
-						out.println("Devi dire una parola che inizia con \"" + lastSyllabe + "\".");
+						out.println("Devi dire una parola che inizia con \"" + getLastSyllabe() + "\".");
 					}
 				}
 			}
@@ -179,7 +179,7 @@ public class ConnectedWords extends GenericConsole{
 	}
 
 	private boolean startsWhitLastSyllabe(String word) {
-		return lastSyllabe == null || word.indexOf(lastSyllabe) == 0;
+		return lastSyllabe == null || word.indexOf(getLastSyllabe()) == 0;
 	}
 
 	private static String getLastSyllabe(String[] str) {
@@ -235,7 +235,7 @@ public class ConnectedWords extends GenericConsole{
 				ArrayList<String> temp = new ArrayList<String>();
 				temp.addAll(word.values());
 				if(startsWhitLastSyllabe(temp.get(0))) {
-					parole.add(temp.get(0));
+					parole.addAll(temp);
 				}
 			}
 		}		
