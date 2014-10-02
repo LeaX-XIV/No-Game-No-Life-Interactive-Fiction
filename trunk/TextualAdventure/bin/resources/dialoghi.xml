@@ -124,7 +124,7 @@ Se non partecipasse al torneo e vincesse tutte le sfide, perderebbe qualsiasi ti
 Ma ha commesso un errore.
 Ha sfidato [].
 I comandamenti danno la possibilità allo sfidato di scegliere il gioco.
-Dato che nelle partite che Stephanie stava giocando prima hai notato che stava barando, decidi di evitarlo.
+Dato che nelle partite di poker che Stephanie stava giocando prima hai notato che stava barando, decidi di evitarlo.
 Pensi a qualcosa di più semplice, dove non si possa barare.
 Come la Morra Cinese.
 Giurate sui comandamenti.
@@ -132,4 +132,56 @@ Giurate sui comandamenti.
 
 
 </innEvent>
+	<janKenLost>"Ahah, nessuno può battermi!" esclamò Stephanie, dando l'impressione di stare emettendo laser dagli occhi.
+Questa è stata la prima sconfitta di [], ma poco importa, dopotutto non si tratava di un gioco on-line.
+Lasciando la sconfitta alle spalle, lasci il tavolo.
+Ti avvicini ad un'altra donna che ha un sacchetto pieno di monete.
+La sfidi a poker:
+in caso di tua vittoria otterrai tutte le monete, altrimenti diventerai un suo schiavo.
+Anche se molto seccata, la donna accetta, fedele in una sua vittoria.
+Dato che il gioco consiste in una singola mano di poker, decidi di puntare a una scala reale massima barando.
+Mentre esegui il trucco, però, la tua mano comincia a tremare, rivelando l'inganno alla donna.
+Secondo l'ottavo comandamento, vieni dichiarato sconfitto e diventi schiavo della vincitrice.
+La donna non sembra avere particolare intenzione di usarti, e ti ordina di non infastidire più nessuno.
+Anche se va contro la tua volontà, sei costretto ad uscire dalla locanda.
+Cerchi di sottrarti al tuo destino, ma i muscoli non vogliono ascoltare i comandi che gli invii.
+Fuori, ti rintani in un angolino per dormire la notte.
+Lentamente ti addormenti nel freddo pungente notturno.
+
+Qui, fuori dalla locanda, la leggenda di [] ha fine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</janKenLost>
+	<janKenWin>Con lo stupore generale del pubblico, che si era fermato a guardare la breve partita, batti la campionessa in carica.
+La folla esulta davanti al nuovo candidato re, e ti porta da altri sfidanti, che batti facilmente.
+Tra un gioco e l'altro, cerchi Stephanie, che nel frattempo hai perso di vista.
+Per un attimo riesci a sottrarti all'euforia dei festeggiamenti, e ti avvicini alla ragazza dai capelli rossi, che sta piangendo in un angolino.
+Quando sente chiamare il suo nome e realizza che la fonte sei tu, comincia a maledirti;
+dopotutto ha perso tutti i titoli che le sarebbero spettati.
+La vista di una ragazza che piange ti spezza il cuore.
+Decidi quindi, attraverso il potere dei comandamenti, di 'farla innamorare di te'.
+Improvvisamente Stephanie inizia a dichiarare il suo amore per te, mentre sbatte violentemente la testa contro il muro.
+Probabilmente non le va molto a genio di aver appena perso e di essere costretta ad innamorarsi.
+Vieni sfidato altre volte, ma nessuno ha l'abilità necessaria per batterti.
+Man mano gli avversari diminuiscono, e vieni dichiarato vincitore del torneo.
+E mentre Steph (vuole essere chiamata così dal suo amato) ti ronza intorno come una mosca sullo sterco, ti viene detto che per la cerimonia d'incoronazione ti saresti dovuto presentare nella sala del trono del palazzo di Elchea.
+Concludi che è ora di smettere di festeggiare e decidi di andare a dormire.
+Prenoti una camera singola alla locanda con i soldi di Steph, che è costretta a dormire in un'altra stanza.
+L'indomani è alle porte...
+
+
+</janKenWin>
 </dialogs>

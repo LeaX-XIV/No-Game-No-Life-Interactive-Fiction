@@ -54,7 +54,7 @@ public class Game extends GenericConsole implements Serializable {
 				return super.use(who);
 			}
 		};
-		secretKey.setDescription("Una chiave con una dentatura \"già vista prima\".");
+		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
 		mountainPass.add(secretKey);
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
