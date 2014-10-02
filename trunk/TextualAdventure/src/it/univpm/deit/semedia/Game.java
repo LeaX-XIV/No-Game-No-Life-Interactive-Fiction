@@ -55,7 +55,6 @@ public class Game extends GenericConsole implements Serializable {
 		super(in, out);
 		
 		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
-		
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
