@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<prologue>Sei nella tua stanza mentre giochi ad un MMORPG.
+<dialogs>
+	<prologue>Sei nella tua stanza mentre giochi ad un MMORPG.
 Ricevi una mail inaspettata.
 Mittente sconosciuto.
 Nessun oggetto.
@@ -12,8 +13,8 @@ Mossa dopo mossa, i pezzi sulla scacchiera diminuiscono.
 L'avversario sceglie le sue mosse attentamente, potrebbe essere addirittura un supercomputer.
 Ma non importa cosa, facendo mosse perfettamente calcolate, il primo a muovere ha più elevate possibilità di vittoria.
 E tu stai comandando i bianchi.
-Per non parlare del fatto che sei [].
-Un giocatore on-line, ormai diventato una leggenda metropolitana per essere primo in classifica in qualsiasi videogioco.
+Per non parlare del fatto che sei []:
+un giocatore on-line, ormai diventato una leggenda metropolitana per essere primo in classifica in qualsiasi videogioco.
 Nessun cheat, solo una grandissima abilità nel leggere le intenzioni altrui, nonchè un'innata abilità di calcolo mentale.
 Non trascorre molto tempo prima della fine della partita.
 L'avversario se l'era cavata egregiamente, ma a [] non è concessa la sconfitta.
@@ -94,9 +95,41 @@ Sora
 
 
 </prologue>
-<innEvent>Non puoi tornare indietro.
+	<innEvent>Non puoi tornare indietro.
 Non puoi tornare nel tuo mondo.
 All'orizzonte vedi una città.
 Non trovi altra soluzione se non percorrere il sentiero verso la città.
 Ma la civiltà è lontana, e la notte si fa incombente.
-Decidi di riposare in una locanda 
+Decidi di riposare in una locanda sulla via per la città.
+Nella locanda c'è agitazione, fin troppa per una normale locanda fuori città.
+Senti vociferare, e apprendi che si sta tenendo un torneo in tutto il paese per eleggere il nuovo re.
+Ricordi ciò che ha detto il Dio che ti ha portato in questo mondo:
+ogni conflitto deve essere risolto attraverso un gioco;
+quindi anche il titolo di re si decide giocando.
+Vedi molta gente andarsene sconfitta.
+Altri, seppur non vincitori, rimangono a vedere l'esito del torneo.
+La maggior parte dei perdenti è stata eliminata dalla stessa ragazza dai capelli rossi.
+
+Dopo aver eliminato l'ennesimo sfidante, la ragazza si volta in cerca di altri contendenti, e ti punta un dito contro.
+"Ehi, tu! Vieni a giocare. Voglio divertirmi ancora un po'".
+Sei stato sfidato.
+Non puoi certo tirarti indietro.
+C'è in gioco il dominio di una regno.
+E dover sfidare la ragazza che sembra essere la favorita ti dà la carica.
+Ti avvicini al tavolo in cui giocherete e vi presentate.
+La ragazza dai capelli rossi si chiama Stephanie Dola.
+E sarebbe stata l'erede al trono, se solo il nonno non avesse organizzato questo torneo nel suo testamento.
+A quanto pare vuole proteggere la sua eredità, per questo gioca con tutta se stessa.
+Se non partecipasse al torneo e vincesse tutte le sfide, perderebbe qualsiasi titolo nobiliare.
+Ma ha commesso un errore.
+Ha sfidato [].
+I comandamenti danno la possibilità allo sfidato di scegliere il gioco.
+Dato che nelle partite che Stephanie stava giocando prima hai notato che stava barando, decidi di evitarlo.
+Pensi a qualcosa di più semplice, dove non si possa barare.
+Come la Morra Cinese.
+Giurate sui comandamenti.
+"Aschente!"
+
+
+</innEvent>
+</dialogs>
