@@ -8,6 +8,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ScrollableText {
@@ -69,10 +72,26 @@ public class ScrollableText {
 
 			doc.getDocumentElement().normalize();
 			
+			NodeList nList = doc.getElementsByTagName("dialogs");
 			
-			String prologue = doc.getElementsByTagName(tag).item(0).getTextContent();
+			String text = "";
+
+			for(int i = 0; i < nList.getLength(); i++) {
+				Node node = nList.item(i);
 				
-			ScrollableText st = new ScrollableText(prologue);
+				if(node.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) node;
+					text = doc.getElementsByTagName(tag).item(0).getTextContent();
+					break;
+				}
+					
+			}
+			
+			
+//			String text = doc.getElementsByTagName(tag).item(0).getTextContent();
+				
+			ScrollableText st = new ScrollableText(text);
 			st.setWaitTime(waitTime);
 			st.show();
 		}catch(IOException | ParserConfigurationException | SAXException e) {

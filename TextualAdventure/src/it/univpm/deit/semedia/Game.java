@@ -5,8 +5,6 @@ import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
-import it.univpm.deit.semedia.gameclasses.objects.Banana;
-import it.univpm.deit.semedia.gameclasses.objects.Weapon;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Key;
@@ -34,15 +32,6 @@ import java.util.Iterator;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 public class Game extends GenericConsole implements Serializable {
 
@@ -162,10 +151,7 @@ public class Game extends GenericConsole implements Serializable {
 				
 				world.get(0).add(mc);
 				
-//				ScrollableText.showSclollTextFromXml("prologue");
-				
-				// the look command is executed
-				game.executeLine("look");
+				ScrollableText.showSclollTextFromXml("prologue");
 			}
 
 			@Override
