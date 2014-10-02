@@ -59,7 +59,7 @@ public class ConnectedWords extends GenericConsole{
 							String[] syllabe = Door.getKeyByValue(removeGroup(words, word), word).split("-");
 							String lastSyllabe = getLastSyllabe(syllabe);
 							ConnectedWords.this.lastSyllabe = lastSyllabe;
-							out.println(word);
+//							out.println(word);
 							initTimer();
 
 							timer.schedule(endTurn, turnTime);
@@ -267,7 +267,6 @@ public class ConnectedWords extends GenericConsole{
 
 	public static void main(String[] args) {
 		ConnectedWords game = new ConnectedWords(System.in, System.out);
-		//		System.out.println(game.words.toString());
 		game.run();
 	}
 
