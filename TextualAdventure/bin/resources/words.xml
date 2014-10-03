@@ -1,79 +1,1082 @@
 <?xml version="1.0" encoding="utf-8"?>
 <words>
 	<group>
-		<parola>a-ba-co</parola>
-		<parola>a-ba-ci</parola>
-	</group>
-	<group>
-		<parola>a-ba-te</parola>
-		<parola>a-ba-ti</parola>
-	</group>
-	<group>
-		<parola>ab-ba-co</parola>
-		<parola>ab-ba-ci</parola>
-	</group>
-	<group>
-		<parola>ab-ba-glio</parola>
-		<parola>ab-ba-gli</parola>
-	</group>
-	<group>
-		<parola>ab-ba-ia-ta</parola>
-		<parola>ab-ba-ia-te</parola>
-	</group>
-	<group>
-		<parola>ab-ba-i-no</parola>
-		<parola>ab-ba-i-ni</parola>
-	</group>
-	<group>
-		<parola>ab-ba-io</parola>
-		<parola>ab-ba-i</parola>
-	</group>
-	<group>
-		<parola>ab-ban-do-no</parola>
-		<parola>ab-ban-do-ni</parola>
-	</group>
-	<group>
-		<parola>ab-bat-ti-men-to</parola>
-		<parola>ab-bat-ti-men-ti</parola>
-	</group>
-	<group>
-		<parola>ab-ba-zi-a</parola>
-		<parola>ab-ba-zi-e</parola>
-	</group>
-	<group>
-		<parola>ab-be-ce-da-rio</parola>
-		<parola>ab-be-ce-da-ri</parola>
-	</group>
-	<group>
-		<parola>ab-bel-li-men-to</parola>
-		<parola>ab-bel-li-men-ti</parola>
-	</group>
-	<group>
-		<parola>ab-be-ve-ra-to-io</parola>
-		<parola>ab-be-ve-ra-to-i</parola>
-	</group>
-	<group>
-		<parola>ab-bic-cì</parola>
-	</group>
-	<group>
-		<parola>ab-bi-glia-men-to</parola>
-		<parola>ab-bi-glia-men-ti</parola>
-	</group>
-	<group>
-		<parola>ab-bi-na-men-to</parola>
-		<parola>ab-bi-na-men-ti</parola>
-	</group>
-	<group>
-		<parola>ab-boc-ca-men-to</parola>
-		<parola>ab-boc-ca-men-ti</parola>
-	</group>
-	<group>
-		<parola>ab-bo-na-men-to</parola>
-		<parola>ab-bo-na-men-ti</parola>
-	</group>
-	<group>
-		<parola>cic-cio-ne</parola>
-		<parola>cic-cio-na</parola>
-		<parola>cic-cio-ni</parola>
-	</group>
+	<parola>bab-bi</parola>
+	<parola>bab-bo</parola>
+</group>
+<group>
+	<parola>bab-bu-i-ni</parola>
+	<parola>bab-bu-i-no</parola>
+</group>
+<group>
+	<parola>bac-ca-la</parola>
+</group>
+<group>
+	<parola>bac-ca-ni</parola>
+	<parola>bac-ca-no</parola>
+</group>
+<group>
+	<parola>bac-chet-ta</parola>
+	<parola>bac-chet-te</parola>
+</group>
+<group>
+	<parola>ba-co</parola>
+	<parola>ba-chi</parola>
+</group>
+<group>
+	<parola>ba-cio</parola>
+	<parola>ba-ci</parola>
+</group>
+<group>
+	<parola>ba-cia-ta</parola>
+</group>
+<group>
+	<parola>ba-ci-nel-la</parola>
+	<parola>ba-ci-nel-le</parola>
+</group>
+<group>
+	<parola>ba-ci-ni</parola>
+	<parola>ba-ci-no</parola>
+</group>
+<group>
+	<parola>ba-di-le</parola>
+	<parola>ba-di-li</parola>
+</group>
+<group>
+	<parola>ba-di-no</parola>
+</group>
+<group>
+	<parola>ba-do</parola>
+</group>
+<group>
+	<parola>baf-fi</parola>
+	<parola>baf-fo</parola>
+</group>
+<group>
+	<parola>ba-ga-gli</parola>
+	<parola>ba-ga-glio</parola>
+</group>
+<group>
+	<parola>ba-glio-re</parola>
+	<parola>ba-glio-ri</parola>
+</group>
+<group>
+	<parola>ba-gni</parola>
+	<parola>ba-gno</parola>
+</group>
+<group>
+	<parola>ba-ia</parola>
+	<parola>ba-ie</parola>
+</group>
+<group>
+	<parola>bal-bu-zia</parola>
+	<parola>bal-bu-zie</parola>
+</group>
+<group>
+	<parola>bal-co-ne</parola>
+	<parola>bal-co-ni</parola>
+</group>
+<group>
+	<parola>bal-dan-za</parola>
+	<parola>bal-dan-ze</parola>
+</group>
+<group>
+	<parola>bal-do-ria</parola>
+	<parola>bal-do-rie</parola>
+</group>
+<group>
+	<parola>ba-le-na</parola>
+	<parola>ba-le-ne</parola>
+</group>
+<group>
+	<parola>ba-le-no</parola>
+</group>
+<group>
+	<parola>ba-lia</parola>
+	<parola>ba-lie</parola>
+</group>
+<group>
+	<parola>bal-la</parola>
+</group>
+<group>
+	<parola>bal-la-bi-le</parola>
+	<parola>bal-la-bi-li</parola>
+</group>
+<group>
+	<parola>bal-la-ta</parola>
+	<parola>bal-la-te</parola>
+</group>
+<group>
+	<parola>bal-le-ri-na</parola>
+	<parola>bal-le-ri-ne</parola>
+	<parola>bal-le-ri-ni</parola>
+	<parola>bal-le-ri-no</parola>
+</group>
+<group>
+	<parola>bal-li</parola>
+	<parola>bal-lo</parola>
+</group>
+<group>
+	<parola>ba-loc-chi</parola>
+	<parola>ba-loc-co</parola>
+</group>
+<group>
+	<parola>ba-lor-da</parola>
+	<parola>ba-lor-de</parola>
+	<parola>ba-lor-di</parola>
+	<parola>ba-lor-do</parola>
+</group>
+<group>
+	<parola>ba-lu-ar-di</parola>
+	<parola>ba-lu-ar-do</parola>
+</group>
+<group>
+	<parola>bal-za-ta</parola>
+	<parola>bal-za-te</parola>
+	<parola>bal-za-ti</parola>
+</group>
+<group>
+	<parola>bal-zi</parola>
+	<parola>bal-zo</parola>
+</group>
+<group>
+	<parola>bam-bi-na</parola>
+	<parola>bam-bi-ne</parola>
+	<parola>bam-bi-ni</parola>
+	<parola>bam-bi-no</parola>
+</group>
+<group>
+	<parola>bam-bo-la</parola>
+	<parola>bam-bo-le</parola>
+</group>
+<group>
+	<parola>ba-na-le</parola>
+	<parola>ba-na-li</parola>
+</group>
+<group>
+	<parola>ba-na-na</parola>
+	<parola>ba-na-ne</parola>
+</group>
+<group>
+	<parola>ban-ca</parola>
+	<parola>ban-che</parola>
+</group>
+<group>
+	<parola>ban-ca-ri</parola>
+	<parola>ban-ca-ria</parola>
+	<parola>ban-ca-rie</parola>
+	<parola>ban-ca-rio</parola>
+</group>
+<group>
+	<parola>ban-ca-rot-ta</parola>
+	<parola>ban-ca-rot-te</parola>
+</group>
+<group>
+	<parola>ban-chet-ti</parola>
+	<parola>ban-chet-to</parola>
+</group>
+<group>
+	<parola>ban-chi</parola>
+	<parola>ban-co</parola>
+</group>
+<group>
+	<parola>ban-chi-na</parola>
+	<parola>ban-chi-ne</parola>
+</group>
+<group>
+	<parola>ban-co-no-ta</parola>
+	<parola>ban-co-no-te</parola>
+</group>
+<group>
+	<parola>ban-da</parola>
+	<parola>ban-de</parola>
+</group>
+<group>
+	<parola>ban-di-ta</parola>
+	<parola>ban-di-te</parola>
+	<parola>ban-di-ti</parola>
+	<parola>ban-di-to</parola>
+</group>
+<group>
+	<parola>ba-ra</parola>
+	<parola>ba-re</parola>
+</group>
+<group>
+	<parola>ba-rac-ca</parola>
+	<parola>ba-rac-che</parola>
+</group>
+<group>
+	<parola>ba-ra-ta</parola>
+	<parola>ba-ra-te</parola>
+</group>
+<group>
+	<parola>ba-ra-tri</parola>
+	<parola>ba-ra-tro</parola>
+</group>
+<group>
+	<parola>ba-rat-ti</parola>
+	<parola>ba-rat-to</parola>
+</group>
+<group>
+	<parola>ba-rat-to-li</parola>
+	<parola>ba-rat-to-lo</parola>
+</group>
+<group>
+	<parola>bar-ba</parola>
+	<parola>bar-be</parola>
+</group>
+<group>
+	<parola>bar-ba-ra</parola>
+	<parola>bar-ba-re</parola>
+	<parola>bar-ba-ri</parola>
+	<parola>bar-ba-ro</parola>
+</group>
+<group>
+	<parola>bar-bie-re</parola>
+	<parola>bar-bie-ri</parola>
+</group>
+<group>
+	<parola>bar-ca</parola>
+	<parola>bar-che</parola>
+</group>
+<group>
+	<parola>bar-ca-io-li</parola>
+	<parola>bar-ca-io-lo</parola>
+</group>
+<group>
+	<parola>bar-col-li-no</parola>
+</group>
+<group>
+	<parola>ba-rel-la</parola>
+	<parola>ba-rel-le</parola>
+</group>
+<group>
+	<parola>ba-ri-le</parola>
+	<parola>ba-ri-li</parola>
+</group>
+<group>
+	<parola>ba-ro</parola>
+</group>
+<group>
+	<parola>ba-ro-me-tri</parola>
+	<parola>ba-ro-me-tro</parola>
+</group>
+<group>
+	<parola>ba-ro-ne</parola>
+	<parola>ba-ro-ni</parola>
+</group>
+<group>
+	<parola>bar-ra</parola>
+	<parola>bar-re</parola>
+</group>
+<group>
+	<parola>bar-rie-ra</parola>
+	<parola>bar-rie-re</parola>
+</group>
+<group>
+	<parola>ba-ruf-fa</parola>
+	<parola>ba-ruf-fe</parola>
+</group>
+<group>
+	<parola>ba-se</parola>
+	<parola>ba-si</parola>
+</group>
+<group>
+	<parola>ba-set-ta</parola>
+	<parola>ba-set-te</parola>
+</group>
+<group>
+	<parola>bas-sa</parola>
+	<parola>bas-so</parola>
+</group>
+<group>
+	<parola>ba-sti-men-ti</parola>
+	<parola>ba-sti-men-to</parola>
+</group>
+<group>
+	<parola>ba-sto-ne</parola>
+	<parola>ba-sto-ni</parola>
+</group>
+<group>
+	<parola>bat-ta-glia</parola>
+	<parola>bat-ta-glie</parola>
+</group>
+<group>
+	<parola>bat-te-ria</parola>
+	<parola>bat-te-rie</parola>
+</group>
+<group>
+	<parola>bat-te-si-mi</parola>
+	<parola>bat-te-si-mo</parola>
+</group>
+<group>
+	<parola>bat-ti-cu-o-re</parola>
+	<parola>bat-ti-cu-o-ri</parola>
+</group>
+<group>
+	<parola>bat-ti-ma-ni</parola>
+	<parola>bat-ti-ma-no</parola>
+</group>
+<group>
+	<parola>bat-ti-ste-ri</parola>
+	<parola>bat-ti-ste-ro</parola>
+</group>
+<group>
+	<parola>bat-ti-ti</parola>
+	<parola>bat-ti-to</parola>
+</group>
+<group>
+	<parola>bat-ti-tu-ra</parola>
+</group>
+<group>
+	<parola>ba-tuf-fo-li</parola>
+	<parola>ba-tuf-fo-lo</parola>
+</group>
+<group>
+	<parola>bau-le</parola>
+	<parola>bau-li</parola>
+</group>
+<group>
+	<parola>ba-va</parola>
+	<parola>ba-ve</parola>
+</group>
+<group>
+	<parola>ba-va-gli</parola>
+	<parola>ba-va-glio</parola>
+</group>
+<group>
+	<parola>ba-ve-ri</parola>
+	<parola>ba-ve-ro</parola>
+</group>
+<group>
+	<parola>baz-ze-co-la</parola>
+	<parola>baz-ze-co-le</parola>
+</group>
+<group>
+	<parola>be-a-ta</parola>
+	<parola>be-a-te</parola>
+	<parola>be-a-ti</parola>
+	<parola>be-a-to</parola>
+</group>
+<group>
+	<parola>bec-chi</parola>
+	<parola>bec-co</parola>
+</group>
+<group>
+	<parola>bef-fa</parola>
+	<parola>bef-fe</parola>
+</group>
+<group>
+	<parola>bel-la</parola>
+	<parola>bel-le</parola>
+	<parola>bel-li</parola>
+	<parola>bel-lo</parola>
+</group>
+<group>
+	<parola>bel-lez-za</parola>
+	<parola>bel-lez-ze</parola>
+</group>
+<group>
+	<parola>bel-li-co-sa</parola>
+	<parola>bel-li-co-se</parola>
+	<parola>bel-li-co-si</parola>
+	<parola>bel-li-co-so</parola>
+</group>
+<group>
+	<parola>bel-lis-si-ma</parola>
+	<parola>bel-lis-si-me</parola>
+	<parola>bel-lis-si-mi</parola>
+	<parola>bel-lis-si-mo</parola>
+</group>
+<group>
+	<parola>bel-va</parola>
+	<parola>bel-ve</parola>
+</group>
+<group>
+	<parola>ben-da</parola>
+	<parola>ben-de</parola>
+</group>
+<group>
+	<parola>be-ne</parola>
+	<parola>be-ni</parola>
+</group>
+<group>
+	<parola>be-ne-fi-ci</parola>
+	<parola>be-ne-fi-cio</parola>
+</group>
+<group>
+	<parola>be-nes-se-re</parola>
+	<parola>be-nes-se-ri</parola>
+</group>
+<group>
+	<parola>be-ne-stan-te</parola>
+	<parola>be-ne-stan-ti</parola>
+</group>
+<group>
+	<parola>ben-ve-nu-ti</parola>
+	<parola>ben-ve-nu-to</parola>
+</group>
+<group>
+	<parola>ben-zi-na</parola>
+	<parola>ben-zi-ne</parola>
+</group>
+<group>
+	<parola>be-o-ne</parola>
+	<parola>be-o-ni</parola>
+</group>
+<group>
+	<parola>ber-ci</parola>
+</group>
+<group>
+	<parola>ber-lo</parola>
+</group>
+<group>
+	<parola>ber-ret-ti</parola>
+	<parola>ber-ret-to</parola>
+</group>
+<group>
+	<parola>ber-sa-gli</parola>
+	<parola>ber-sa-glio</parola>
+</group>
+<group>
+	<parola>ber-si</parola>
+</group>
+<group>
+	<parola>be-stem-mia</parola>
+	<parola>be-stem-mie</parola>
+</group>
+<group>
+	<parola>be-stia</parola>
+	<parola>be-stie</parola>
+</group>
+<group>
+	<parola>be-stia-me</parola>
+	<parola>be-stia-mi</parola>
+</group>
+<group>
+	<parola>bet-to-la</parola>
+	<parola>bet-to-le</parola>
+</group>
+<group>
+	<parola>be-tul-la</parola>
+	<parola>be-tul-le</parola>
+</group>
+<group>
+	<parola>be-van-da</parola>
+	<parola>be-van-de</parola>
+</group>
+<group>
+	<parola>be-vi-to-re</parola>
+	<parola>be-vi-to-ri</parola>
+	<parola>be-vi-tri-ci</parola>
+</group>
+<group>
+	<parola>bian-ca</parola>
+	<parola>bian-che</parola>
+	<parola>bian-chi</parola>
+	<parola>bian-co</parola>
+</group>
+<group>
+	<parola>bian-che-ria</parola>
+	<parola>bian-che-rie</parola>
+</group>
+<group>
+	<parola>bib-bia</parola>
+	<parola>bib-bie</parola>
+</group>
+<group>
+	<parola>bi-be-ron</parola>
+</group>
+<group>
+	<parola>bi-bi-ta</parola>
+	<parola>bi-bi-te</parola>
+</group>
+<group>
+	<parola>bi-blio-gra-fia</parola>
+	<parola>bi-blio-gra-fie</parola>
+</group>
+<group>
+	<parola>bi-blio-te-ca</parola>
+	<parola>bi-blio-te-che</parola>
+</group>
+<group>
+	<parola>bic-chie-re</parola>
+	<parola>bic-chie-ri</parola>
+</group>
+<group>
+	<parola>bi-ci-clet-ta</parola>
+	<parola>bi-ci-clet-te</parola>
+</group>
+<group>
+	<parola>bi-di-re-zio-na-le</parola>
+	<parola>bi-di-re-zio-na-li</parola>
+</group>
+<group>
+	<parola>bi-do-ne</parola>
+	<parola>bi-do-ni</parola>
+</group>
+<group>
+	<parola>bie-chi</parola>
+	<parola>bie-co</parola>
+</group>
+<group>
+	<parola>bien-na-le</parola>
+	<parola>bien-na-li</parola>
+</group>
+<group>
+	<parola>bie-to-la</parola>
+	<parola>bie-to-le</parola>
+</group>
+<group>
+	<parola>bi-gliet-ti</parola>
+	<parola>bi-gliet-to</parola>
+</group>
+<group>
+	<parola>bi-lan-ce</parola>
+	<parola>bi-lan-cia</parola>
+</group>
+<group>
+	<parola>bi-le</parola>
+	<parola>bi-li</parola>
+</group>
+<group>
+	<parola>bi-liar-di</parola>
+	<parola>bi-liar-do</parola>
+</group>
+<group>
+	<parola>bim-ba</parola>
+	<parola>bim-be</parola>
+	<parola>bim-bi</parola>
+	<parola>bim-bo</parola>
+</group>
+<group>
+	<parola>bi-na-ri</parola>
+	<parola>bi-na-rio</parola>
+</group>
+<group>
+	<parola>bi-no-co-li</parola>
+	<parola>bi-no-co-lo</parola>
+</group>
+<group>
+	<parola>bio-gra-fia</parola>
+	<parola>bio-gra-fie</parola>
+</group>
+<group>
+	<parola>bio-lo-ga</parola>
+	<parola>bio-lo-ghe</parola>
+	<parola>bio-lo-gi</parola>
+	<parola>bio-lo-go</parola>
+</group>
+<group>
+	<parola>bion-da</parola>
+	<parola>bion-de</parola>
+	<parola>bion-di</parola>
+	<parola>bion-do</parola>
+</group>
+<group>
+	<parola>bir-ban-te</parola>
+	<parola>bir-ban-ti</parola>
+</group>
+<group>
+	<parola>bi-ril-li</parola>
+	<parola>bi-ril-lo</parola>
+</group>
+<group>
+	<parola>bir-ra</parola>
+	<parola>bir-re</parola>
+</group>
+<group>
+	<parola>bir-re-ria</parola>
+	<parola>bir-re-rie</parola>
+</group>
+<group>
+	<parola>bi-sac-ce</parola>
+	<parola>bi-sac-cia</parola>
+</group>
+<group>
+	<parola>bis-be-ti-ca</parola>
+	<parola>bis-be-ti-che</parola>
+	<parola>bis-be-ti-ci</parola>
+	<parola>bis-be-ti-co</parola>
+</group>
+<group>
+	<parola>bis-bi-gli</parola>
+	<parola>bis-bi-glio</parola>
+</group>
+<group>
+	<parola>bi-sca</parola>
+	<parola>bi-sce</parola>
+	<parola>bi-sche</parola>
+	<parola>bi-scia</parola>
+</group>
+<group>
+	<parola>bi-scot-ti</parola>
+	<parola>bi-scot-to</parola>
+</group>
+<group>
+	<parola>bi-se-sti-le</parola>
+	<parola>bi-se-sti-li</parola>
+</group>
+<group>
+	<parola>bis-lac-chi</parola>
+	<parola>bis-lac-co</parola>
+</group>
+<group>
+	<parola>bis-non-na</parola>
+	<parola>bis-non-ne</parola>
+	<parola>bis-non-ni</parola>
+	<parola>bis-non-no</parola>
+</group>
+<group>
+	<parola>bi-so-gni</parola>
+	<parola>bi-so-gno</parola>
+</group>
+<group>
+	<parola>bi-stec-ca</parola>
+	<parola>bi-stec-che</parola>
+</group>
+<group>
+	<parola>bi-stic-ci</parola>
+	<parola>bi-stic-cio</parola>
+</group>
+<group>
+	<parola>bi-stu-ri</parola>
+</group>
+<group>
+	<parola>bi-tor-zo-li</parola>
+	<parola>bi-tor-zo-lo</parola>
+</group>
+<group>
+	<parola>biz-zar-ra</parola>
+	<parola>biz-zar-re</parola>
+	<parola>biz-zar-ri</parola>
+	<parola>biz-zar-ro</parola>
+</group>
+<group>
+	<parola>biz-zo-sa</parola>
+	<parola>biz-zo-se</parola>
+	<parola>biz-zo-si</parola>
+	<parola>biz-zo-so</parola>
+</group>
+<group>
+	<parola>blan-da</parola>
+	<parola>blan-de</parola>
+	<parola>blan-di</parola>
+	<parola>blan-do</parola>
+</group>
+<group>
+	<parola>bloc-cag-gio</parola>
+</group>
+<group>
+	<parola>bloc-chi</parola>
+	<parola>bloc-co</parola>
+</group>
+<group>
+	<parola>blu</parola>
+</group>
+<group>
+	<parola>boc-ca</parola>
+	<parola>boc-che</parola>
+</group>
+<group>
+	<parola>boc-ca-le</parola>
+	<parola>boc-ca-li</parola>
+</group>
+<group>
+	<parola>boc-ca-por-ti</parola>
+	<parola>boc-ca-por-to</parola>
+</group>
+<group>
+	<parola>boc-ca-ta</parola>
+	<parola>boc-ca-te</parola>
+</group>
+<group>
+	<parola>boc-ce</parola>
+	<parola>boc-cia</parola>
+</group>
+<group>
+	<parola>boc-chi-ni</parola>
+	<parola>boc-chi-no</parola>
+</group>
+<group>
+	<parola>boc-ci-no</parola>
+	<parola>boc-ci-ni</parola>
+</group>
+<group>
+	<parola>boc-cio</parola>
+	<parola>boc-cio-li</parola>
+	<parola>boc-cio-lo</parola>
+</group>
+<group>
+	<parola>boc-co-ne</parola>
+	<parola>boc-co-ni</parola>
+</group>
+<group>
+	<parola>bo-ia</parola>
+</group>
+<group>
+	<parola>bol-la</parola>
+	<parola>bol-le</parola>
+</group>
+<group>
+	<parola>bol-let-ta</parola>
+	<parola>bol-let-te</parola>
+</group>
+<group>
+	<parola>bol-let-ti-ni</parola>
+	<parola>bol-let-ti-no</parola>
+</group>
+<group>
+	<parola>bol-li</parola>
+	<parola>bol-lo</parola>
+</group>
+<group>
+	<parola>bom-ba</parola>
+	<parola>bom-be</parola>
+</group>
+<group>
+	<parola>bo-nac-cia</parola>
+	<parola>bo-nac-cie</parola>
+</group>
+<group>
+	<parola>bo-na-rie-ta</parola>
+</group>
+<group>
+	<parola>bon-ta</parola>
+</group>
+<group>
+	<parola>bo-o-le-a-ni</parola>
+	<parola>bo-o-le-a-no</parola>
+</group>
+<group>
+	<parola>bor-di</parola>
+	<parola>bor-do</parola>
+</group>
+<group>
+	<parola>bor-ga-ta</parola>
+	<parola>bor-ga-te</parola>
+</group>
+<group>
+	<parola>bor-ghe-se</parola>
+	<parola>bor-ghe-si</parola>
+</group>
+<group>
+	<parola>bor-ghe-sia</parola>
+	<parola>bor-ghe-sie</parola>
+</group>
+<group>
+	<parola>bor-ghi</parola>
+	<parola>bor-go</parola>
+</group>
+<group>
+	<parola>bo-ria</parola>
+	<parola>bo-rie</parola>
+</group>
+<group>
+	<parola>bo-rio-sa</parola>
+	<parola>bo-rio-se</parola>
+</group>
+<group>
+	<parola>bo-rio-si</parola>
+	<parola>bo-rio-so</parola>
+</group>
+<group>
+	<parola>bor-rac-ce</parola>
+	<parola>bor-rac-cia</parola>
+</group>
+<group>
+	<parola>bor-sa</parola>
+	<parola>bor-se</parola>
+</group>
+<group>
+	<parola>bor-sa-io-la</parola>
+	<parola>bor-sa-io-le</parola>
+	<parola>bor-sa-io-li</parola>
+	<parola>bor-sa-io-lo</parola>
+</group>
+<group>
+	<parola>bo-schet-ti</parola>
+	<parola>bo-schet-to</parola>
+</group>
+<group>
+	<parola>bo-schi</parola>
+	<parola>bo-sco</parola>
+</group>
+<group>
+	<parola>bo-ta-ni-ca</parola>
+	<parola>bo-ta-ni-che</parola>
+</group>
+<group>
+	<parola>bo-to-la</parola>
+	<parola>bo-to-le</parola>
+</group>
+<group>
+	<parola>bot-ta</parola>
+	<parola>bot-te</parola>
+</group>
+<group>
+	<parola>bot-te-ga</parola>
+	<parola>bot-te-ghe</parola>
+</group>
+<group>
+	<parola>bot-ti-glia</parola>
+	<parola>bot-ti-glie</parola>
+</group>
+<group>
+	<parola>bot-ti-ni</parola>
+	<parola>bot-ti-no</parola>
+</group>
+<group>
+	<parola>bot-to-ne</parola>
+	<parola>bot-to-ni</parola>
+</group>
+<group>
+	<parola>boz-za</parola>
+	<parola>boz-ze</parola>
+</group>
+<group>
+	<parola>boz-zet-ti</parola>
+	<parola>boz-zet-to</parola>
+</group>
+<group>
+	<parola>brac-cet-ti</parola>
+	<parola>brac-cet-to</parola>
+</group>
+<group>
+	<parola>brac-cia</parola>
+	<parola>brac-cio</parola>
+</group>
+<group>
+	<parola>brac-co</parola>
+</group>
+<group>
+	<parola>bra-ce</parola>
+	<parola>bra-ci</parola>
+</group>
+<group>
+	<parola>bra-ce-re</parola>
+	<parola>bra-ce-ri</parola>
+</group>
+<group>
+	<parola>bra-cio-la</parola>
+	<parola>bra-cio-le</parola>
+</group>
+<group>
+	<parola>bran-ca</parola>
+	<parola>bran-che</parola>
+</group>
+<group>
+	<parola>bran-da</parola>
+	<parola>bran-de</parola>
+</group>
+<group>
+	<parola>bran-del-li</parola>
+	<parola>bran-del-lo</parola>
+</group>
+<group>
+	<parola>bra-ni</parola>
+	<parola>bra-no</parola>
+</group>
+<group>
+	<parola>bra-va</parola>
+	<parola>bra-ve</parola>
+	<parola>bra-vi</parola>
+	<parola>bra-vo</parola>
+</group>
+<group>
+	<parola>bra-vu-ra</parola>
+	<parola>bra-vu-re</parola>
+</group>
+<group>
+	<parola>bre-tel-la</parola>
+	<parola>bre-tel-le</parola>
+</group>
+<group>
+	<parola>bre-ve</parola>
+	<parola>bre-vi</parola>
+</group>
+<group>
+	<parola>brez-za</parola>
+	<parola>brez-ze</parola>
+	<parola>bric-chi</parola>
+	<parola>bric-co</parola>
+</group>
+<group>
+	<parola>bric-co-na-ta</parola>
+	<parola>bric-co-na-te</parola>
+</group>
+<group>
+	<parola>bric-co-ne</parola>
+	<parola>bric-co-ni</parola>
+</group>
+<group>
+	<parola>bri-cio-la</parola>
+	<parola>bri-cio-le</parola>
+</group>
+<group>
+	<parola>bri-gan-te</parola>
+	<parola>bri-gan-ti</parola>
+</group>
+<group>
+	<parola>bri-ga-ta</parola>
+	<parola>bri-ga-te</parola>
+</group>
+<group>
+	<parola>bri-glia</parola>
+	<parola>bri-glie</parola>
+</group>
+<group>
+	<parola>bril-lo</parola>
+</group>
+<group>
+	<parola>brin-di-si</parola>
+</group>
+<group>
+	<parola>bri-ne</parola>
+</group>
+<group>
+	<parola>brio</parola>
+</group>
+<group>
+	<parola>bri-vi-di</parola>
+	<parola>bri-vi-do</parola>
+</group>
+<group>
+	<parola>broc-ca</parola>
+	<parola>broc-che</parola>
+</group>
+<group>
+	<parola>bro-di</parola>
+	<parola>bro-do</parola>
+</group>
+<group>
+	<parola>bron-chi-te</parola>
+	<parola>bron-chi-ti</parola>
+</group>
+<group>
+	<parola>bron-ci</parola>
+	<parola>bron-cio</parola>
+</group>
+<group>
+	<parola>bron-zi</parola>
+	<parola>bron-zo</parola>
+</group>
+<group>
+	<parola>bru-chi</parola>
+	<parola>bru-co</parola>
+</group>
+<group>
+	<parola>brul-la</parola>
+	<parola>brul-le</parola>
+	<parola>brul-li</parola>
+	<parola>brul-lo</parola>
+</group>
+<group>
+	<parola>bru-na</parola>
+	<parola>bru-ne</parola>
+</group>
+<group>
+	<parola>bru-ni</parola>
+	<parola>bru-no</parola>
+</group>
+<group>
+	<parola>bru-sco-li</parola>
+	<parola>bru-sco-lo</parola>
+</group>
+<group>
+	<parola>bru-ta-le</parola>
+	<parola>bru-ta-li</parola>
+</group>
+<group>
+	<parola>bru-ti</parola>
+	<parola>bru-to</parola>
+</group>
+<group>
+	<parola>brut-ta</parola>
+	<parola>brut-te</parola>
+</group>
+<group>
+	<parola>brut-tez-za</parola>
+	<parola>brut-tez-ze</parola>
+</group>
+<group>
+	<parola>brut-ti</parola>
+	<parola>brut-to</parola>
+</group>
+<group>
+	<parola>bu-ca</parola>
+	<parola>bu-che</parola>
+</group>
+<group>
+	<parola>buc-ce</parola>
+	<parola>buc-cia</parola>
+</group>
+<group>
+	<parola>bu-chi</parola>
+	<parola>bu-co</parola>
+</group>
+<group>
+	<parola>bu-del-li</parola>
+	<parola>bu-del-lo</parola>
+</group>
+<group>
+	<parola>bu-di-ni</parola>
+	<parola>bu-di-no</parola>
+</group>
+<group>
+	<parola>bu-e</parola>
+	<parola>bu-o-i</parola>
+</group>
+<group>
+	<parola>bu-fe-ra</parola>
+	<parola>bu-fe-re</parola>
+</group>
+<group>
+	<parola>buf-fa</parola>
+	<parola>buf-fe</parola>
+</group>
+<group>
+	<parola>buf-fi</parola>
+	<parola>buf-fo</parola>
+</group>
+<group>
+	<parola>buf-fo-ne</parola>
+	<parola>buf-fo-ni</parola>
+</group>
+<group>
+	<parola>bu-gia</parola>
+	<parola>bu-gie</parola>
+</group>
+<group>
+	<parola>bu-i</parola>
+	<parola>bu-io</parola>
+</group>
+<group>
+	<parola>bul-bi</parola>
+	<parola>bul-bo</parola>
+</group>
+<group>
+	<parola>bu-rat-ti-ni</parola>
+	<parola>bu-rat-ti-no</parola>
+</group>
+<group>
+	<parola>bur-la</parola>
+	<parola>bur-le</parola>
+</group>
+<group>
+	<parola>bu-ro-cra-zia</parola>
+	<parola>bu-ro-cra-zie</parola>
+</group>
+<group>
+	<parola>bur-ri</parola>
+	<parola>bur-ro</parola>
+</group>
+<group>
+	<parola>bus-so-la</parola>
+	<parola>bus-so-le</parola>
+</group>
+<group>
+	<parola>bu-sti</parola>
+	<parola>bu-sto</parola>
+</group>
 </words>
