@@ -27,9 +27,14 @@ public class ScrollableText {
 	
 	
 	public ScrollableText(String text) {
-		this.text = text;
+		setText(text);
 	}
 	
+	private void setText(String text) {
+		this.text = text;
+	}
+
+
 	public void setWaitTime(int wait) {
 		this.waitTime = wait;
 	}
@@ -45,6 +50,17 @@ public class ScrollableText {
 			}
 			System.out.print(c);
 		}
+	}
+	
+	public void show(boolean first) {
+		if(first) {
+			setText(this.text.split("|")[0]);
+		}
+		else {
+			setText(this.text.split("|")[1]);
+		}
+		
+		show();
 	}
 	
 	public int getReturns() {
@@ -87,9 +103,6 @@ public class ScrollableText {
 				}
 					
 			}
-			
-			
-//			String text = doc.getElementsByTagName(tag).item(0).getTextContent();
 				
 			ScrollableText st = new ScrollableText(text);
 			st.setWaitTime(waitTime);

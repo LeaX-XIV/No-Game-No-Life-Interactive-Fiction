@@ -35,6 +35,7 @@ public class Credit extends ScrollableText{
 						+ "\t\t\t\t" + SIDE_PROGRAMMER + "\n"
 						+ "Programmazione Giochi\t\t" + MAIN_PROGRAMMER + "\n"
 						+ "\t\t\t\t" + SIDE_PROGRAMMER + "\n"
+						+ "\t\t\t\t" + SIDE_SIDE_PROGRAMMER + "\n"
 						+ "Tester\t\t\t\t" + MAIN_PROGRAMMER + "\n"
 						+ "\t\t\t\t" + SIDE_PROGRAMMER + "\n"
 						+ "\t\t\t\t" + SIDE_SIDE_PROGRAMMER + "\n\n\n"

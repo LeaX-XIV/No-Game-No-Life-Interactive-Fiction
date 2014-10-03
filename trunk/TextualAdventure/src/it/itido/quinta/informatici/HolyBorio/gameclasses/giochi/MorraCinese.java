@@ -17,14 +17,14 @@ public class MorraCinese extends GenericConsole {
 	public MorraCinese(InputStream in, PrintStream out) {
 		super(in, out);
 		
-		super.registerCommand(new ConsoleCommand("paper") {
+		super.registerCommand(new ConsoleCommand("carta") {
 
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				int cpu = getCpu();
 				writeResult(0, cpu);
 				if(!check(0, cpu)) {
-					out.println("Another time!");
+					out.println("Ancora!");
 					executeLine("start");
 				}
 				else {
@@ -40,19 +40,19 @@ public class MorraCinese extends GenericConsole {
 
 			@Override
 			public String description() {
-				return "Play paper";
+				return "Gioca carta.";
 			}
 
 		});
 		
-		super.registerCommand(new ConsoleCommand("rock") {
+		super.registerCommand(new ConsoleCommand("sasso") {
 
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				int cpu = getCpu();
 				writeResult(1, cpu);
 				if(!check(1, cpu)) {
-					out.println("Another time!");
+					out.println("Ancora!");
 					executeLine("start");
 				}
 				else {
@@ -68,19 +68,19 @@ public class MorraCinese extends GenericConsole {
 
 			@Override
 			public String description() {
-				return "Play rock";
+				return "Gioca sasso.";
 			}
 
 		});
 		
-		super.registerCommand(new ConsoleCommand("scissors") {
+		super.registerCommand(new ConsoleCommand("forbici") {
 
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				int cpu = getCpu();
 				writeResult(2, cpu);
 				if(!check(2, cpu)) {
-					out.println("Another time!");
+					out.println("Ancora!");
 					executeLine("start");
 				}
 				else {
@@ -96,7 +96,7 @@ public class MorraCinese extends GenericConsole {
 
 			@Override
 			public String description() {
-				return "Play scissors";
+				return "Gioca forbici.";
 			}
 
 		});
@@ -109,7 +109,7 @@ public class MorraCinese extends GenericConsole {
 
 			@Override
 			public String description() {
-				return "Start the game";
+				return "Inizia il gioco.";
 			}
 
 		});
@@ -123,7 +123,7 @@ public class MorraCinese extends GenericConsole {
 	
 	@Override
 	protected String consolePrompt() {
-		return "Make your bet > ";
+		return "> ";
 	}
 	
 	private int getCpu() {
@@ -164,7 +164,7 @@ public class MorraCinese extends GenericConsole {
 	}
 	
 	private void writeResult(int i, int cpu) {
-		System.out.println("" + (i==0?"paper":i==1?"rock":"scissors") + "          -          " + (cpu==0?"paper":cpu==1?"rock":"scissors"));
+		System.out.println("" + (i==0?"carta":i==1?"sasso":"forbici") + "          -          " + (cpu==0?"carta":cpu==1?"sasso":"forbici"));
 	}
 	
 	public static void main(String[] args) {
