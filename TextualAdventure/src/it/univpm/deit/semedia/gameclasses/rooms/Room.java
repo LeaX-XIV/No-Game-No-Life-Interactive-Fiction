@@ -12,8 +12,13 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 	// XXX: NON USARE STRINGHE MA ENUM
 	ArrayList<Door> doors = new ArrayList<Door>();
 	
+	private int enterCount;
+	private Trigger trigger;
+	
 	public Room(String description) {
 		super(description);
+		enterCount = 0;
+		trigger = null;
 	}
 	
 	/**
@@ -54,6 +59,10 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 	
 	public void enter(Person person) {
 		add(person);
+		enterCount++;
+		if(trigger != null) {
+			trigger.execute();
+		}
 	}
 	
 	public boolean hasClosedDoor() {
@@ -87,5 +96,13 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 		}
 		
 		return false;
+	}
+	
+	public int getCount() {
+		return enterCount;
+	}
+	
+	public void setTrigger() {
+		this.trigger = new Trigger(this);
 	}
 }

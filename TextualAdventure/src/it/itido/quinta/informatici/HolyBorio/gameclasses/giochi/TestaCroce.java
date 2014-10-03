@@ -17,7 +17,7 @@ public class TestaCroce extends GenericConsole {
 	public TestaCroce(InputStream in, PrintStream out) {
 		super(in, out);
 		
-		super.registerCommand(new ConsoleCommand("head") {
+		super.registerCommand(new ConsoleCommand("testa") {
 			
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
@@ -32,11 +32,11 @@ public class TestaCroce extends GenericConsole {
 			
 			@Override
 			public String description() {
-				return "Choose head";
+				return "Scegli testa.";
 			}
 		});
 		
-		super.registerCommand(new ConsoleCommand("tails") {
+		super.registerCommand(new ConsoleCommand("croce") {
 			
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
@@ -51,7 +51,7 @@ public class TestaCroce extends GenericConsole {
 			
 			@Override
 			public String description() {
-				return "Choose tails";
+				return "Scegli croce.";
 			}
 		});
 		
@@ -65,7 +65,7 @@ public class TestaCroce extends GenericConsole {
 	
 	@Override
 	protected String consolePrompt() {
-		return "Choose head or tails > ";
+		return "> ";
 	}
 	
 	private boolean flipCoin() {
