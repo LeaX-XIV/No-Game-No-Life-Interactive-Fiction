@@ -59,7 +59,9 @@ public class ConnectedWords extends GenericConsole{
 							String[] syllabe = Door.getKeyByValue(removeGroup(words, word), word).split("-");
 							String lastSyllabe = getLastSyllabe(syllabe);
 							ConnectedWords.this.lastSyllabe = lastSyllabe;
-//							out.println(word);
+							if(!yourTurn) {
+								out.println(word);
+							}
 							initTimer();
 
 							timer.schedule(endTurn, turnTime);
