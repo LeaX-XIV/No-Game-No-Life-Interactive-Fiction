@@ -1,6 +1,7 @@
 package it.univpm.deit.semedia.gameclasses.rooms;
 
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
 import it.univpm.deit.semedia.GenericConsole;
 
 public class Trigger {
@@ -11,7 +12,7 @@ public class Trigger {
 	private int triggerCount;
 	
 	private ScrollableText startTrigger;
-	private GenericConsole event;
+	private Gioco event;
 	private boolean eventResult;
 	private ScrollableText endTrigger;
 	
@@ -24,7 +25,7 @@ public class Trigger {
 		this.endTrigger = null;
 	}
 	
-	public void init(int triggerCount, String startText, GenericConsole event, ScrollableText endTrigger) {
+	public void init(int triggerCount, String startText, Gioco event, ScrollableText endTrigger) {
 		this.triggerCount = triggerCount;
 		this.startTrigger = new ScrollableText(startText);
 		this.event = event;
@@ -39,12 +40,12 @@ public class Trigger {
 					startTrigger.show();
 				}
 				if(event != null) {
-					// FIXME: synchrinized
-					eventResult = event.run();
+					eventResult = event.getResult();
+					if(endTrigger != null) {
+						endTrigger.show(eventResult);
+					}
 				}
-				if(endTrigger != null) {
-					endTrigger.show(eventResult);
-				}
+				
 				
 			}
 		}

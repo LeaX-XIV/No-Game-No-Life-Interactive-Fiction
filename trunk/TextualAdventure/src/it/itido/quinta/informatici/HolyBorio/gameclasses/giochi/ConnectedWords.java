@@ -22,7 +22,7 @@ import it.univpm.deit.semedia.ConsoleCommand;
 import it.univpm.deit.semedia.GenericConsole;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
 
-public class ConnectedWords extends GenericConsole{
+public class ConnectedWords extends Gioco{
 
 	private final File xmlFile = new File(ConnectedWords.class.getResource("/resources/words.xml").getFile());
 	private ArrayList<LinkedHashMap<String, String>> words = new ArrayList<LinkedHashMap<String, String>>();
@@ -109,10 +109,17 @@ public class ConnectedWords extends GenericConsole{
 			@Override
 			public void run() {
 				System.out.println("Tempo scaduto.");
-				// FIXME: IL THREAD CESSA SOLO DOPO AVER SCRITTO QUALCOSA
 				timer.cancel();
-				ConnectedWords.this.executeLine("exit");
-				//				System.exit(0);
+				synchronized (qualcosaPerSincronizzare) {
+					if(yourTurn) {
+						win = false;
+					}
+					else {
+						win = true;
+					}
+					
+					qualcosaPerSincronizzare.notify();
+				}
 			}
 		};		
 	}
@@ -219,12 +226,22 @@ public class ConnectedWords extends GenericConsole{
 		ArrayList<String> parole = getCorrectWords();
 		String parola = mindSimulatorChooser(parole);
 		
+		try {
+			Thread.sleep(new Random().nextInt((int) turnTime) + 1500);
+		} catch (InterruptedException e) {
+		}
+		
 		if(parola != null) {
 			this.executeLine("say " + parola);
 		}
 		else {
 			System.out.println("Nessuna parola. Hai vinto");
-			this.executeLine("exit");
+			synchronized (qualcosaPerSincronizzare) {
+				win = true;
+				qualcosaPerSincronizzare.notify();
+			}
+			
+//			this.executeLine("exit");
 		}
 	}
 	
@@ -269,7 +286,6 @@ public class ConnectedWords extends GenericConsole{
 
 	public static void main(String[] args) {
 		ConnectedWords game = new ConnectedWords(System.in, System.out);
-		game.run();
 	}
 
 }
