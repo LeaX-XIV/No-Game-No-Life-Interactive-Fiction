@@ -50,7 +50,13 @@ public class Game extends GenericConsole implements Serializable {
 		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) {
 			@Override
 			public String use(Person who) {
-				new ConnectedWords(in, out).run();
+				boolean b = new ConnectedWords(in, out).getResult();
+				if(b) {
+					out.println("Hai Vinto");
+				}
+				else {
+					out.println("Hai perso");
+				}
 				return super.use(who);
 			}
 		};
@@ -151,7 +157,7 @@ public class Game extends GenericConsole implements Serializable {
 				
 				world.get(0).add(mc);
 				
-				ScrollableText.showSclollTextFromXml("prologue");
+//				ScrollableText.showSclollTextFromXml("prologue");
 			}
 
 			@Override

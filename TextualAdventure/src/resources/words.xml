@@ -1087,6 +1087,10 @@
 	<parola>ca-ca-o</parola>
 </group>
 <group>
+	<parola>cac-ca</parola>
+	<parola>cac-che</parola>
+</group>
+<group>
 	<parola>cac-ce</parola>
 	<parola>cac-cia</parola>
 </group>
@@ -1289,6 +1293,10 @@
 	<parola>cam-pa-ne</parola>
 </group>
 <group>
+	<parola>cam-pa-na-ro</parola>
+	<parola>cam-pa-ne-ri</parola>
+</group>
+<group>
 	<parola>cam-pa-nel-li</parola>
 	<parola>cam-pa-nel-lo</parola>
 </group>
@@ -1442,6 +1450,10 @@
 	<parola>cap-pel-lo</parola>
 </group>
 <group>
+	<parola>cappe-ro</parola>
+	<parola>cappe-ri</parola>
+</group>
+<group>
 	<parola>cap-pot-ti</parola>
 	<parola>cap-pot-to</parola>
 </group>
@@ -1452,6 +1464,14 @@
 <group>
 	<parola>ca-ra-bi-na</parola>
 	<parola>ca-ra-bi-ne</parola>
+</group>
+<group>
+	<parola>caramel-la</parola>
+	<parola>caramel-le</parola>
+</group>
+<group>
+	<parola>caramel-lo</parola>
+	<parola>caramel-li</parola>
 </group>
 <group>
 	<parola>ca-raf-fa</parola>
@@ -1673,6 +1693,10 @@
 	<parola>ca-sti-tà</parola>
 </group>
 <group>
+	<parola>casto-ro</parola>
+	<parola>casto-ri</parola>
+</group>
+<group>
 	<parola>ca-su-a-le</parola>
 	<parola>ca-su-a-li</parola>
 </group>
@@ -1737,6 +1761,12 @@
 <group>
 	<parola>ca-va</parola>
 	<parola>ca-ve</parola>
+</group>
+<group>
+	<parola>caval-lo</parola>
+	<parola>caval-la</parola>
+	<parola>caval-li</parola>
+	<parola>caval-le</parola>
 </group>
 <group>
 	<parola>ca-va-tap-pi</parola>
@@ -1920,6 +1950,10 @@
 <group>
 	<parola>ce-trio-li</parola>
 	<parola>ce-trio-lo</parola>
+</group>
+<group>
+	<parola>che-la</parola>
+	<parola>che-le</parola>
 </group>
 <group>
 	<parola>chia-ma-ta</parola>
@@ -2178,6 +2212,10 @@
 	<parola>cit-tà</parola>
 </group>
 <group>
+	<parola>cittadel-la</parola>
+	<parola>cittadel-le</parola>
+</group>
+<group>
 	<parola>cit-ta-di-ni</parola>
 	<parola>cit-ta-di-no</parola>
 </group>
@@ -2255,6 +2293,10 @@
 </group>
 <group>
 	<parola>co-cai-na</parola>
+</group>
+<group>
+	<parola>coc-co</parola>
+	<parola>coc-chi</parola>
 </group>
 <group>
 	<parola>co-co-me-ri</parola>
@@ -2449,6 +2491,10 @@
 	<parola>col-tel-lo</parola>
 </group>
 <group>
+	<parola>col-tre</parola>
+	<parola>col-tri</parola>
+</group>
+<group>
 	<parola>co-man-dan-te</parola>
 	<parola>co-man-dan-ti</parola>
 </group>
@@ -2505,6 +2551,9 @@
 	<parola>com-mes-se</parola>
 	<parola>com-mes-si</parola>
 	<parola>com-mes-so</parola>
+</group>
+<group>
+	<parola>comò</parola>
 </group>
 <group>
 	<parola>co-mo-di-ni</parola>
@@ -2681,6 +2730,10 @@
 	<parola>con-cor-so</parola>
 </group>
 <group>
+	<parola>concorren-te</parola>
+	<parola>concorren-ti</parola>
+</group>
+<group>
 	<parola>con-dan-na</parola>
 	<parola>con-dan-ne</parola>
 </group>
@@ -2725,6 +2778,10 @@
 <group>
 	<parola>con-fes-so-re</parola>
 	<parola>con-fes-so-ri</parola>
+</group>
+<group>
+	<parola>con-fet-to</parola>
+	<parola>con-fet-ti</parola>
 </group>
 <group>
 	<parola>con-fet-tu-ra</parola>
@@ -3110,6 +3167,10 @@
 	<parola>cor-ni-ci</parola>
 </group>
 <group>
+	<parola>cor-ni-cio-ne</parola>
+	<parola>cor-ni-cio-ni</parola>
+</group>
+<group>
 	<parola>co-ro-na</parola>
 	<parola>co-ro-ne</parola>
 </group>
@@ -3413,6 +3474,15 @@
 	<parola>cri-sto</parola>
 </group>
 <group>
+	<parola>cristia-no</parola>
+	<parola>cristia-na</parola>
+	<parola>cristia-ni</parola>
+	<parola>cristia-ne</parola>
+</group>
+<group>
+	<parola>cristianesi-mo</parola>
+</group>
+<group>
 	<parola>cri-te-ri</parola>
 	<parola>cri-te-rio</parola>
 </group>
@@ -3473,6 +3543,9 @@
 	<parola>cro-sta-te</parola>
 </group>
 <group>
+	<parola>crudel-tà</parola>
+</group>
+<group>
 	<parola>cru-na</parola>
 	<parola>cru-ne</parola>
 </group>
@@ -3499,6 +3572,10 @@
 <group>
 	<parola>cuc-chi-ai-ni</parola>
 	<parola>cuc-chi-ai-no</parola>
+</group>
+<group>
+	<parola>cuc-cia</parola>
+	<parola>cuc-ce</parola>
 </group>
 <group>
 	<parola>cuc-cio-li</parola>
