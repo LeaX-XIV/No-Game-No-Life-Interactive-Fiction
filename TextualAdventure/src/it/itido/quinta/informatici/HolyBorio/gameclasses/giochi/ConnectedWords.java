@@ -112,10 +112,10 @@ public class ConnectedWords extends Gioco{
 				timer.cancel();
 				synchronized (qualcosaPerSincronizzare) {
 					if(yourTurn) {
-						win = false;
+						win = new Boolean(false);
 					}
 					else {
-						win = true;
+						win = new Boolean(true);
 					}
 					
 					qualcosaPerSincronizzare.notify();
@@ -237,7 +237,7 @@ public class ConnectedWords extends Gioco{
 		else {
 			System.out.println("Nessuna parola. Hai vinto");
 			synchronized (qualcosaPerSincronizzare) {
-				win = true;
+				win = new Boolean(true);
 				qualcosaPerSincronizzare.notify();
 			}
 			
