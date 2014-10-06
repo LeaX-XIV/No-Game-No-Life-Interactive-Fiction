@@ -98,7 +98,7 @@ public class Game extends GenericConsole implements Serializable {
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(code))));
 		Door d8 = new Door();
 		
-		d1.addLink("nord", "sud", mountainPass, inn);
+		d1.addLink("ovest", "sud", mountainPass, inn);
 		d2.addLink("nord", "sud", inn, elchea);
 		d3.addLink("nord", "sud", elchea, elcheaStreets);
 		d4.addLink("est", "ovest", elcheaStreets, library);
