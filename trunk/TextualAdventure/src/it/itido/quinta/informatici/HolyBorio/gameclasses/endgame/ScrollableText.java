@@ -76,8 +76,8 @@ public class ScrollableText {
 		return count;
 	}
 	
-	public static void showSclollTextFromXml(String tag) {
-		showSclollTextFromXml(tag, 2500);
+	public static void showSclollText(String tag) {
+		showSclollText(tag, 2500);
 	}
 	
 	public static String readFromXml(String tag) {
@@ -110,7 +110,7 @@ public class ScrollableText {
 		return text;
 	}
 	
-	public static void showSclollTextFromXml(String text, int waitTime) {
+	public static void showSclollText(String text, int waitTime) {
 			ScrollableText st = new ScrollableText(text);
 			st.setWaitTime(waitTime);
 			st.show();
