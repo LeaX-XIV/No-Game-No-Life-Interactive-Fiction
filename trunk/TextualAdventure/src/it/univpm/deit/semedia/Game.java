@@ -10,6 +10,7 @@ import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Key;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
+import it.univpm.deit.semedia.gameclasses.rooms.Trigger;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,7 +44,7 @@ public class Game extends GenericConsole implements Serializable {
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
 		
-		// FIXME: CORREGGERE GET YOU CON TANTE GERARCHIE
+		// FIXME: CORREGGERE get you IMPLEMENTANDO Collectable IN OGNI ITEM COLLEZIONABILE
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
@@ -88,6 +89,9 @@ public class Game extends GenericConsole implements Serializable {
 		library.setDescription("La biblioteca pi\u00f9 grande di Elchea.\nContiene migliaia di libri provenienti da altri paesi.");
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
+		
+//		Trigger prologue = new Trigger(mountainPass);
+//		prologue.init(triggerCount, startText, event, endTrigger);
 
 		Door d1 = new Door(true);
 		Door d2 = new Door(true);
@@ -215,7 +219,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		game.registerCommand(new ConsoleCommand("get") {
 
-			// FIXME: CAMBIARE GameObject IN Item
+			// FIXME: CAMBIARE GameObject IN Collectable
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if (args.length == 1) {

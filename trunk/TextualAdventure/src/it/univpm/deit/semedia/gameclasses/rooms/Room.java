@@ -98,6 +98,10 @@ public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl imple
 		return false;
 	}
 	
+	public void setTrigger(Trigger trigger) {
+		this.trigger = trigger;
+	}
+	
 	public int getCount() {
 		return enterCount;
 	}

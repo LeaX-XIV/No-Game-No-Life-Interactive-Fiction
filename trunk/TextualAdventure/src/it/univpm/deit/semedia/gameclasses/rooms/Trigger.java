@@ -18,7 +18,7 @@ public class Trigger {
 	
 	public Trigger(Room room) {
 		this.initialized = false;
-		this.triggerRoom = room;
+		room.setTrigger(this);
 		this.startTrigger = null;
 		this.event = null;
 		this.eventResult = false;
@@ -45,8 +45,6 @@ public class Trigger {
 						endTrigger.show(eventResult);
 					}
 				}
-				
-				
 			}
 		}
 	}
