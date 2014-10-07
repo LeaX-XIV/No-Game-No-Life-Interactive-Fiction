@@ -1,5 +1,7 @@
 package it.univpm.deit.semedia.gameclasses.rooms;
 
+import it.univpm.deit.semedia.gameclasses.objects.Key;
+
 import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;

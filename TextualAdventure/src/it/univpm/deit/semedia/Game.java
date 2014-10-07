@@ -3,12 +3,13 @@ package it.univpm.deit.semedia;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.MorraCinese;
+import it.univpm.deit.semedia.gameclasses.CollectableItem;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
+import it.univpm.deit.semedia.gameclasses.objects.Key;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
-import it.univpm.deit.semedia.gameclasses.rooms.Key;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
 import it.univpm.deit.semedia.gameclasses.rooms.Trigger;
@@ -44,7 +45,7 @@ public class Game extends GenericConsole implements Serializable {
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
-		
+
 		// FIXME: CORREGGERE get you IMPLEMENTANDO Collectable IN OGNI ITEM COLLEZIONABILE
 
 		Room mountainPass = new Room("Sentiero Montano");
@@ -67,17 +68,17 @@ public class Game extends GenericConsole implements Serializable {
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
-			
+
 			@Override
 			public String getDescription() {
-				
-			       DateFormat ora = new SimpleDateFormat("hh:mm"); 				
-			       
+
+				DateFormat ora = new SimpleDateFormat("hh:mm"); 				
+
 				return super.description + ora.format(new Date()) + "\n" + getContentDescription() ;
 			}
 		};		
-	    elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
-							+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
+		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
+				+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
 		Room elcheaStreets = new Room("Vie di Elchea");
 		elcheaStreets.setDescription("Vie che attraversano Elchea.");
 		Room elcheaPalace = new Room("Palazzo di Elchea");
@@ -90,7 +91,10 @@ public class Game extends GenericConsole implements Serializable {
 		library.setDescription("La biblioteca pi\u00f9 grande di Elchea.\nContiene migliaia di libri provenienti da altri paesi.");
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
-		
+		Room throneHall = new Room("Sala del trono");
+		throneHall.setDescription("La sala del trono del palazzo");
+
+
 		Trigger prologue = new Trigger(mountainPass);
 		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
@@ -104,7 +108,9 @@ public class Game extends GenericConsole implements Serializable {
 		Door d6 = new Door(true);
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(code))));
 		Door d8 = new Door();
-		
+		Door d9 = new Door(true);
+
+
 		d1.addLink("ovest", "sud", mountainPass, inn);
 		d2.addLink("nord", "sud", inn, elchea);
 		d3.addLink("nord", "sud", elchea, elcheaStreets);
@@ -113,7 +119,7 @@ public class Game extends GenericConsole implements Serializable {
 		d6.addLink("ovest", "est", elcheaPalace, kingRoom);
 		d7.addLink("sud", "nord", kingRoom, secretRoom);
 		d8.addLink("ovest", "est", elchea, easternUnion);
-		
+		d9.addLink("ovest", "est", throneHall, elcheaPalace);
 		world = new ArrayList<Room>();
 		world.add(mountainPass);
 		world.add(inn);
@@ -124,6 +130,7 @@ public class Game extends GenericConsole implements Serializable {
 		world.add(kingRoom);
 		world.add(secretRoom);
 		world.add(easternUnion);
+		world.add(throneHall);
 	}
 
 	/**
@@ -135,33 +142,33 @@ public class Game extends GenericConsole implements Serializable {
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 
-//				Room room1 = new Room("the white room");
-//				room1.setDescription("Its a white room, with black curtains, near the station.");
-//				Room room2 = new Room("a corridor");
-//				Room room3 = new Room("the armery");
-//
-//				ContainerImpl closet = new ContainerImpl("closet");
-//				GameObject dagger = new Weapon("dagger", 25);
-//				dagger.setDescription("old, but likely to work");
-//				closet.add(dagger);
-//				room3.add(closet);
-//
-//				Room room4 = new Room("King's bedroom");
-//				Room room5 = new Room("Queen's bedroom");
-//				GameObject mirror = new GameObject("mirror") {
-//					@Override
-//					public String use(Person who) {
-//						return "you see " + who.getDescription() + ". Hey he's reversed!";
-//					}
-//				};
-//				mirror.setDescription("A gold encrusted mirror, unfortunately the glass is broken");
-//				room5.add(mirror);		
-//				room5.add(new Banana());
-//				room5.add(new Banana());
-				
+				//				Room room1 = new Room("the white room");
+				//				room1.setDescription("Its a white room, with black curtains, near the station.");
+				//				Room room2 = new Room("a corridor");
+				//				Room room3 = new Room("the armery");
+				//
+				//				ContainerImpl closet = new ContainerImpl("closet");
+				//				GameObject dagger = new Weapon("dagger", 25);
+				//				dagger.setDescription("old, but likely to work");
+				//				closet.add(dagger);
+				//				room3.add(closet);
+				//
+				//				Room room4 = new Room("King's bedroom");
+				//				Room room5 = new Room("Queen's bedroom");
+				//				GameObject mirror = new GameObject("mirror") {
+				//					@Override
+				//					public String use(Person who) {
+				//						return "you see " + who.getDescription() + ". Hey he's reversed!";
+				//					}
+				//				};
+				//				mirror.setDescription("A gold encrusted mirror, unfortunately the glass is broken");
+				//				room5.add(mirror);		
+				//				room5.add(new Banana());
+				//				room5.add(new Banana());
+
 				mc = new Person("Sora", 100);
 				mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
-				
+
 				world.get(0).enter(mc);
 			}
 
@@ -170,7 +177,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "Comincia un nuovo gioco.";
 			}
 		});
-		
+
 		game.registerCommand(new ConsoleCommand("bag") {
 
 			@Override
@@ -183,7 +190,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "Mostra il contenuto della borsa.";
 			}
 		});
-		
+
 		game.registerCommand(new ConsoleCommand("look") {
 
 			@Override
@@ -226,9 +233,12 @@ public class Game extends GenericConsole implements Serializable {
 					// first see if there is such object in the room the hero is
 					GameObject object = mc.getContainedIn().objectByName(args[0].toString());
 					if (object != null) {
-						// if so place it in the hem.. hero
-						object.getContainedIn().moveContainedTo(object, mc);
-						out.println("Metti " + object.getName() + " nella tua borsa.");
+						if(object instanceof CollectableItem) {
+
+							// if so place it in the hem.. hero
+							object.getContainedIn().moveContainedTo(object, mc);
+							out.println("Metti " + object.getName() + " nella tua borsa.");
+						}
 					}
 					else {
 						out.println("Non riesci a trovare l'oggetto " + args[0]);
@@ -240,16 +250,18 @@ public class Game extends GenericConsole implements Serializable {
 						if(object instanceof ContainerImpl) {
 							ContainerImpl container = (ContainerImpl) object;
 							GameObject target = container.objectByNameRecursive((String) args[0]);
-							if(target != null) {
-								target.getContainedIn().moveContainedTo(target, mc);
-								out.println("Metti " + target.getName() + " nella tua borsa.");
+							if(object instanceof CollectableItem) {
+								if(target != null) {
+									target.getContainedIn().moveContainedTo(target, mc);
+									out.println("Metti " + target.getName() + " nella tua borsa.");
+								}
+								else {
+									out.println("Non riesci a trovare l'oggetto " + args[0]);
+								}
 							}
 							else {
-								out.println("Non riesci a trovare l'oggetto " + args[0]);
+								out.println("L'oggetto " + args[1] + " non è un contenitore.");
 							}
-						}
-						else {
-							out.println("L'oggetto " + args[1] + " non è un contenitore.");
 						}
 					}
 					else {
@@ -312,7 +324,7 @@ public class Game extends GenericConsole implements Serializable {
 						if (doors.containsKey(args[0].toString())) {
 							//moves mc to the room with the specified name
 							room.personExits(mc, args[0].toString());
-//							room.moveContainedTo(mc,(IContainer) doors.get(args[0].toString()));
+							//							room.moveContainedTo(mc,(IContainer) doors.get(args[0].toString()));
 						}
 						else {
 							out.println("Uscita inesistente.");
@@ -329,7 +341,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "Attraversa l'uscita specificata.";
 			}
 		});
-		
+
 		game.registerCommand(new ConsoleCommand("use") {
 
 			@Override
@@ -432,7 +444,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "Salva i progressi del gioco.";
 			}
 		});
-		
+
 		// FIXME: NON FUNZIONA UN CAZZO
 		game.registerCommand(new ConsoleCommand("load") {
 
@@ -444,21 +456,21 @@ public class Game extends GenericConsole implements Serializable {
 					FileNameExtensionFilter filter = new FileNameExtensionFilter("NGNL Save (*.ngnl)", "ngnl");
 					choose.setFileFilter(filter);
 					int returnVal = choose.showOpenDialog(new JFrame());
-				    if(returnVal == JFileChooser.APPROVE_OPTION) {
-				    	String path = choose.getSelectedFile().getAbsolutePath();
-				    	game.executeLine("load " + path);
-				    }
+					if(returnVal == JFileChooser.APPROVE_OPTION) {
+						String path = choose.getSelectedFile().getAbsolutePath();
+						game.executeLine("load " + path);
+					}
 				}
-				
+
 				if(args.length == 1) {
 					String path = (String) args[0];
 					if(path.toLowerCase().endsWith(".ngnl")) {
 						ObjectInputStream stream = null;
 						try {
-							 stream = new ObjectInputStream(new FileInputStream(path));
-							 // SI BLOCCA QUI
-							 world = (ArrayList<Room>) stream.readObject();
-							 mc = (Person) stream.readObject();
+							stream = new ObjectInputStream(new FileInputStream(path));
+							// SI BLOCCA QUI
+							world = (ArrayList<Room>) stream.readObject();
+							mc = (Person) stream.readObject();
 						} catch (FileNotFoundException e) {
 							out.println("I nostri gnometti da giardino non riescono a trovare il file.");
 						} catch (IOException e) {
@@ -484,13 +496,13 @@ public class Game extends GenericConsole implements Serializable {
 			public String description() {
 				return "Riprende il gioco da un punto salvato.";
 			}
-			
+
 			public String getUsage() {
 				return "[PATH]\n\n"
 						+ "PATH = il percorso del file da caricare";
 			}
 		});
-//*/
+		//*/
 		game.run();
 	}
 
