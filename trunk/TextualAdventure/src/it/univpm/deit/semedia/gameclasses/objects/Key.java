@@ -1,7 +1,9 @@
-package it.univpm.deit.semedia.gameclasses.rooms;
+package it.univpm.deit.semedia.gameclasses.objects;
 
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
+import it.univpm.deit.semedia.gameclasses.rooms.Door;
+import it.univpm.deit.semedia.gameclasses.rooms.Room;
 
 import java.io.Serializable;
 import java.security.InvalidParameterException;
