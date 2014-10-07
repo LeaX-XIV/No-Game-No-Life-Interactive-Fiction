@@ -53,11 +53,13 @@ public class ScrollableText {
 	}
 	
 	public void show(boolean first) {
+		String[] route = this.text.split("\\|");
+		
 		if(first) {
-			setText(this.text.split("|")[0]);
+			setText(route[0]);
 		}
 		else {
-			setText(this.text.split("|")[1]);
+			setText(route[1]);
 		}
 		
 		show();
@@ -78,8 +80,10 @@ public class ScrollableText {
 		showSclollTextFromXml(tag, 2500);
 	}
 	
-	public static void showSclollTextFromXml(String tag, int waitTime) {
+	public static String readFromXml(String tag) {
 		File file = new File(ScrollableText.class.getResource("/resources/dialoghi.xml").getFile());
+		
+		String text = "";
 
 		try {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -89,26 +93,27 @@ public class ScrollableText {
 			doc.getDocumentElement().normalize();
 			
 			NodeList nList = doc.getElementsByTagName("dialogs");
-			
-			String text = "";
 
 			for(int i = 0; i < nList.getLength(); i++) {
 				Node node = nList.item(i);
 				
 				if(node.getNodeType() == Node.ELEMENT_NODE) {
 
-					Element eElement = (Element) node;
 					text = doc.getElementsByTagName(tag).item(0).getTextContent();
 					break;
 				}
 					
 			}
-				
+		} catch(IOException | ParserConfigurationException | SAXException e) {
+		}
+		
+		return text;
+	}
+	
+	public static void showSclollTextFromXml(String text, int waitTime) {
 			ScrollableText st = new ScrollableText(text);
 			st.setWaitTime(waitTime);
 			st.show();
-		}catch(IOException | ParserConfigurationException | SAXException e) {
-		}
 	}
 	
 }
