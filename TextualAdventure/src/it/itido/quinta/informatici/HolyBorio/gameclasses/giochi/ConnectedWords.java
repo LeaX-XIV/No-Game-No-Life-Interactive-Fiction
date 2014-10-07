@@ -33,14 +33,14 @@ public class ConnectedWords extends Gioco{
 	private Timer timer;
 	private TimerTask endTurn;
 	private static final long turnTime = 30000;
-	
+
 	// TODO: RENDERE synchronized PER LEGGERE RISULTATO GIOCO
 
 	public ConnectedWords(InputStream in, PrintStream out) {
 		super(in, out);
 
 		initTimer();
-		
+
 		ConsoleCommand say = new ConsoleCommand("say") {
 
 			@Override
@@ -67,7 +67,7 @@ public class ConnectedWords extends Gioco{
 							timer.schedule(endTurn, turnTime);
 
 							yourTurn = !yourTurn;
-							
+
 							if(!yourTurn) {
 								aiTurn();
 							}
@@ -110,15 +110,12 @@ public class ConnectedWords extends Gioco{
 			public void run() {
 				System.out.println("Tempo scaduto.");
 				timer.cancel();
-				synchronized (qualcosaPerSincronizzare) {
-					if(yourTurn) {
-						win = new Boolean(false);
-					}
-					else {
-						win = new Boolean(true);
-					}
-					
-					qualcosaPerSincronizzare.notify();
+				
+				if(yourTurn) {
+					endGame(false);
+				}
+				else {
+					endGame(true);
 				}
 			}
 		};		
@@ -172,7 +169,7 @@ public class ConnectedWords extends Gioco{
 			e.printStackTrace();
 		}
 	}
-	
+
 	private String getLastSyllabe() {
 		return lastSyllabe.replaceAll("à|á", "a").replaceAll("ì|í", "i").replaceAll("ù|ú", "u").replaceAll("è|é", "e").replaceAll("ò|ó", "o");
 	}
@@ -225,32 +222,29 @@ public class ConnectedWords extends Gioco{
 	private void aiTurn() {
 		ArrayList<String> parole = getCorrectWords();
 		String parola = mindSimulatorChooser(parole);
-		
+
 		try {
 			Thread.sleep(new Random().nextInt((int) turnTime) + 1500);
 		} catch (InterruptedException e) {
 		}
-		
+
 		if(parola != null) {
 			this.executeLine("say " + parola);
 		}
 		else {
 			System.out.println("Nessuna parola. Hai vinto");
-			synchronized (qualcosaPerSincronizzare) {
-				win = new Boolean(true);
-				qualcosaPerSincronizzare.notify();
-			}
-			
-//			this.executeLine("exit");
+			endGame(true);
+
+			//			this.executeLine("exit");
 		}
 	}
-	
+
 	private ArrayList<String> getCorrectWords() {
 		ArrayList<String> parole = new ArrayList<String>();
 		if(!words.isEmpty()) {
 			for(int i = 0; i < words.size(); i++) {
 				LinkedHashMap<String, String> word = words.get(i);
-				
+
 				ArrayList<String> temp = new ArrayList<String>();
 				temp.addAll(word.values());
 				if(startsWhitLastSyllabe(temp.get(0))) {
@@ -258,13 +252,13 @@ public class ConnectedWords extends Gioco{
 				}
 			}
 		}		
-		
+
 		return parole;
 	}
-	
+
 	private <E> E mindSimulatorChooser(ArrayList<E> list) {
 		E choosenOne = null;
-		
+
 		if(list != null) {
 			if(!list.isEmpty()) {
 				// Elimino parole non ricordate (75% di possibilità di ricordare ogni parola)
@@ -276,16 +270,27 @@ public class ConnectedWords extends Gioco{
 				}
 				// Scelgo la parola da dire
 				int index = new Random().nextInt(list.size());
-				
+
 				choosenOne = list.get(index);
 			}
 		}
-		
+
 		return choosenOne;
 	}
 
 	public static void main(String[] args) {
 		ConnectedWords game = new ConnectedWords(System.in, System.out);
+	}
+
+	@Override
+	public void endGame(boolean result) {
+		synchronized (qualcosaPerSincronizzare) {
+			win = result;
+
+			qualcosaPerSincronizzare.notify();
+		}
+		
+		executeLine("exit");
 	}
 
 }

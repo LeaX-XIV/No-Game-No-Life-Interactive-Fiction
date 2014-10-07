@@ -12,7 +12,7 @@ import it.univpm.deit.semedia.GenericConsole;
  * @author LeaX
  *
  */
-public class MorraCinese extends GenericConsole {
+public class MorraCinese extends Gioco {
 
 	public MorraCinese(InputStream in, PrintStream out) {
 		super(in, out);
@@ -29,12 +29,11 @@ public class MorraCinese extends GenericConsole {
 				}
 				else {
 					if(play(0, cpu)) {
-						out.println("You won!");
+						endGame(true);
 					}
 					else {
-						out.println("You lost :(");
+						endGame(false);
 					}
-					executeLine("exit");
 				}
 			}
 
@@ -57,12 +56,11 @@ public class MorraCinese extends GenericConsole {
 				}
 				else {
 					if(play(1, cpu)) {
-						out.println("You won!");
+						endGame(true);
 					}
 					else {
-						out.println("You lost :(");
+						endGame(false);
 					}
-					executeLine("exit");
 				}
 			}
 
@@ -85,12 +83,11 @@ public class MorraCinese extends GenericConsole {
 				}
 				else {
 					if(play(2, cpu)) {
-						out.println("You won!");
+						endGame(true);
 					}
 					else {
-						out.println("You lost :(");
+						endGame(false);
 					}
-					executeLine("exit");
 				}
 			}
 
@@ -171,5 +168,14 @@ public class MorraCinese extends GenericConsole {
 		MorraCinese morra = new MorraCinese(System.in, System.out);
 		morra.run();
 		
+	}
+
+	@Override
+	public void endGame(boolean end) {
+		synchronized(qualcosaPerSincronizzare) {
+			win = end;
+			qualcosaPerSincronizzare.notify();
+		}
+		executeLine("exit");
 	}
 }

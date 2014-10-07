@@ -5,7 +5,7 @@ import java.io.PrintStream;
 
 import it.univpm.deit.semedia.GenericConsole;
 
-public class Gioco extends GenericConsole {
+public abstract class Gioco extends GenericConsole {
 
 	protected Boolean win;
 	protected final Object qualcosaPerSincronizzare = new Object();
@@ -31,5 +31,7 @@ public class Gioco extends GenericConsole {
 			return win;
 		}
 	}
+	
+	public abstract void endGame(boolean result);
 
 }

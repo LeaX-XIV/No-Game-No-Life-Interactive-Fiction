@@ -2,6 +2,7 @@ package it.univpm.deit.semedia;
 
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.MorraCinese;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
@@ -90,8 +91,10 @@ public class Game extends GenericConsole implements Serializable {
 		Room easternUnion = new Room("Federazione dell'Est");
 		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
 		
-//		Trigger prologue = new Trigger(mountainPass);
-//		prologue.init(triggerCount, startText, event, endTrigger);
+		Trigger prologue = new Trigger(mountainPass);
+		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+		Trigger innTrigger = new Trigger(inn);
+		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 
 		Door d1 = new Door(true);
 		Door d2 = new Door(true);
@@ -159,17 +162,15 @@ public class Game extends GenericConsole implements Serializable {
 				mc = new Person("Sora", 100);
 				mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
 				
-				world.get(0).add(mc);
-				
-//				ScrollableText.showSclollTextFromXml("prologue");
+				world.get(0).enter(mc);
 			}
 
 			@Override
 			public String description() {
 				return "Comincia un nuovo gioco.";
 			}
-
 		});
+		
 		game.registerCommand(new ConsoleCommand("bag") {
 
 			@Override
@@ -181,8 +182,8 @@ public class Game extends GenericConsole implements Serializable {
 			public String description() {
 				return "Mostra il contenuto della borsa.";
 			}
-
 		});
+		
 		game.registerCommand(new ConsoleCommand("look") {
 
 			@Override
@@ -214,7 +215,6 @@ public class Game extends GenericConsole implements Serializable {
 			public String description() {
 				return "Guarda intorno o a uno specifico oggetto.";
 			}
-
 		});
 
 		game.registerCommand(new ConsoleCommand("get") {
@@ -270,7 +270,6 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 
-
 		game.registerCommand(new ConsoleCommand("drop") {
 
 			@Override
@@ -312,7 +311,8 @@ public class Game extends GenericConsole implements Serializable {
 						HashMap<String, Room> doors = room.getDoors();
 						if (doors.containsKey(args[0].toString())) {
 							//moves mc to the room with the specified name
-							room.moveContainedTo(mc,(IContainer) doors.get(args[0].toString()));
+							room.personExits(mc, args[0].toString());
+//							room.moveContainedTo(mc,(IContainer) doors.get(args[0].toString()));
 						}
 						else {
 							out.println("Uscita inesistente.");
@@ -329,6 +329,7 @@ public class Game extends GenericConsole implements Serializable {
 				return "Attraversa l'uscita specificata.";
 			}
 		});
+		
 		game.registerCommand(new ConsoleCommand("use") {
 
 			@Override
@@ -490,7 +491,6 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 //*/
-
 		game.run();
 	}
 

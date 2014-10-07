@@ -198,6 +198,10 @@
 	<parola>ban-di-to</parola>
 </group>
 <group>
+	<parola>bandie-ra</parola>
+	<parola>bandie-re</parola>
+</group>
+<group>
 	<parola>ba-ra</parola>
 	<parola>ba-re</parola>
 </group>
@@ -4100,6 +4104,10 @@
 	<parola>dia-be-ti</parola>
 </group>
 <group>
+	<parola>diaco-co</parola>
+	<parola>diaco-ni</parola>
+</group>
+<group>
 	<parola>dia-de-ma</parola>
 	<parola>dia-de-mi</parola>
 </group>
@@ -4119,6 +4127,9 @@
 	<parola>dia-let-to</parola>
 </group>
 <group>
+	<parola>diali-si</parola>
+</group>
+<group>
 	<parola>dia-lo-ghi</parola>
 	<parola>dia-lo-go</parola>
 </group>
@@ -4133,6 +4144,14 @@
 <group>
 	<parola>dia-ri</parola>
 	<parola>dia-rio</parola>
+</group>
+<group>
+	<parola>diar-re-a</parola>
+	<parola>diar-re-e</parola>
+</group>
+<group>
+	<parola>diaspo-ra</parola>
+	<parola>diaspo-re</parola>
 </group>
 <group>
 	<parola>dia-vo-li</parola>
@@ -4262,6 +4281,10 @@
 <group>
 	<parola>di-na-stia</parola>
 	<parola>di-na-stie</parola>
+</group>
+<group>
+	<parola>dinosau-ro</parola>
+	<parola>dinosau-ri</parola>
 </group>
 <group>
 	<parola>dio-ce-si</parola>
@@ -4395,6 +4418,10 @@
 <group>
 	<parola>di-scor-si</parola>
 	<parola>di-scor-so</parola>
+</group>
+<group>
+	<parola>discote-ca</parola>
+	<parola>discote-che</parola>
 </group>
 <group>
 	<parola>di-scre-zio-ni</parola>
@@ -4534,6 +4561,10 @@
 	<parola>di-stil-la-to</parola>
 </group>
 <group>
+	<parola>distrazio-ne</parola>
+	<parola>distrazio-ni</parola>
+</group>
+<group>
 	<parola>di-stur-bi</parola>
 	<parola>di-stur-bo</parola>
 </group>
@@ -4548,6 +4579,10 @@
 <group>
 	<parola>di-ta-le</parola>
 	<parola>di-ta-li</parola>
+</group>
+<group>
+	<parola>ditton-go</parola>
+	<parola>ditton-ghi</parola>
 </group>
 <group>
 	<parola>di-va-ni</parola>
@@ -4741,6 +4776,10 @@
 <group>
 	<parola>dro-ghie-re</parola>
 	<parola>dro-ghie-ri</parola>
+</group>
+<group>
+	<parola>dromeda-rio</parola>
+	<parola>dromeda-ri</parola>
 </group>
 <group>
 	<parola>dub-bi</parola>

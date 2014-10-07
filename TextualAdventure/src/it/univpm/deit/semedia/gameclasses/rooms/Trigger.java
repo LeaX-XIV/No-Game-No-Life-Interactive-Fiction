@@ -19,6 +19,7 @@ public class Trigger {
 	public Trigger(Room room) {
 		this.initialized = false;
 		room.setTrigger(this);
+		this.triggerRoom = room;
 		this.startTrigger = null;
 		this.event = null;
 		this.eventResult = false;
