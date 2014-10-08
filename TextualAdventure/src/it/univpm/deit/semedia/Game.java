@@ -51,7 +51,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) {
+		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) /*{
 			@Override
 			public String use(Person who) {
 				boolean b = new ConnectedWords(in, out).getResult();
@@ -63,9 +63,9 @@ public class Game extends GenericConsole implements Serializable {
 				}
 				return super.use(who);
 			}
-		};
+		}*/;
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
-//		mountainPass.add(secretKey);
+		mountainPass.add(secretKey);
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -239,6 +239,9 @@ public class Game extends GenericConsole implements Serializable {
 							object.getContainedIn().moveContainedTo(object, mc);
 							out.println("Metti " + object.getName() + " nella tua borsa.");
 						}
+						else {
+							out.println("L'oggetto " + args[0].toString() + " non può essere messo nella borsa.");
+						}
 					}
 					else {
 						out.println("Non riesci a trovare l'oggetto " + args[0]);
@@ -250,18 +253,21 @@ public class Game extends GenericConsole implements Serializable {
 						if(object instanceof ContainerImpl) {
 							ContainerImpl container = (ContainerImpl) object;
 							GameObject target = container.objectByNameRecursive((String) args[0]);
-							if(object instanceof CollectableItem) {
-								if(target != null) {
+							if(target != null) {
+								if(target instanceof CollectableItem) {
 									target.getContainedIn().moveContainedTo(target, mc);
 									out.println("Metti " + target.getName() + " nella tua borsa.");
 								}
 								else {
-									out.println("Non riesci a trovare l'oggetto " + args[0]);
+									out.println("L'oggetto " + args[0].toString() + " non può essere messo nella borsa.");
 								}
 							}
 							else {
-								out.println("L'oggetto " + args[1] + " non è un contenitore.");
+								out.println("Non riesci a trovare l'oggetto " + args[0]);
 							}
+						}
+						else {
+							out.println("L'oggetto " + args[1] + " non è un contenitore.");
 						}
 					}
 					else {
@@ -382,7 +388,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
-/*
+		/*
 		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
@@ -502,26 +508,26 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		//*/
-		
-		
+
+
 		game.registerCommand(new ConsoleCommand("end") {
-			
+
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				new EndGame(false).run();
 				Game.game.executeLine("exit");
 			}
-			
+
 			@Override
 			public String description() {
 				return "The game will end.";
 			}
 		});
-		
+
 		game.run();
-		
+
 	}
-	
+
 
 	@Override
 	protected String welcomeMsg() {
