@@ -22,7 +22,7 @@ public class Credit extends ScrollableText{
 						+ "Abbiamo delle voci?\n\n"
 						+ "Ending Theme\n"
 						// FIXME: NON SI LEGGE
-						+ "\uff62\u30aa\u30e9\u30b7\u30aa\u30f3\uff63\n"
+						+ "Oracion\n"
 						+ "Voce\t\t\t\tKayano Ai\n"
 						+ "Testi\t\t\t\tNazca\n"
 						+ "Musica\t\t\t\tNazca\n"
@@ -41,7 +41,7 @@ public class Credit extends ScrollableText{
 						+ "\t\t\t\t" + SIDE_SIDE_PROGRAMMER + "\n\n\n"
 						+ "Liberamente tratto da\n"
 						// FIXME: NON SI LEGGE
-						+ "\uff62\u30ce\u30fc\u30b2\u30fc\u30e0\u30ce\u30fc\u30e9\u30a4\u30d5\uff63\n"
+						+ "No Game No Life\n"
 						+ "di Kamiya Yuu\n\n"
 						+ "Ringraziamenti Speciali\n"
 						+ SPECIAL_THANKS + "\n"
