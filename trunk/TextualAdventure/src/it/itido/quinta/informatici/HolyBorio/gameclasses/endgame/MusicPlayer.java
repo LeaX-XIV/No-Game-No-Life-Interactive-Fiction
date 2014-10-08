@@ -38,9 +38,8 @@ public class MusicPlayer extends Thread{
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
 		}catch (IOException e) {
-			e.printStackTrace();
 		}catch(JavaLayerException e) {
-			e.printStackTrace();
+		}catch(NullPointerException e) {
 		}
 	}
 	
@@ -55,11 +54,9 @@ public class MusicPlayer extends Thread{
 			long millis = (long) (durationInSeconds * 1000);
 			
 			return millis;
-		} catch (UnsupportedAudioFileException e) {
-		} catch (IOException e) {
+		} catch (UnsupportedAudioFileException | IOException e) {
+			return 90000;
 		}
-		
-		return 90000;
 	}
 	
 	@Override
@@ -67,7 +64,7 @@ public class MusicPlayer extends Thread{
 		try {
 			player.play();
 		} catch (JavaLayerException e) {
-			e.printStackTrace();
+		}catch(NullPointerException e) {
 		}
     }
 	

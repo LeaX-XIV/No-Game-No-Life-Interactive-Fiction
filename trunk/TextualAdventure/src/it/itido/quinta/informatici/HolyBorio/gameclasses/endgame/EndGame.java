@@ -7,10 +7,10 @@ package it.itido.quinta.informatici.HolyBorio.gameclasses.endgame;
  */
 public class EndGame {
 	
-	private boolean finishedWithoutDeath;
+	private boolean finished;
 	
 	public EndGame(boolean finished) {
-		finishedWithoutDeath = finished;
+		this.finished = finished;
 	}
 	
 	public void run() {
@@ -22,7 +22,7 @@ public class EndGame {
 		mp.start();
 		c.show();
 		
-		if(finishedWithoutDeath) {
+		if(finished) {
 			System.out.print("\t\t\t\t\t\t\t\t\t    Fine");
 		}
 		else {
