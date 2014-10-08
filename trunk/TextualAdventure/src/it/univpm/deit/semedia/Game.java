@@ -51,7 +51,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) /*{
+		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) {
 			@Override
 			public String use(Person who) {
 				boolean b = new ConnectedWords(in, out).getResult();
@@ -63,9 +63,9 @@ public class Game extends GenericConsole implements Serializable {
 				}
 				return super.use(who);
 			}
-		}*/;
+		};
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
-		mountainPass.add(secretKey);
+//		mountainPass.add(secretKey);
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -226,8 +226,8 @@ public class Game extends GenericConsole implements Serializable {
 		});
 
 		game.registerCommand(new ConsoleCommand("get") {
-
-			@Override
+		
+		@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if (args.length == 1) {
 					// first see if there is such object in the room the hero is
@@ -275,7 +275,7 @@ public class Game extends GenericConsole implements Serializable {
 					}
 				}
 			}
-
+			
 			@Override
 			public String description() {
 				return "Prende un oggetto e lo mette nella borsa.";
@@ -388,7 +388,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
-		/*
+/*
 		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
@@ -508,26 +508,26 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		//*/
-
-
+		
+		
 		game.registerCommand(new ConsoleCommand("end") {
-
+			
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				new EndGame(false).run();
 				Game.game.executeLine("exit");
 			}
-
+			
 			@Override
 			public String description() {
 				return "The game will end.";
 			}
 		});
-
+		
 		game.run();
-
+		
 	}
-
+	
 
 	@Override
 	protected String welcomeMsg() {

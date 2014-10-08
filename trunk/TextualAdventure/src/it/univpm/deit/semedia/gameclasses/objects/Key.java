@@ -1,6 +1,5 @@
 package it.univpm.deit.semedia.gameclasses.objects;
 
-import it.univpm.deit.semedia.gameclasses.CollectableItem;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-public class Key extends CollectableItem implements Serializable {
+public class Key extends GameObject implements Serializable {
 	
 	private ArrayList<Byte> denti;
 	
