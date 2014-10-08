@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialogs>
+	<prologue>Sei nella tua stanza mentre giochi ad un MMORPG.
+Ricevi una mail inaspettata.
+Mittente sconosciuto.
+Nessun oggetto.
+Un link sospetto come unico testo.
+Decidi di aprirla.
+Sullo schermo compare una scacchiera.
+Grafica 2D scadente, ma quanto basta per renderlo giocabile.
+Cominci a giocare.
+Mossa dopo mossa, i pezzi sulla scacchiera diminuiscono.
+L'avversario sceglie le sue mosse attentamente, potrebbe essere addirittura un supercomputer.
+Ma non importa cosa, facendo mosse perfettamente calcolate, il primo a muovere ha più elevate possibilità di vittoria.
+E tu stai comandando i bianchi.
+Per non parlare del fatto che sei []:
+un giocatore on-line, ormai diventato una leggenda metropolitana per essere primo in classifica in qualsiasi videogioco.
+Nessun cheat, solo una grandissima abilità nel leggere le intenzioni altrui, nonchè un'innata abilità di calcolo mentale.
+Non trascorre molto tempo prima della fine della partita.
+L'avversario se l'era cavata egregiamente, ma a [] non è concessa la sconfitta.
+Ring--.
+Il suono di un'altra mail in entrata.
+Questa volta era presente una frase:
+"Cosa ne pensi di questo mondo? È interessante? Un luogo che ti fa sentire a tuo agio?".
+Pensi che tutto ciò sia strano.
+Il fatto che sei il miglior giocatore nelle classifiche.
+Il fatto che qualcuno, chissà da che parte del mondo, invece di idolatrarti, sembra riesca a capirti.
+Un mondo in cui sia le regole che l'obiettivo non sono conosciuti, in cui 7 miliardi di persone fanno le loro mosse;
+vieni penalizzato, sia che vinci o che perdi troppo,
+non puoi saltare il turno, e se parli troppo, vieni escluso.
+Questo mondo è un gioco di merda.
+Come queste parole ti balenano in testa, perdi la concezione del mondo che ti circonda.
+Improvvisamente tutto diventa buio e precipiti nel vuoto.
+Chiudi istintivamente gli occhi.
+Intorno a te, il nulla.
+Lentamente, cominci a sentire aria che si abbatte con forza sul tuo corpo in caduta libera.
+Ora riesci a percepire il bagliore del sole attraverso le palpebre chiuse.
+Timorosamente apri gli occhi...
+
+In un primo momento la luce ti acceca.
+Quando l'immagine diventa nitida, vedi, sotto di te, delle rocce.
+E, a distanziarti da quelle rocce, metri, forse kilometri, d'aria.
+Vai nel panico.
+Dopotutto è normale, quando ad essere in pericolo è la tua stessa vita piuttosto di quella di un insieme di dati.
+E mentre continui a precipitare, una figura fluttuante si avvicina a te.
+È un ragazzo del tutto tranquillo, e sta precipitando con molta più grazia ed equilibrio, quasi come fosse lui a comandare la gravità.
+Con tutta calma, si presenta.
+Dice di chiamarsi Tet, e di essere "il solo Dio di questo mondo".
+Comincia a parlare, ma sei troppo spaventato per riuscire ad ascoltare ciò che dice.
+Riesci a capire solo una cosa, che attira la tua attenzione:
+"Questo è il mio mondo. E in questo mondo vigono 10 comandamenti, 10 regole assolute:
+1. È vietata ogni forma di omicidio, guerra e furto.
+2. Ogni tipo di conflitto deve essere risolto attraverso i giochi.
+3. In questo giochi, ogni giocatore mette in palio qualcosa che si ritiene essere di pari valore.
+4. Fintanto che non infranga il terzo comandamento, ciò che viene scommesso e il modo di condurre il gioco non viene messo in discussione.
+5. La parte sfidata a duello ha diritto di stabilire le regole del gioco.
+6. Ogni scommessa fatta in base ai comandamenti deve essere mantenuta.
+7. I conflitti tra i gruppi sono condotti dai rappresentanti designati con autorità assoluta.
+8. Essere colti sul fatto mentre si bara durante ina partita provoca la sconfitta immediata.
+9. Nel nome di Dio, le precedenti regole non potranno essere modificate.
+10. Divertiamoci e giochiamo tutti insieme!"
+Quando il presunto Dio smise di elencare quelle assurde regole, la tua attenzione torna al pavimento di roccia, che si avvicina inesorabilmente.
+Ti sei reso conto che ormai non puoi più fare niente, non che ci fosse stato qualcosa che avresti potuto fare, per evitare di schiantarti al suolo.
+Accetti il fatto che di lì a poco saresti diventato una poltiglia informe.
+Si sentì un enorme tonfo, come di un tuono che cade a 10 centimetri di distanza, e si alza un polverone.
+Eppure tu non ha sentito alcun dolore, forse perchè la botta è stata talmente veloce che non hai nemmeno avuto il tempo di renderti connto della tua stessa morte.
+La polvere alzata della caduta si dilegua.
+Sei atterrato di schiena.
+O meglio, stavi per atterrare di schiena.
+Sei sospeso in aria, a pochi centimetri da terra, sotto di te un cratere creatosi dall'enorme spostamento d'aria.
+Senti la veoce dell'autoproclamato Dio dire: "Non vedo l'ora di incontrarti di nuovo".
+Lo cerchi con gli occhi, ma sembra essere scomparso.
+Guardi il cielo da cui sei precipitato. Un cielo limpido.
+E ricordi una parte del tuo nome.
+Quello vero.
+Quello non utilizzato ormai da due anni.
+
+Sora.
+Ma l'altra metà è ancora un vuoto nella tua testa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</prologue>
+	<innEvent>Non puoi tornare indietro.
+Non puoi tornare nel tuo mondo.
+All'orizzonte vedi una città.
+Non trovi altra soluzione se non percorrere il sentiero verso la città.
+Ma la civiltà è lontana, e la notte si fa incombente.
+Decidi di riposare in una locanda sulla via per la città.
+Nella locanda c'è agitazione, fin troppa per una normale locanda fuori città.
+Senti vociferare, e apprendi che si sta tenendo un torneo in tutto il paese per eleggere il nuovo re.
+Ricordi ciò che ha detto il Dio che ti ha portato in questo mondo:
+ogni conflitto deve essere risolto attraverso un gioco;
+quindi anche il titolo di re si decide giocando.
+Vedi molta gente andarsene sconfitta.
+Altri, seppur non vincitori, rimangono a vedere l'esito del torneo.
+La maggior parte dei perdenti è stata eliminata dalla stessa ragazza dai capelli rossi.
+
+Dopo aver eliminato l'ennesimo sfidante, la ragazza si volta in cerca di altri contendenti, e ti punta un dito contro.
+"Ehi, tu! Vieni a giocare. Voglio divertirmi ancora un po'".
+Sei stato sfidato.
+Non puoi certo tirarti indietro.
+C'è in gioco il dominio di una regno.
+E dover sfidare la ragazza che sembra essere la favorita ti dà la carica.
+Ti avvicini al tavolo in cui giocherete e vi presentate.
+La ragazza dai capelli rossi si chiama Stephanie Dola.
+E sarebbe stata l'erede al trono, se solo il nonno non avesse organizzato questo torneo nel suo testamento.
+A quanto pare vuole proteggere la sua eredità, per questo gioca con tutta se stessa.
+Se non partecipasse al torneo e vincesse tutte le sfide, perderebbe qualsiasi titolo nobiliare.
+Ma ha commesso un errore.
+Ha sfidato [].
+I comandamenti danno la possibilità allo sfidato di scegliere il gioco.
+Dato che nelle partite di poker che Stephanie stava giocando prima hai notato che stava barando, decidi di evitarlo.
+Pensi a qualcosa di più semplice, dove non si possa barare.
+Come la Morra Cinese.
+Giurate sui comandamenti.
+"Aschente!"
+
+
+</innEvent>
+	<janKenLost>"Ahah, nessuno può battermi!" esclamò Stephanie, dando l'impressione di stare emettendo laser dagli occhi.
+Questa è stata la prima sconfitta di [], ma poco importa, dopotutto non si tratava di un gioco on-line.
+Lasciando la sconfitta alle spalle, lasci il tavolo.
+Ti avvicini ad un'altra donna che ha un sacchetto pieno di monete.
+La sfidi a poker:
+in caso di tua vittoria otterrai tutte le monete, altrimenti diventerai un suo schiavo.
+Anche se molto seccata, la donna accetta, fedele in una sua vittoria.
+Dato che il gioco consiste in una singola mano di poker, decidi di puntare a una scala reale massima barando.
+Mentre esegui il trucco, però, la tua mano comincia a tremare, rivelando l'inganno alla donna.
+Secondo l'ottavo comandamento, vieni dichiarato sconfitto e diventi schiavo della vincitrice.
+La donna non sembra avere particolare intenzione di usarti, e ti ordina di non infastidire più nessuno.
+Anche se va contro la tua volontà, sei costretto ad uscire dalla locanda.
+Cerchi di sottrarti al tuo destino, ma i muscoli non vogliono ascoltare i comandi che gli invii.
+Fuori, ti rintani in un angolino per dormire la notte.
+Lentamente ti addormenti nel freddo pungente notturno.
+
+Qui, fuori dalla locanda, la leggenda di [] ha fine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</janKenLost>
+	<janKenWin>Con lo stupore generale del pubblico, che si era fermato a guardare la breve partita, batti la campionessa in carica.
+La folla esulta davanti al nuovo candidato re, e ti porta da altri sfidanti, che batti facilmente.
+Tra un gioco e l'altro, cerchi Stephanie, che nel frattempo hai perso di vista.
+Per un attimo riesci a sottrarti all'euforia dei festeggiamenti, e ti avvicini alla ragazza dai capelli rossi, che sta piangendo in un angolino.
+Quando sente chiamare il suo nome e realizza che la fonte sei tu, comincia a maledirti;
+dopotutto ha perso tutti i titoli che le sarebbero spettati.
+La vista di una ragazza che piange ti spezza il cuore.
+Decidi quindi, attraverso il potere dei comandamenti, di 'farla innamorare di te'.
+Improvvisamente Stephanie inizia a dichiarare il suo amore per te, mentre sbatte violentemente la testa contro il muro.
+Probabilmente non le va molto a genio di aver appena perso e di essere costretta ad innamorarsi.
+Vieni sfidato altre volte, ma nessuno ha l'abilità necessaria per batterti.
+Man mano gli avversari diminuiscono, e vieni dichiarato vincitore del torneo.
+E mentre Steph (vuole essere chiamata così dal suo amato) ti ronza intorno come una mosca sullo sterco, ti viene detto che per la cerimonia d'incoronazione ti saresti dovuto presentare nella sala del trono del palazzo di Elchea.
+Concludi che è ora di smettere di festeggiare e decidi di andare a dormire.
+Prenoti una camera singola alla locanda con i soldi di Steph, che è costretta a dormire in un'altra stanza.
+L'indomani è alle porte...
+
+
+</janKenWin>
+</dialogs>
