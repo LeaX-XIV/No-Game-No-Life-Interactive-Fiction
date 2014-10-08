@@ -65,7 +65,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		};
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
-//		mountainPass.add(secretKey);
+		mountainPass.add(secretKey);
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -388,7 +388,7 @@ public class Game extends GenericConsole implements Serializable {
 			}
 
 		});
-/*
+
 		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
@@ -508,21 +508,6 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		//*/
-		
-		
-		game.registerCommand(new ConsoleCommand("end") {
-			
-			@Override
-			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
-				new EndGame(false).run();
-				Game.game.executeLine("exit");
-			}
-			
-			@Override
-			public String description() {
-				return "The game will end.";
-			}
-		});
 		
 		game.run();
 		
