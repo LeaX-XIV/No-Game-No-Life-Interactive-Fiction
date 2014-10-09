@@ -38,7 +38,7 @@ public class Trigger {
 		if(initialized) {
 			if(triggerCount == triggerRoom.getCount()) {
 				if(startTrigger != null) {
-					startTrigger.show();
+					startTrigger.showDinamicWait();
 				}
 				if(event != null) {
 					eventResult = event.getResult();
@@ -49,5 +49,4 @@ public class Trigger {
 			}
 		}
 	}
-
 }
