@@ -48,7 +48,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(code))) {
+		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
 			@Override
 			public String use(Person who) {
 				boolean b = new ConnectedWords(in, out).getResult();
