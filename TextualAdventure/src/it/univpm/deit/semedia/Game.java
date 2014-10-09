@@ -1,6 +1,5 @@
 package it.univpm.deit.semedia;
 
-import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.EndGame;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.MorraCinese;
@@ -46,8 +45,6 @@ public class Game extends GenericConsole implements Serializable {
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
-
-		// FIXME: CORREGGERE get you IMPLEMENTANDO Collectable IN OGNI ITEM COLLEZIONABILE
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
@@ -95,7 +92,6 @@ public class Game extends GenericConsole implements Serializable {
 		Room throneHall = new Room("Sala del trono");
 		throneHall.setDescription("La sala del trono del palazzo");
 
-
 		Trigger prologue = new Trigger(mountainPass);
 		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
@@ -121,6 +117,7 @@ public class Game extends GenericConsole implements Serializable {
 		d7.addLink("sud", "nord", kingRoom, secretRoom);
 		d8.addLink("ovest", "est", elchea, easternUnion);
 		d9.addLink("ovest", "est", throneHall, elcheaPalace);
+		
 		world = new ArrayList<Room>();
 		world.add(mountainPass);
 		world.add(inn);
@@ -167,8 +164,9 @@ public class Game extends GenericConsole implements Serializable {
 				//				room5.add(new Banana());
 				//				room5.add(new Banana());
 
-				mc = new Person("Sora", 100);
-				mc.setDescription("18 anni, vergine, introverso, NEET, dipendente dai videogiochi");
+				mc = new Person("[]", 100);
+				// TODO: SET DESCRIPTION
+				mc.setDescription("");
 
 				world.get(0).enter(mc);
 			}
@@ -450,7 +448,6 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 
-		// FIXME: NON FUNZIONA UN CAZZO
 		game.registerCommand(new ConsoleCommand("load") {
 
 			@SuppressWarnings("unchecked")
@@ -473,7 +470,7 @@ public class Game extends GenericConsole implements Serializable {
 						ObjectInputStream stream = null;
 						try {
 							stream = new ObjectInputStream(new FileInputStream(path));
-							// SI BLOCCA QUI
+							// FIXME: SI BLOCCA QUI, NotSerializableException
 							world = (ArrayList<Room>) stream.readObject();
 							mc = (Person) stream.readObject();
 						} catch (FileNotFoundException e) {
