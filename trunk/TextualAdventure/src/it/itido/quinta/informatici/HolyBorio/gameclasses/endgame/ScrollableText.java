@@ -15,6 +15,7 @@ import org.xml.sax.SAXException;
 
 public class ScrollableText {
 
+	protected int waitTimePerChar = 75;
 	protected int waitTime = 1500;
 	protected String text;
 	
@@ -24,7 +25,6 @@ public class ScrollableText {
 				+ "del testo\n"
 				+ "scorrevole.";
 	}
-	
 	
 	public ScrollableText(String text) {
 		setText(text);
@@ -37,6 +37,10 @@ public class ScrollableText {
 
 	public void setWaitTime(int wait) {
 		this.waitTime = wait;
+	}
+	
+	public void setWaitTimePerChar(int wait) {
+		this.waitTimePerChar = wait;
 	}
 	
 	public void show() {
@@ -52,6 +56,23 @@ public class ScrollableText {
 		}
 	}
 	
+	public void showDinamicWait() {
+		// TODO: CONTROLLARE TIMER,
+			String[] lines = text.split("\n");
+			for(int i = 0; i < lines.length; i++) {
+				int chars = lines[i].length();
+				System.out.println(lines[i]);
+				long wait = waitTimePerChar * chars;
+				if(lines[0].endsWith(".")) {
+					wait += 100;
+				}
+				try {
+					Thread.sleep(wait);
+				} catch (InterruptedException e) {
+				}
+			}
+	}
+	
 	public void show(boolean first) {
 		String[] route = this.text.split("\\|");
 		
@@ -62,7 +83,7 @@ public class ScrollableText {
 			setText(route[1]);
 		}
 		
-		show();
+		showDinamicWait();
 	}
 	
 	public int getReturns() {
