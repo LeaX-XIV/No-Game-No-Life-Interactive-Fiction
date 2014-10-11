@@ -59,7 +59,7 @@ public class ScrollableText {
 
 	public void showDinamicWait() {
 		// TODO: CONTROLLARE TIMER
-		String[] lines = text.split("\n");
+		String[] lines = text.split("\n", this.getReturns());
 		for(int i = 0; i < lines.length; i++) {
 			int chars = lines[i].length();
 			consolePrint(lines[i]);

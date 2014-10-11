@@ -42,6 +42,19 @@ public class Game extends GenericConsole implements Serializable {
 	private static Game game;
 	private static ArrayList<Room> world;
 	Byte[] code = {31, (byte) 192, 116, 24};
+	
+	/*
+	 * TODO: AGGIUNGERE OGGETTI NELLE STANZE
+	 * 
+	 * 
+	 * SASSO NEL SENTIERO MONTANO
+	 * PICCIONI NELLE VIE DI ELCHEA
+	 * TRONO NELLA SALA DEL TRONO
+	 * LETTTO NELLA STANZA DEL RE
+	 * LIBRERIA SINISTRA NELLA STANZA DEL RE
+	 * LIBRERIA DESTRA NELLA STANZA DEL RE
+	 * LIBRO IN ???
+	 */
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
@@ -59,6 +72,22 @@ public class Game extends GenericConsole implements Serializable {
 					out.println("Hai perso");
 				}
 				return super.use(who);
+			}
+			
+			@Override
+			public String use(Person who, GameObject target) {
+				if(target != null) {
+					// FIXME: target == libreria sinistra
+					if(target == who) {
+						return super.use(who, target);
+					}
+					else {
+						return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
+					}
+				}
+				else {
+					return "Non puoi usare la chiave qui.";
+				}
 			}
 		};
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
@@ -165,8 +194,6 @@ public class Game extends GenericConsole implements Serializable {
 				//				room5.add(new Banana());
 
 				mc = new Person("[]", 100);
-				// TODO: SET DESCRIPTION
-				mc.setDescription("");
 
 				world.get(0).enter(mc);
 			}
