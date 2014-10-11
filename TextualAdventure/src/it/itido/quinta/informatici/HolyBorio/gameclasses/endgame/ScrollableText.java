@@ -99,18 +99,18 @@ public class ScrollableText {
 
 	// FIXME: NON DIVIDE LA III RIGA
 	private static void consolePrint(String text) {
-		int lastI = 0;
-		int lastIndex = 0;
+		int beginIndex = 0;
+		int endIndex = 0;
 		try {
 			while (true) {
-				String sbstr = text.substring(lastI, lastI + 80);
-				lastI += sbstr.lastIndexOf(" ");
-				String str = text.substring(lastIndex, lastI++);
+				String sbstr = text.substring(beginIndex, beginIndex + 80);
+				endIndex += sbstr.lastIndexOf(" ");
+				String str = text.substring(beginIndex, endIndex++);
 				System.out.println(str);
-				lastIndex += lastI;
+				beginIndex += endIndex;
 			}
 		}catch(StringIndexOutOfBoundsException e) {
-			System.out.println(text.substring(lastI, text.length()));
+			System.out.println(text.substring(endIndex, text.length()));
 		}
 	}
 
