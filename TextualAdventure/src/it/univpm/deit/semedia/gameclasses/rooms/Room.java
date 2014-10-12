@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public class Room extends it.univpm.deit.semedia.gameclasses.ContainerImpl implements Serializable {
 	
-	// XXX: NON USARE STRINGHE MA ENUM
 	ArrayList<Door> doors = new ArrayList<Door>();
 	
 	private int enterCount;
