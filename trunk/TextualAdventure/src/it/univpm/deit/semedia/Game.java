@@ -41,7 +41,6 @@ public class Game extends GenericConsole implements Serializable {
 	private static Person mc;
 	private static Game game;
 	private static ArrayList<Room> world;
-	Byte[] code = {31, (byte) 192, 116, 24};
 	
 	/*
 	 * TODO: AGGIUNGERE OGGETTI NELLE STANZE
@@ -79,7 +78,7 @@ public class Game extends GenericConsole implements Serializable {
 				if(target != null) {
 					// FIXME: target == libreria sinistra
 					if(target == who) {
-						return super.use(who, target);
+						return super.use(who);
 					}
 					else {
 						return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
@@ -132,7 +131,7 @@ public class Game extends GenericConsole implements Serializable {
 		Door d4 = new Door(true);
 		Door d5 = new Door(true);
 		Door d6 = new Door(true);
-		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(code))));
+		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
 		Door d8 = new Door();
 		Door d9 = new Door(true);
 
