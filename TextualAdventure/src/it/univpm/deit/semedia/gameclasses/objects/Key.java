@@ -37,6 +37,18 @@ public class Key extends CollectableItem implements Serializable {
 		throw new InvalidParameterException();
 	}
 	
+	public Key(String name, ArrayList<Byte> denti) {
+		super(name);
+		if(denti != null) {
+			if(denti.size() == 4) {
+				this.denti = denti;
+				return;
+			}
+		}
+		
+		throw new InvalidParameterException();
+	}
+	
 	public ArrayList<Byte> getCode() {
 		return this.denti;
 	}
