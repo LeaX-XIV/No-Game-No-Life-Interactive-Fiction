@@ -45,22 +45,32 @@ public class Game extends GenericConsole implements Serializable {
 	/*
 	 * TODO: AGGIUNGERE OGGETTI NELLE STANZE
 	 * 
+	 * CREA GLI OGGETTI COSÌ
 	 * 
-	 * SASSO NEL SENTIERO MONTANO
-	 * PICCIONI NELLE VIE DI ELCHEA
-	 * TRONO NELLA SALA DEL TRONO
-	 * LETTTO NELLA STANZA DEL RE
-	 * LIBRERIA SINISTRA NELLA STANZA DEL RE
-	 * LIBRERIA DESTRA NELLA STANZA DEL RE
-	 * LIBRO IN ???
+	 * CollectableItem sasso = new CollectableItem("sasso") {
+			@Override
+			public String use(Person who, GameObject target) {
+				// CONTROLLA SE TARGET = PICCIONI, SE SI I PICCIONI VOLANO VIA *mc.getContainedIn().remove(piccioni);*
+			}
+		};
+	 * 
+	 * SASSO NEL SENTIERO MONTANO				COLLECTABLE
+	 * PICCIONI NELLE VIE DI ELCHEA				NON COLLECTABLE
+	 * TRONO NELLA SALA DEL TRONO				NON COLLECTABLE
+	 * LETTO NELLA STANZA DEL RE				NON COLLECTABLE
+	 * LIBRERIA SINISTRA NELLA STANZA DEL RE	NON COLLECTABLE
+	 * LIBRERIA DESTRA NELLA STANZA DEL RE		NON COLLECTABLE
+	 * LIBRO IN ???								NON COLLECTABLE
 	 */
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
+		
+		
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
+		Key secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
 			@Override
 			public String use(Person who) {
 				boolean b = new ConnectedWords(in, out).getResult();
