@@ -28,6 +28,9 @@ public class ScrollableText {
 	}
 
 	public ScrollableText(String text) {
+		if(text == null) {
+			text = "";
+		}
 		setText(text);
 	}
 

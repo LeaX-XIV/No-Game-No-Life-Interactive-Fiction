@@ -1,8 +1,11 @@
 package it.univpm.deit.semedia;
 
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.MorraCinese;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.TestaCroce;
 import it.univpm.deit.semedia.gameclasses.CollectableItem;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
@@ -41,27 +44,6 @@ public class Game extends GenericConsole implements Serializable {
 	private static Person mc;
 	private static Game game;
 	private static ArrayList<Room> world;
-	
-	/*
-	 * TODO: AGGIUNGERE OGGETTI NELLE STANZE
-	 * 
-	 * CREA GLI OGGETTI COSÌ
-	 * 
-	 * CollectableItem sasso = new CollectableItem("sasso") {
-			@Override
-			public String use(Person who, GameObject target) {
-				// CONTROLLA SE TARGET = PICCIONI, SE SI I PICCIONI VOLANO VIA *mc.getContainedIn().remove(piccioni);*
-			}
-		};
-	 * 
-	 * SASSO NEL SENTIERO MONTANO				COLLECTABLE
-	 * PICCIONI NELLE VIE DI ELCHEA				NON COLLECTABLE
-	 * TRONO NELLA SALA DEL TRONO				NON COLLECTABLE
-	 * LETTO NELLA STANZA DEL RE				NON COLLECTABLE
-	 * LIBRERIA SINISTRA NELLA STANZA DEL RE	NON COLLECTABLE
-	 * LIBRERIA DESTRA NELLA STANZA DEL RE		NON COLLECTABLE
-	 * LIBRO IN ???								NON COLLECTABLE
-	 */
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
@@ -70,37 +52,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		Key secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
-			@Override
-			public String use(Person who) {
-				boolean b = new ConnectedWords(in, out).getResult();
-				if(b) {
-					out.println("Hai Vinto");
-				}
-				else {
-					out.println("Hai perso");
-				}
-				return super.use(who);
-			}
-			
-			@Override
-			public String use(Person who, GameObject target) {
-				if(target != null) {
-					// FIXME: target == libreria sinistra
-					if(target == who) {
-						return super.use(who);
-					}
-					else {
-						return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
-					}
-				}
-				else {
-					return "Non puoi usare la chiave qui.";
-				}
-			}
-		};
-		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
-		mountainPass.add(secretKey);
+		
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -131,9 +83,19 @@ public class Game extends GenericConsole implements Serializable {
 		throneHall.setDescription("La sala del trono del palazzo");
 
 		Trigger prologue = new Trigger(mountainPass);
-		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+//		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
-		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+//		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+		
+		
+		
+		
+		
+		
+		
+		
+		Trigger federationTrigger = new Trigger(easternUnion);
+		federationTrigger.init(1, (String) null, new TestaCroce(in, out), new Credit());
 
 		Door d1 = new Door(true);
 		Door d2 = new Door(true);
@@ -142,7 +104,7 @@ public class Game extends GenericConsole implements Serializable {
 		Door d5 = new Door(true);
 		Door d6 = new Door(true);
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
-		Door d8 = new Door();
+		Door d8 = new Door(true);
 		Door d9 = new Door(true);
 
 
@@ -167,6 +129,104 @@ public class Game extends GenericConsole implements Serializable {
 		world.add(secretRoom);
 		world.add(easternUnion);
 		world.add(throneHall);
+		
+		CollectableItem rock;
+		GameObject throne;
+		GameObject pigeons;
+		GameObject bed;
+		GameObject leftBookshelf;
+		GameObject rightBookshelf;
+		Key secretKey;
+		GameObject book;		
+		
+		throne = new GameObject("trono");
+		pigeons = new GameObject("piccioni");
+		rock = new CollectableItem("sasso") {
+			@Override
+			public String use(Person who, GameObject target) {
+				if(target == pigeons) {
+					mc.getContainedIn().remove(pigeons);
+					return "I piccioni sono volati via.";
+				}
+				else {
+					return "Non è consigliabile lanciare un sasso a " + target;
+				}
+			}
+		};
+		bed = new GameObject("letto") {
+			@Override
+			public String use(Person who) {
+				out.println("Ti addormenti sul letto.");
+				// TODO: AGGIUNGERE MUSICA RILASSANTE
+				return "Al tuo risveglio, sei caduto dal lato sinistro.";
+			}
+		};
+		leftBookshelf = new GameObject("libreria_sinistra");
+		rightBookshelf = new GameObject("libreria_destra");
+		secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
+			@Override
+			public String use(Person who) {
+				boolean b = new ConnectedWords(in, out).getResult();
+				if(b) {
+					out.println("Hai Vinto");
+				}
+				else {
+					out.println("Hai perso");
+				}
+				return super.use(who);
+			}
+			
+			// TODO: Rendere inutilizzabile
+			@Override
+			public String use(Person who, GameObject target) {
+				if(target != null) {
+					if(target == leftBookshelf) {
+						return super.use(who);
+					}
+					else {
+						return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
+					}
+				}
+				else {
+					return "Non puoi usare la chiave qui.";
+				}
+			}
+		};
+		book = new GameObject("libro") {
+			@Override
+			public String use(Person who) {
+				if(d8.isOpen()) {	// piazza di elchea <-> federazione dell'est
+					return "Il libro scritto dal precedente re che ti ha rivelato l'ubicazione della\nFederazione dell'Est.";
+				}
+				else {
+					d8.open();
+					return "Questo libro contiene le informazioni sull'ubicazione della Federazione\ndell'Est.\nA quanto pare si trova a Ovest.";
+				}
+			}
+		};
+		
+		rock.setDescription("Un sasso della grandezza di una gomma.");
+		throne.setDescription("Il trono sul quale puoi sederti in funzione di re.");
+		pigeons.setDescription("Dei tranquillissimi piccioni sopra un tetto.");
+		bed.setDescription("Il letto a baldacchino del precendte re. Ha un aria meastosa.");
+		leftBookshelf.setDescription("La libreria che si trova alla sinistra dell'entrata.");
+		rightBookshelf.setDescription("La libreria che si trova alla destra dell'entrata.");
+		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
+		book.setDescription("Un libro misterioso ricoperto di ragnatele.");
+				
+		mountainPass.add(rock);
+		throneHall.add(throne);
+		elcheaStreets.add(pigeons);
+		kingRoom.add(bed);
+		kingRoom.add(leftBookshelf);
+		kingRoom.add(rightBookshelf);
+		secretRoom.add(book);
+		
+		
+		
+		// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
+		elchea.add(secretKey);
+		
 	}
 
 	/**
