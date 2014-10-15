@@ -12,7 +12,7 @@ import it.univpm.deit.semedia.GenericConsole;
  * @author LeaX
  *
  */
-public class TestaCroce extends GenericConsole {
+public class TestaCroce extends Gioco {
 
 	public TestaCroce(InputStream in, PrintStream out) {
 		super(in, out);
@@ -76,6 +76,12 @@ public class TestaCroce extends GenericConsole {
 	public static void main(String[] args) {
 		TestaCroce coin = new TestaCroce(System.in, System.out);
 		coin.run();
+	}
+
+	@Override
+	public void endGame(boolean result) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
