@@ -1,5 +1,6 @@
 package it.univpm.deit.semedia.gameclasses.rooms;
 
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
 import it.univpm.deit.semedia.GenericConsole;
@@ -43,6 +44,14 @@ public class Trigger {
 				if(event != null) {
 					eventResult = event.getResult();
 					if(endTrigger != null) {
+						if (endTrigger instanceof Credit) {
+							Credit credit = (Credit) endTrigger;
+							if(eventResult) {
+								credit.setText(credit.getText().split("\\|")[1]);
+								credit.show();
+								return;
+							}							
+						}
 						endTrigger.show(eventResult);
 					}
 				}

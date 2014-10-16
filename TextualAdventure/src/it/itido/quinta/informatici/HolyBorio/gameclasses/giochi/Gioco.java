@@ -32,6 +32,14 @@ public abstract class Gioco extends GenericConsole {
 		}
 	}
 	
-	public abstract void endGame(boolean result);
+	public void endGame(boolean result) {
+		synchronized (qualcosaPerSincronizzare) {
+			win = result;
+
+			qualcosaPerSincronizzare.notify();
+		}
+		
+		executeLine("exit");
+	}
 
 }
