@@ -84,9 +84,9 @@ public class Game extends GenericConsole implements Serializable {
 		throneHall.setDescription("La sala del trono del palazzo");
 
 		Trigger prologue = new Trigger(mountainPass);
-//		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
-//		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 		
 		// TODO: AGGIUNGERE TRIGGER IN THRONE HALL E ELCHEA LIBRARY.
 		
