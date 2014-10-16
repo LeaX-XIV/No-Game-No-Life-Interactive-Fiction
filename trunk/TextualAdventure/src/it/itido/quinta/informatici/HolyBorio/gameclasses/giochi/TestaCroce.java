@@ -22,12 +22,11 @@ public class TestaCroce extends Gioco {
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if(flipCoin()) {
-					out.println("You won!");
+					endGame(true);
 				}
 				else {
-					out.println("You lost :(");
+					endGame(false);
 				}
-				executeLine("exit");
 			}
 			
 			@Override
@@ -41,12 +40,11 @@ public class TestaCroce extends Gioco {
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if(!flipCoin()) {
-					out.println("You won!");
+					endGame(true);
 				}
 				else {
-					out.println("You lost :(");
+					endGame(false);
 				}
-				executeLine("exit");
 			}
 			
 			@Override
@@ -54,8 +52,6 @@ public class TestaCroce extends Gioco {
 				return "Scegli croce.";
 			}
 		});
-		
-		
 	}
 	
 	@Override
@@ -76,12 +72,6 @@ public class TestaCroce extends Gioco {
 	public static void main(String[] args) {
 		TestaCroce coin = new TestaCroce(System.in, System.out);
 		coin.run();
-	}
-
-	@Override
-	public void endGame(boolean result) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

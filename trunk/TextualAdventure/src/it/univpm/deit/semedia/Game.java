@@ -1,6 +1,7 @@
 package it.univpm.deit.semedia;
 
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.MusicPlayer;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
@@ -87,7 +88,7 @@ public class Game extends GenericConsole implements Serializable {
 		Trigger innTrigger = new Trigger(inn);
 //		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 		
-		
+		// TODO: AGGIUNGERE TRIGGER IN THRONE HALL E ELCHEA LIBRARY.
 		
 		
 		
@@ -95,7 +96,9 @@ public class Game extends GenericConsole implements Serializable {
 		
 		
 		Trigger federationTrigger = new Trigger(easternUnion);
-		federationTrigger.init(1, (String) null, new TestaCroce(in, out), new Credit());
+		Credit credit = new Credit(false);
+		credit.setText(credit.getText() + "|You lost lol");
+		federationTrigger.init(1, null, new TestaCroce(in, out), credit);
 
 		Door d1 = new Door(true);
 		Door d2 = new Door(true);
@@ -106,7 +109,6 @@ public class Game extends GenericConsole implements Serializable {
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
 		Door d8 = new Door(true);
 		Door d9 = new Door(true);
-
 
 		d1.addLink("ovest", "sud", mountainPass, inn);
 		d2.addLink("nord", "sud", inn, elchea);
@@ -157,7 +159,7 @@ public class Game extends GenericConsole implements Serializable {
 			@Override
 			public String use(Person who) {
 				out.println("Ti addormenti sul letto.");
-				// TODO: AGGIUNGERE MUSICA RILASSANTE
+				new MusicPlayer(getClass().getResource("/resources/Bed.mp3").getFile()).run();
 				return "Al tuo risveglio, sei caduto dal lato sinistro.";
 			}
 		};

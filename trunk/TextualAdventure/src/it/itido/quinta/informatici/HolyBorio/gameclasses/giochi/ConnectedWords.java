@@ -281,16 +281,4 @@ public class ConnectedWords extends Gioco{
 	public static void main(String[] args) {
 		ConnectedWords game = new ConnectedWords(System.in, System.out);
 	}
-
-	@Override
-	public void endGame(boolean result) {
-		synchronized (qualcosaPerSincronizzare) {
-			win = result;
-
-			qualcosaPerSincronizzare.notify();
-		}
-		
-		executeLine("exit");
-	}
-
 }

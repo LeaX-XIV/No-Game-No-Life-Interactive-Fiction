@@ -34,10 +34,13 @@ public class ScrollableText {
 		setText(text);
 	}
 
-	private void setText(String text) {
+	public void setText(String text) {
 		this.text = text;
 	}
 
+	public String getText() {
+		return text;
+	}
 
 	public void setWaitTime(int wait) {
 		this.waitTime = wait;
