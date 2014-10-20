@@ -4,7 +4,6 @@ import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.MusicPlayer;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
-import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.MorraCinese;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.TestaCroce;
 import it.univpm.deit.semedia.gameclasses.CollectableItem;
@@ -49,11 +48,9 @@ public class Game extends GenericConsole implements Serializable {
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
 		
-		
-
 		Room mountainPass = new Room("Sentiero Montano");
 		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-		
+
 		Room inn = new Room("Locanda");
 		inn.setDescription("Una locanda fuori città.");
 		Room elchea = new Room("Piazza di Elchea") {
@@ -87,14 +84,14 @@ public class Game extends GenericConsole implements Serializable {
 		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
 		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
-		
+
 		// TODO: AGGIUNGERE TRIGGER IN THRONE HALL E ELCHEA LIBRARY.
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		Trigger federationTrigger = new Trigger(easternUnion);
 		Credit credit = new Credit(false);
 		credit.setText(credit.getText() + "|You lost lol");
@@ -107,7 +104,7 @@ public class Game extends GenericConsole implements Serializable {
 		Door d5 = new Door(true);
 		Door d6 = new Door(true);
 		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
-		Door d8 = new Door(true);
+		Door d8 = new Door();
 		Door d9 = new Door(true);
 
 		d1.addLink("ovest", "sud", mountainPass, inn);
@@ -119,7 +116,7 @@ public class Game extends GenericConsole implements Serializable {
 		d7.addLink("sud", "nord", kingRoom, secretRoom);
 		d8.addLink("ovest", "est", elchea, easternUnion);
 		d9.addLink("ovest", "est", throneHall, elcheaPalace);
-		
+
 		world = new ArrayList<Room>();
 		world.add(mountainPass);
 		world.add(inn);
@@ -131,7 +128,7 @@ public class Game extends GenericConsole implements Serializable {
 		world.add(secretRoom);
 		world.add(easternUnion);
 		world.add(throneHall);
-		
+
 		CollectableItem rock;
 		GameObject throne;
 		GameObject pigeons;
@@ -140,7 +137,7 @@ public class Game extends GenericConsole implements Serializable {
 		GameObject rightBookshelf;
 		Key secretKey;
 		GameObject book;		
-		
+
 		throne = new GameObject("trono");
 		pigeons = new GameObject("piccioni");
 		rock = new CollectableItem("sasso") {
@@ -177,7 +174,7 @@ public class Game extends GenericConsole implements Serializable {
 				}
 				return super.use(who);
 			}
-			
+
 			// TODO: Rendere inutilizzabile
 			@Override
 			public String use(Person who, GameObject target) {
@@ -206,7 +203,7 @@ public class Game extends GenericConsole implements Serializable {
 				}
 			}
 		};
-		
+
 		rock.setDescription("Un sasso della grandezza di una gomma.");
 		throne.setDescription("Il trono sul quale puoi sederti in funzione di re.");
 		pigeons.setDescription("Dei tranquillissimi piccioni sopra un tetto.");
@@ -215,7 +212,7 @@ public class Game extends GenericConsole implements Serializable {
 		rightBookshelf.setDescription("La libreria che si trova alla destra dell'entrata.");
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
 		book.setDescription("Un libro misterioso ricoperto di ragnatele.");
-				
+
 		mountainPass.add(rock);
 		throneHall.add(throne);
 		elcheaStreets.add(pigeons);
@@ -223,12 +220,10 @@ public class Game extends GenericConsole implements Serializable {
 		kingRoom.add(leftBookshelf);
 		kingRoom.add(rightBookshelf);
 		secretRoom.add(book);
-		
-		
-		
+
 		// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
 		elchea.add(secretKey);
-		
+
 	}
 
 	/**
@@ -322,8 +317,8 @@ public class Game extends GenericConsole implements Serializable {
 		});
 
 		game.registerCommand(new ConsoleCommand("get") {
-		
-		@Override
+
+			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
 				if (args.length == 1) {
 					// first see if there is such object in the room the hero is
@@ -343,6 +338,7 @@ public class Game extends GenericConsole implements Serializable {
 						out.println("Non riesci a trovare l'oggetto " + args[0]);
 					}
 				}
+				
 				if(args.length == 2) {
 					GameObject object = mc.getContainedIn().objectByName((String) args[1]);
 					if(object != null) {
@@ -371,7 +367,7 @@ public class Game extends GenericConsole implements Serializable {
 					}
 				}
 			}
-			
+
 			@Override
 			public String description() {
 				return "Prende un oggetto e lo mette nella borsa.";
@@ -405,7 +401,6 @@ public class Game extends GenericConsole implements Serializable {
 				else {
 					out.println("Valore parametri errato.");
 				}
-
 			}
 
 			@Override
@@ -603,11 +598,10 @@ public class Game extends GenericConsole implements Serializable {
 			}
 		});
 		//*/
-		
+
 		game.run();
-		
+
 	}
-	
 
 	@Override
 	protected String welcomeMsg() {
