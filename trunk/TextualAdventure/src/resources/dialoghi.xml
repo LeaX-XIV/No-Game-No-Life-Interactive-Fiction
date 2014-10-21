@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dialogs>
-	<prologue>Sei nella tua stanza mentre giochi ad un MMORPG.
-Ricevi una mail inaspettata.
+	<prologue>Ti trovi in una stanza illuminata solo dal bagliore di un monitor acceso.
+Il silenzio è interrotto solo dal cliccare frenetico delle tue mani sulla tastiera metre casti Reiz sul tuo tank.
+Improvvisamente senti il trillo di una mail in entrata.
 Mittente sconosciuto.
 Nessun oggetto.
 Un link sospetto come unico testo.
-Decidi di aprirla.
+Decidi di aprirlo.
 Sullo schermo compare una scacchiera.
 Grafica 2D scadente, ma quanto basta per renderlo giocabile.
 Cominci a giocare.
@@ -97,13 +98,14 @@ Ma l'altra metà è ancora un vuoto nella tua testa.
 
 
 </prologue>
-	<innEvent>Non puoi tornare indietro.
-Non puoi tornare nel tuo mondo.
+	<innEvent>
 All'orizzonte vedi una città.
-Non trovi altra soluzione se non percorrere il sentiero verso la città.
+Non trovi altra soluzione se non percorrere il sentiero verso di essa.
 Ma la civiltà è lontana, e la notte si fa incombente.
-Decidi di riposare in una locanda sulla via per la città.
-Nella locanda c'è agitazione, fin troppa per una normale locanda fuori città.
+Decidi di riposare in una locanda sulla via.
+Varchi la soglia.
+La luce soffusa emanata dalle candele ti ricorda un'atmosfera medievale.
+All'interno c'è agitazione, fin troppa per essere una locanda fuori città.
 Senti vociferare, e apprendi che si sta tenendo un torneo in tutto il paese per eleggere il nuovo re.
 Ricordi ciò che ha detto il Dio che ti ha portato in questo mondo:
 ogni conflitto deve essere risolto attraverso un gioco;
@@ -187,4 +189,6 @@ L'indomani è alle porte...
 
 
 </janKenWin>
+	<throneEvent>
+</throneEvent>
 </dialogs>
