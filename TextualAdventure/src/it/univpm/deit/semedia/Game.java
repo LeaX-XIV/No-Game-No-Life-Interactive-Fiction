@@ -84,8 +84,10 @@ public class Game extends GenericConsole implements Serializable {
 		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
 		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+		Trigger throneEvent = new Trigger(throneHall);
+		throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
 
-		// TODO: AGGIUNGERE TRIGGER IN THRONE HALL E ELCHEA LIBRARY.
+		// TODO: AGGIUNGERE TRIGGER IN ELCHEA LIBRARY E SULLE LIBRERIE .
 
 
 
@@ -145,6 +147,7 @@ public class Game extends GenericConsole implements Serializable {
 			public String use(Person who, GameObject target) {
 				if(target == pigeons) {
 					mc.getContainedIn().remove(pigeons);
+					getContainedIn().remove(this);
 					return "I piccioni sono volati via.";
 				}
 				else {
@@ -163,6 +166,7 @@ public class Game extends GenericConsole implements Serializable {
 		leftBookshelf = new GameObject("libreria_sinistra");
 		rightBookshelf = new GameObject("libreria_destra");
 		secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
+			// TODO: Rendere inutilizzabile
 			@Override
 			public String use(Person who) {
 				boolean b = new ConnectedWords(in, out).getResult();
@@ -175,7 +179,6 @@ public class Game extends GenericConsole implements Serializable {
 				return super.use(who);
 			}
 
-			// TODO: Rendere inutilizzabile
 			@Override
 			public String use(Person who, GameObject target) {
 				if(target != null) {
