@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dialogs>
-	<prologue>Ti trovi in una stanza illuminata solo dal bagliore di un monitor acceso.
+	<prologue>Ti trovi nella tua stanza illuminata solo dal bagliore del monitor acceso.
 Il silenzio è interrotto solo dal cliccare frenetico delle tue mani sulla tastiera metre casti Reiz sul tuo tank.
 Improvvisamente senti il trillo di una mail in entrata.
 Mittente sconosciuto.
@@ -104,7 +104,7 @@ Non trovi altra soluzione se non percorrere il sentiero verso di essa.
 Ma la civiltà è lontana, e la notte si fa incombente.
 Decidi di riposare in una locanda sulla via.
 Varchi la soglia.
-La luce soffusa emanata dalle candele ti ricorda un'atmosfera medievale.
+La luce soffusa emanata dalle candele richiama un'atmosfera medievale.
 All'interno c'è agitazione, fin troppa per essere una locanda fuori città.
 Senti vociferare, e apprendi che si sta tenendo un torneo in tutto il paese per eleggere il nuovo re.
 Ricordi ciò che ha detto il Dio che ti ha portato in questo mondo:
@@ -171,7 +171,7 @@ Qui, fuori dalla locanda, la leggenda di [] ha fine.
 
 </janKenLost>
 	<janKenWin>Con lo stupore generale del pubblico, che si era fermato a guardare la breve partita, batti la campionessa in carica.
-La folla esulta davanti al nuovo candidato re, e ti porta da altri sfidanti, che batti facilmente.
+La folla esulta davanti al nuovo candidato re, e ti porta da altri sfidanti, contro cui vinci facilmente.
 Tra un gioco e l'altro, cerchi Stephanie, che nel frattempo hai perso di vista.
 Per un attimo riesci a sottrarti all'euforia dei festeggiamenti, e ti avvicini alla ragazza dai capelli rossi, che sta piangendo in un angolino.
 Quando sente chiamare il suo nome e realizza che la fonte sei tu, comincia a maledirti;
@@ -182,13 +182,50 @@ Improvvisamente Stephanie inizia a dichiarare il suo amore per te, mentre sbatte
 Probabilmente non le va molto a genio di aver appena perso e di essere costretta ad innamorarsi.
 Vieni sfidato altre volte, ma nessuno ha l'abilità necessaria per batterti.
 Man mano gli avversari diminuiscono, e vieni dichiarato vincitore del torneo.
-E mentre Steph (vuole essere chiamata così dal suo amato) ti ronza intorno come una mosca sullo sterco, ti viene detto che per la cerimonia d'incoronazione ti saresti dovuto presentare nella sala del trono del palazzo di Elchea.
+E mentre Steph (vuole essere chiamata così dal suo amato) ti ronza intorno, ti viene detto che per la cerimonia d'incoronazione ti saresti dovuto presentare nella sala del trono del palazzo di Elchea.
 Concludi che è ora di smettere di festeggiare e decidi di andare a dormire.
 Prenoti una camera singola alla locanda con i soldi di Steph, che è costretta a dormire in un'altra stanza.
 L'indomani è alle porte...
 
 
 </janKenWin>
-	<throneEvent>
+	<throneEvent>Il momento tanto atteso è finalmente giunto.
+Stai per varcare la soglia che cambierà per sempre la tua vita da gamer.
+Il possente portone davanti a te si spalanca, rivelando un'ampia stanza bianca gremita di quelli che sembrano essere i nobili del paese.
+Seguendo le istruzioni che ti sono state date, avanzi sul tappeto di velluto rosso fino al trono, che si trova rialzato sul fondo della stanza, e ti siedi.
+Ad attenderti davanti al trono, c'è un uomo anziano con la barba bianca.
+L'uomo anziano, probabilmente un alto funzionario di stato, pone solennemente la corona sul tuo capo.
+Poi ti alzi e ti prepari a pronunciare il giuramento.
+"Adesso dichiarerò come 255esimo re di Elchea che ho succeduto al trono!"
+Con un forte vento e una luce abbagliante, davanti a te si materializza un pezzo di scacchi.
+È la cosiddetta "pedina cardine" che rappresenta una razza, concessa ai suoi rappresentanti.
+La pedina degli Imanity è il Re.
+Poi, con la sorpresa dei presenti, dichiari, afferrando saldamente la pedina:
+"Che i giochi abbiano inizio.
+Avete sofferto abbastanza, non è così?
+Avete sopportato abbastanza umiliazione, no?
+L'attea è terminata, Imanity!
+In questo istante, questo paese, Elchea, dichiara guerra al mondo intero!
+Ci riprenderemo i nostri territori!"
+Un boato si alza nella stanza.
+Tutti applaudono, speranzosi che questi buoni propositi non finiscano come con il precedente re.
+
+Finita la cerimonia, Steph ti si avvicina scoinvolta, urlandoti contro.
+"Che cos'hai combinato?!
+Era proprio necessario dichiarare guerra?
+Al mondo intero per di più!"
+Stai cercando di distruggere questo paese?"
+Tu, tranquilllamente, le rispondi:
+"Dovresti iniziare a dubitare degli altri.
+Cosa  pensi che faranno gli altri paesi, sapendo che sono diventato re a seguito di un torneo di giochi il cui scopo era individuare il giocatore migliore?
+Non ci attaccheranno per non fare mosse insensate.
+Per questo ho corso il rischio di dichiarare guerra.
+Così posso prendere l'iniziativa senza tanti problemi."
+Te ne vai con passo deciso.
+Steph, rimasta senza parole, resta a bocca aperta nel corridoio.
+
+
+
+
 </throneEvent>
 </dialogs>
