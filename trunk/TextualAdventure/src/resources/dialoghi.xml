@@ -189,6 +189,31 @@ L'indomani è alle porte...
 
 
 </janKenWin>
+	<historyBook>Milioni di anni fa questo mondo era governato da molti Dei.
+Un giorno gli Dei iniziarono una sanguinosa guerra per guadagnare il titolo di Dio assoluto.
+La guerra continuò per centinaia di anni, e vedeva gli Dei combattere tra di loro supportati dalle varie razze che abitano questo mondo.
+La fine della guerra venne decretata quando tutti gli Dei morirono.
+Di loro ne rimase solo uno, Tet, il Dio dell'intrattenimento, che si era rifiutato di partecipare alla guerra.
+Tet istituì i 10 comandamenti, su cui si basa il nostro mondo attuale.
+
+</historyBook>
+	<racesBook>In Disboard esistono 16 razze intelligenti sulle quali vigono i 10 comandamenti.
+Le razze sono denominate Exceed e sono ordinate secondo l'affinità magica che la razza stessa presenta.
+L'affinità magica è la possibilità di connettersi o meno ai circuiti spirituali, il che implica o meno la capacità di utilizzo e percezione della magia.
+
+I Flügel sono creature angeliche create dagli Dei durante la Grande Guerra per sconfiggersi a vicenda.
+Sono al 6° posto e possiedono una lunga vita e, dato che i comandamenti hanno vietato le guerre, ora si sfidano in vere e proprio battaglie di conoscenza.
+
+Gli Elfi, potendo controllare grandi quantità di magia e lanciare potenti incantesimi, sono al 7° posto.
+
+I Werebeast, abitanti della Federazione dell'Est, sono un popolo in grande espansione da quando il nuovo Leader politico è entrato in carica 50 anni fa.
+Non hanno affinità magica, ma hanno grandi percezioni sensoriali, che gli permettono di prevedere il futuro. Sono al 14° posto tra gli Exceed.
+
+All'ultimo posto tra gli Exceed si trovano gli Imanity. Essi non hanno assolutamente alcuna possibilità di connettersi ai circuiti spirituali.
+Prima della Grande Guerra, erano il popolo che controllava il territorio più vasto, conquistato attraverso le guerre.
+Con l'istituzione dei 10 comandamenti, hanno cominciato a perdere territori, e ora possiedono solo il territorio della capitale, Elchea.
+
+</racesBook>
 	<throneEvent>Il momento tanto atteso è finalmente giunto.
 Stai per varcare la soglia che cambierà per sempre la tua vita da gamer.
 Il possente portone davanti a te si spalanca, rivelando un'ampia stanza bianca gremita di quelli che sembrano essere i nobili del paese.
@@ -228,7 +253,13 @@ Steph, rimasta senza parole, resta a bocca aperta nel corridoio.
 
 
 </throneEvent>
-<historyBook>Che schifo la storia</historyBook>
-<racesBook>Ci sono tante razze</racesBook>
-
+	<libraryEvent>Sei arrivato alla Biblioteca Nazionale di Elchea.
+Era un luogo che gli Imanity potevano visitare tranquillamente, fino a quando il precedente re, il nonno di Steph, non l'ha perso in un gioco contro un Flügel.
+Ora sei qui per riconquistare la biblioteca e ottenere maggiori informazioni sulle altre razze.
+Ma prima bisogna naturalmente sconfiggere il Flügel che si è impossessato della struttura.
+Spalanchi l'immenso portone d'ingresso ed entri all'interno dell'edificio.
+Davanti a te vedi immensi scaffali stracolmi di libri.
+Al centro della biblioteca, dal nulla, compare una luce abbagliante, e ne esce un angelo.
+La creatura comparsa dalla luce è un Flügel, al 7° posto tra gli Exceed.
+L'ex arma da guerra spalanca le ali, e rivela il suo corpo femminile.
 </dialogs>

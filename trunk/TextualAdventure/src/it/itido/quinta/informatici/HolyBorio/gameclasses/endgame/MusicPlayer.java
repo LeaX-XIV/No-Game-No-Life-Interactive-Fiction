@@ -64,7 +64,7 @@ public class MusicPlayer extends Thread{
     }
 	
 	public static void main(String[] args) {
-		MusicPlayer mp = new MusicPlayer(MusicPlayer.class.getResource("/resources/endingTheme1.mp3").getFile());
+		MusicPlayer mp = new MusicPlayer(MusicPlayer.class.getResource("/resources/audio/endingTheme1.mp3").getFile());
 		mp.run();
 	}
 }

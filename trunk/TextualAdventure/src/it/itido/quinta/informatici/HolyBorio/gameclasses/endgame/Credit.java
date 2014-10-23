@@ -24,7 +24,7 @@ public class Credit extends ScrollableText{
 						+ "Cast\n"
 						+ "Abbiamo delle voci?\n\n"
 						+ "Ending Theme\n"
-						// FIXME: NON SI LEGGE
+						// Lo volevo in jappo
 						+ "Oracion\n"
 						+ "Voce\t\t\t\tKayano Ai\n"
 						+ "Testi\t\t\t\tNazca\n"
@@ -42,7 +42,7 @@ public class Credit extends ScrollableText{
 						+ "\t\t\t\t" + SIDE_PROGRAMMER + "\n"
 						+ "\t\t\t\t" + SIDE_SIDE_PROGRAMMER + "\n\n\n"
 						+ "Liberamente tratto da\n"
-						// FIXME: NON SI LEGGE
+						// Lo volevo in jappo
 						+ "No Game No Life\n"
 						+ "di Kamiya Yuu\n\n"
 						+ "Ringraziamenti Speciali\n"
@@ -52,7 +52,7 @@ public class Credit extends ScrollableText{
 						+ "Grazie per aver giocato!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		
 		
-		mp = new MusicPlayer(getClass().getResource("/resources/endingTheme1.mp3").getFile());
+		mp = new MusicPlayer(getClass().getResource("/resources/audio/endingTheme1.mp3").getFile());
 		setWaitTime((int) (mp.getDurationAudioFile() / getReturns()));
 		
 		trueEnd = end;
