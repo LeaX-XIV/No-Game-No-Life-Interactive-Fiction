@@ -11,6 +11,7 @@ import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
 import it.univpm.deit.semedia.gameclasses.objects.Key;
+import it.univpm.deit.semedia.gameclasses.objects.Libro;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
@@ -81,11 +82,11 @@ public class Game extends GenericConsole implements Serializable {
 		throneHall.setDescription("La sala del trono del palazzo");
 
 		Trigger prologue = new Trigger(mountainPass);
-		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+//		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 		Trigger innTrigger = new Trigger(inn);
-		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+//		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 		Trigger throneEvent = new Trigger(throneHall);
-		throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
+//		throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
 
 		// TODO: AGGIUNGERE TRIGGER IN ELCHEA LIBRARY E SULLE LIBRERIE .
 
@@ -135,8 +136,10 @@ public class Game extends GenericConsole implements Serializable {
 		GameObject throne;
 		GameObject pigeons;
 		GameObject bed;
-		GameObject leftBookshelf;
-		GameObject rightBookshelf;
+		ContainerImpl leftBookshelf;
+			Libro historyBook;
+		ContainerImpl rightBookshelf;
+			Libro racesBook;
 		Key secretKey;
 		GameObject book;		
 
@@ -163,8 +166,10 @@ public class Game extends GenericConsole implements Serializable {
 				return "Al tuo risveglio, sei caduto dal lato sinistro.";
 			}
 		};
-		leftBookshelf = new GameObject("libreria_sinistra");
-		rightBookshelf = new GameObject("libreria_destra");
+		leftBookshelf = new ContainerImpl("libreria_sinistra");
+		historyBook = new Libro("libro_storia", ScrollableText.readFromXml("historyBook"));
+		rightBookshelf = new ContainerImpl("libreria_destra");
+		racesBook = new Libro("libro_razze", ScrollableText.readFromXml("racesBook"));
 		secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
 			// TODO: Rendere inutilizzabile
 			@Override
@@ -212,7 +217,9 @@ public class Game extends GenericConsole implements Serializable {
 		pigeons.setDescription("Dei tranquillissimi piccioni sopra un tetto.");
 		bed.setDescription("Il letto a baldacchino del precendte re. Ha un aria meastosa.");
 		leftBookshelf.setDescription("La libreria che si trova alla sinistra dell'entrata.");
+		historyBook.setDescription("Un libro che parla della storia di Disboard.");
 		rightBookshelf.setDescription("La libreria che si trova alla destra dell'entrata.");
+		racesBook.setDescription("Un libro che tratta la suddivisione in razze di questo mondo.");
 		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
 		book.setDescription("Un libro misterioso ricoperto di ragnatele.");
 
@@ -220,7 +227,9 @@ public class Game extends GenericConsole implements Serializable {
 		throneHall.add(throne);
 		elcheaStreets.add(pigeons);
 		kingRoom.add(bed);
+		leftBookshelf.add(historyBook);
 		kingRoom.add(leftBookshelf);
+		rightBookshelf.add(racesBook);
 		kingRoom.add(rightBookshelf);
 		secretRoom.add(book);
 
