@@ -49,8 +49,8 @@ public class Trigger {
 							if(eventResult) {
 								credit.setText(credit.getText().split("\\|")[1]);
 								credit.show();
-								return;
-							}							
+							}
+							System.exit(0);
 						}
 						endTrigger.show(eventResult);
 					}
