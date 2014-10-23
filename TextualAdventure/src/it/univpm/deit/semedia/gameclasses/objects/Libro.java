@@ -1,5 +1,6 @@
 package it.univpm.deit.semedia.gameclasses.objects;
 
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 
@@ -14,7 +15,8 @@ public class Libro extends GameObject {
 	
 	@Override
 	public String use(Person who) {
-		return text;
+		new ScrollableText(text).showDinamicWait();
+		return "";
 	}
 	
 }

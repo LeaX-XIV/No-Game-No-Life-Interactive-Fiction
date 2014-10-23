@@ -151,6 +151,7 @@ public class Game extends GenericConsole implements Serializable {
 				if(target == pigeons) {
 					mc.getContainedIn().remove(pigeons);
 					getContainedIn().remove(this);
+					new MusicPlayer(getClass().getResource("/resources/audio/pigeons.mp3").getFile()).start();
 					return "I piccioni sono volati via.";
 				}
 				else {
@@ -162,7 +163,7 @@ public class Game extends GenericConsole implements Serializable {
 			@Override
 			public String use(Person who) {
 				out.println("Ti addormenti sul letto.");
-				new MusicPlayer(getClass().getResource("/resources/Bed.mp3").getFile()).run();
+				new MusicPlayer(getClass().getResource("/resources/audio/Bed.mp3").getFile()).run();
 				return "Al tuo risveglio, sei caduto dal lato sinistro.";
 			}
 		};
