@@ -69,6 +69,7 @@ public class ConnectedWords extends Gioco{
 							yourTurn = !yourTurn;
 
 							if(!yourTurn) {
+								out.print(consolePrompt());
 								aiTurn();
 							}
 						}
@@ -105,17 +106,25 @@ public class ConnectedWords extends Gioco{
 	private void initTimer() {
 		timer = new Timer();
 		endTurn = new TimerTask() {
+			
+			// FIXME: IL GIOCO NON TERMINA FINCHE' NON VIENE INSERITO UN COMANDO
 
 			@Override
 			public void run() {
 				System.out.println("Tempo scaduto.");
-				timer.cancel();
-				
-				if(yourTurn) {
-					endGame(false);
-				}
-				else {
-					endGame(true);
+
+				try {
+					if(yourTurn) {
+						endGame(false);
+					}
+					else {
+						endGame(true);
+					}
+				} catch(Exception e) {
+				} finally {
+					timer.cancel();
+					timer = null;
+					endTurn = null;
 				}
 			}
 		};		
@@ -233,9 +242,11 @@ public class ConnectedWords extends Gioco{
 		}
 		else {
 			System.out.println("Nessuna parola. Hai vinto");
-			endGame(true);
 
-			//			this.executeLine("exit");
+			timer.cancel();
+			timer = null;
+			endTurn = null;
+			endGame(true);
 		}
 	}
 
@@ -276,6 +287,11 @@ public class ConnectedWords extends Gioco{
 		}
 
 		return choosenOne;
+	}
+
+	@Override
+	protected String consolePrompt() {
+		return lastSyllabe!=null? lastSyllabe + " > " : "> ";
 	}
 
 	public static void main(String[] args) {
