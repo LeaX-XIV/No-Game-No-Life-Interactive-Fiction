@@ -48,195 +48,6 @@ public class Game extends GenericConsole implements Serializable {
 
 	public Game(InputStream in, PrintStream out) {
 		super(in, out);
-		
-		Room mountainPass = new Room("Sentiero Montano");
-		mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
-
-		Room inn = new Room("Locanda");
-		inn.setDescription("Una locanda fuori città.");
-		Room elchea = new Room("Piazza di Elchea") {
-
-			@Override
-			public String getDescription() {
-
-				DateFormat ora = new SimpleDateFormat("hh:mm"); 				
-
-				return super.description + ora.format(new Date()) + "\n" + getContentDescription() ;
-			}
-		};		
-		elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
-				+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
-		Room elcheaStreets = new Room("Vie di Elchea");
-		elcheaStreets.setDescription("Vie che attraversano Elchea.");
-		Room elcheaPalace = new Room("Palazzo di Elchea");
-		elcheaPalace.setDescription("Il palazzo dove risiede il re degli umani.");
-		Room kingRoom = new Room("Stanza del re");
-		kingRoom.setDescription("Camera da letto del re di Elchea.");
-		Room secretRoom = new Room("???");
-		secretRoom.setDescription("Una stanza misteriosa nascosta dietro la libreria nella camera del re.");
-		Room library = new Room("Biblioteca Nazionale di Elchea");
-		library.setDescription("La biblioteca pi\u00f9 grande di Elchea.\nContiene migliaia di libri provenienti da altri paesi.");
-		Room easternUnion = new Room("Federazione dell'Est");
-		easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
-		Room throneHall = new Room("Sala del trono");
-		throneHall.setDescription("La sala del trono del palazzo");
-
-		Trigger prologue = new Trigger(mountainPass);
-//		prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
-		Trigger innTrigger = new Trigger(inn);
-//		innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
-		Trigger throneEvent = new Trigger(throneHall);
-//		throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
-
-		// TODO: AGGIUNGERE TRIGGER IN ELCHEA LIBRARY E SULLE LIBRERIE .
-
-
-
-
-
-
-		Trigger federationTrigger = new Trigger(easternUnion);
-		Credit credit = new Credit(false);
-		credit.setText(credit.getText() + "|You lost lol");
-		federationTrigger.init(1, null, new TestaCroce(in, out), credit);
-
-		Door d1 = new Door(true);
-		Door d2 = new Door(true);
-		Door d3 = new Door(true);
-		Door d4 = new Door(true);
-		Door d5 = new Door(true);
-		Door d6 = new Door(true);
-		Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
-		Door d8 = new Door();
-		Door d9 = new Door(true);
-
-		d1.addLink("ovest", "sud", mountainPass, inn);
-		d2.addLink("nord", "sud", inn, elchea);
-		d3.addLink("nord", "sud", elchea, elcheaStreets);
-		d4.addLink("est", "ovest", elcheaStreets, library);
-		d5.addLink("nord", "sud", elcheaStreets, elcheaPalace);
-		d6.addLink("ovest", "est", elcheaPalace, kingRoom);
-		d7.addLink("sud", "nord", kingRoom, secretRoom);
-		d8.addLink("ovest", "est", elchea, easternUnion);
-		d9.addLink("ovest", "est", throneHall, elcheaPalace);
-
-		world = new ArrayList<Room>();
-		world.add(mountainPass);
-		world.add(inn);
-		world.add(elchea);
-		world.add(elcheaStreets);
-		world.add(library);
-		world.add(elcheaPalace);
-		world.add(kingRoom);
-		world.add(secretRoom);
-		world.add(easternUnion);
-		world.add(throneHall);
-
-		CollectableItem rock;
-		GameObject throne;
-		GameObject pigeons;
-		GameObject bed;
-		ContainerImpl leftBookshelf;
-			Libro historyBook;
-		ContainerImpl rightBookshelf;
-			Libro racesBook;
-		Key secretKey;
-		GameObject book;		
-
-		throne = new GameObject("trono");
-		pigeons = new GameObject("piccioni");
-		rock = new CollectableItem("sasso") {
-			@Override
-			public String use(Person who, GameObject target) {
-				if(target == pigeons) {
-					mc.getContainedIn().remove(pigeons);
-					getContainedIn().remove(this);
-					new MusicPlayer(getClass().getResource("/resources/audio/pigeons.mp3").getFile()).start();
-					return "I piccioni sono volati via.";
-				}
-				else {
-					return "Non è consigliabile lanciare un sasso a " + target;
-				}
-			}
-		};
-		bed = new GameObject("letto") {
-			@Override
-			public String use(Person who) {
-				out.println("Ti addormenti sul letto.");
-				new MusicPlayer(getClass().getResource("/resources/audio/Bed.mp3").getFile()).run();
-				return "Al tuo risveglio, sei caduto dal lato sinistro.";
-			}
-		};
-		leftBookshelf = new ContainerImpl("libreria_sinistra");
-		historyBook = new Libro("libro_storia", ScrollableText.readFromXml("historyBook"));
-		rightBookshelf = new ContainerImpl("libreria_destra");
-		racesBook = new Libro("libro_razze", ScrollableText.readFromXml("racesBook"));
-		secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
-			// TODO: Rendere inutilizzabile
-			@Override
-			public String use(Person who) {
-				boolean b = new ConnectedWords(in, out).getResult();
-				if(b) {
-					out.println("Hai Vinto");
-				}
-				else {
-					out.println("Hai perso");
-				}
-				return super.use(who);
-			}
-
-			@Override
-			public String use(Person who, GameObject target) {
-				if(target != null) {
-					if(target == leftBookshelf) {
-						return super.use(who);
-					}
-					else {
-						return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
-					}
-				}
-				else {
-					return "Non puoi usare la chiave qui.";
-				}
-			}
-		};
-		book = new GameObject("libro") {
-			@Override
-			public String use(Person who) {
-				if(d8.isOpen()) {	// piazza di elchea <-> federazione dell'est
-					return "Il libro scritto dal precedente re che ti ha rivelato l'ubicazione della\nFederazione dell'Est.";
-				}
-				else {
-					d8.open();
-					return "Questo libro contiene le informazioni sull'ubicazione della Federazione\ndell'Est.\nA quanto pare si trova a Ovest.";
-				}
-			}
-		};
-
-		rock.setDescription("Un sasso della grandezza di una gomma.");
-		throne.setDescription("Il trono sul quale puoi sederti in funzione di re.");
-		pigeons.setDescription("Dei tranquillissimi piccioni sopra un tetto.");
-		bed.setDescription("Il letto a baldacchino del precendte re. Ha un aria meastosa.");
-		leftBookshelf.setDescription("La libreria che si trova alla sinistra dell'entrata.");
-		historyBook.setDescription("Un libro che parla della storia di Disboard.");
-		rightBookshelf.setDescription("La libreria che si trova alla destra dell'entrata.");
-		racesBook.setDescription("Un libro che tratta la suddivisione in razze di questo mondo.");
-		secretKey.setDescription("Una chiave con una dentatura già vista prima.");
-		book.setDescription("Un libro misterioso ricoperto di ragnatele.");
-
-		mountainPass.add(rock);
-		throneHall.add(throne);
-		elcheaStreets.add(pigeons);
-		kingRoom.add(bed);
-		leftBookshelf.add(historyBook);
-		kingRoom.add(leftBookshelf);
-		rightBookshelf.add(racesBook);
-		kingRoom.add(rightBookshelf);
-		secretRoom.add(book);
-
-		// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
-		elchea.add(secretKey);
-
 	}
 
 	/**
@@ -271,6 +82,195 @@ public class Game extends GenericConsole implements Serializable {
 				//				room5.add(mirror);		
 				//				room5.add(new Banana());
 				//				room5.add(new Banana());
+				
+				
+				Room mountainPass = new Room("Sentiero Montano");
+				mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
+
+				Room inn = new Room("Locanda");
+				inn.setDescription("Una locanda fuori città.");
+				Room elchea = new Room("Piazza di Elchea") {
+
+					@Override
+					public String getDescription() {
+
+						DateFormat ora = new SimpleDateFormat("hh:mm"); 				
+
+						return super.description + ora.format(new Date()) + "\n" + getContentDescription() ;
+					}
+				};		
+				elchea.setDescription("La piazza di Elchea, l'ultimo territorio rimasto in mano agli umani.\n"
+						+ "Puoi scorgere l'orologio situato sulla torre del palazzo. Segna le ");
+				Room elcheaStreets = new Room("Vie di Elchea");
+				elcheaStreets.setDescription("Vie che attraversano Elchea.");
+				Room elcheaPalace = new Room("Palazzo di Elchea");
+				elcheaPalace.setDescription("Il palazzo dove risiede il re degli umani.");
+				Room kingRoom = new Room("Stanza del re");
+				kingRoom.setDescription("Camera da letto del re di Elchea.");
+				Room secretRoom = new Room("???");
+				secretRoom.setDescription("Una stanza misteriosa nascosta dietro la libreria nella camera del re.");
+				Room library = new Room("Biblioteca Nazionale di Elchea");
+				library.setDescription("La biblioteca pi\u00f9 grande di Elchea.\nContiene migliaia di libri provenienti da altri paesi.");
+				Room easternUnion = new Room("Federazione dell'Est");
+				easternUnion.setDescription("Stato confinante con Elchea, controllato dai Werebeast.");
+				Room throneHall = new Room("Sala del trono");
+				throneHall.setDescription("La sala del trono del palazzo");
+
+				Trigger prologue = new Trigger(mountainPass);
+//				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+				Trigger innTrigger = new Trigger(inn);
+//				innTrigger.init(1,ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+				Trigger throneEvent = new Trigger(throneHall);
+//				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
+
+				// TODO: AGGIUNGERE TRIGGER IN ELCHEA LIBRARY E SULLE LIBRERIE .
+
+
+
+
+
+
+				Trigger federationTrigger = new Trigger(easternUnion);
+				Credit credit = new Credit(false);
+				credit.setText(credit.getText() + "|You lost lol");
+				federationTrigger.init(1, null, new TestaCroce(in, out), credit);
+
+				Door d1 = new Door(true);
+				Door d2 = new Door(true);
+				Door d3 = new Door(true);
+				Door d4 = new Door(true);
+				Door d5 = new Door(true);
+				Door d6 = new Door(true);
+				Door d7 = new Door(new Lock(new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))));
+				Door d8 = new Door();
+				Door d9 = new Door(true);
+
+				d1.addLink("ovest", "sud", mountainPass, inn);
+				d2.addLink("nord", "sud", inn, elchea);
+				d3.addLink("nord", "sud", elchea, elcheaStreets);
+				d4.addLink("est", "ovest", elcheaStreets, library);
+				d5.addLink("nord", "sud", elcheaStreets, elcheaPalace);
+				d6.addLink("ovest", "est", elcheaPalace, kingRoom);
+				d7.addLink("sud", "nord", kingRoom, secretRoom);
+				d8.addLink("ovest", "est", elchea, easternUnion);
+				d9.addLink("ovest", "est", throneHall, elcheaPalace);
+
+				world = new ArrayList<Room>();
+				world.add(mountainPass);
+				world.add(inn);
+				world.add(elchea);
+				world.add(elcheaStreets);
+				world.add(library);
+				world.add(elcheaPalace);
+				world.add(kingRoom);
+				world.add(secretRoom);
+				world.add(easternUnion);
+				world.add(throneHall);
+
+				CollectableItem rock;
+				GameObject throne;
+				GameObject pigeons;
+				GameObject bed;
+				ContainerImpl leftBookshelf;
+					Libro historyBook;
+				ContainerImpl rightBookshelf;
+					Libro racesBook;
+				Key secretKey;
+				GameObject book;		
+
+				throne = new GameObject("trono");
+				pigeons = new GameObject("piccioni");
+				rock = new CollectableItem("sasso") {
+					@Override
+					public String use(Person who, GameObject target) {
+						if(target == pigeons) {
+							mc.getContainedIn().remove(pigeons);
+							getContainedIn().remove(this);
+							new MusicPlayer(getClass().getResource("/resources/audio/pigeons.mp3").getFile()).start();
+							return "I piccioni sono volati via.";
+						}
+						else {
+							return "Non è consigliabile lanciare un sasso a " + target;
+						}
+					}
+				};
+				bed = new GameObject("letto") {
+					@Override
+					public String use(Person who) {
+						out.println("Ti addormenti sul letto.");
+						new MusicPlayer(getClass().getResource("/resources/audio/Bed.mp3").getFile()).run();
+						return "Al tuo risveglio, sei caduto dal lato sinistro.";
+					}
+				};
+				leftBookshelf = new ContainerImpl("libreria_sinistra");
+				historyBook = new Libro("libro_storia", ScrollableText.readFromXml("historyBook"));
+				rightBookshelf = new ContainerImpl("libreria_destra");
+				racesBook = new Libro("libro_razze", ScrollableText.readFromXml("racesBook"));
+				secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
+					// TODO: Rendere inutilizzabile
+					@Override
+					public String use(Person who) {
+						boolean b = new ConnectedWords(in, out).getResult();
+						if(b) {
+							out.println("Hai Vinto");
+						}
+						else {
+							out.println("Hai perso");
+						}
+						return super.use(who);
+					}
+
+					@Override
+					public String use(Person who, GameObject target) {
+						if(target != null) {
+							if(target == leftBookshelf) {
+								return super.use(who);
+							}
+							else {
+								return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
+							}
+						}
+						else {
+							return "Non puoi usare la chiave qui.";
+						}
+					}
+				};
+				book = new GameObject("libro") {
+					@Override
+					public String use(Person who) {
+						if(d8.isOpen()) {	// piazza di elchea <-> federazione dell'est
+							return "Il libro scritto dal precedente re che ti ha rivelato l'ubicazione della\nFederazione dell'Est.";
+						}
+						else {
+							d8.open();
+							return "Questo libro contiene le informazioni sull'ubicazione della Federazione\ndell'Est.\nA quanto pare si trova a Ovest.";
+						}
+					}
+				};
+
+				rock.setDescription("Un sasso della grandezza di una gomma.");
+				throne.setDescription("Il trono sul quale puoi sederti in funzione di re.");
+				pigeons.setDescription("Dei tranquillissimi piccioni sopra un tetto.");
+				bed.setDescription("Il letto a baldacchino del precendte re. Ha un aria meastosa.");
+				leftBookshelf.setDescription("La libreria che si trova alla sinistra dell'entrata.");
+				historyBook.setDescription("Un libro che parla della storia di Disboard.");
+				rightBookshelf.setDescription("La libreria che si trova alla destra dell'entrata.");
+				racesBook.setDescription("Un libro che tratta la suddivisione in razze di questo mondo.");
+				secretKey.setDescription("Una chiave con una dentatura già vista prima.");
+				book.setDescription("Un libro misterioso ricoperto di ragnatele.");
+
+				mountainPass.add(rock);
+				throneHall.add(throne);
+				elcheaStreets.add(pigeons);
+				kingRoom.add(bed);
+				leftBookshelf.add(historyBook);
+				kingRoom.add(leftBookshelf);
+				rightBookshelf.add(racesBook);
+				kingRoom.add(rightBookshelf);
+				secretRoom.add(book);
+
+				// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
+				elchea.add(secretKey);
 
 				mc = new Person("[]", 100);
 
@@ -618,9 +618,7 @@ public class Game extends GenericConsole implements Serializable {
 
 	@Override
 	protected String welcomeMsg() {
-		return "Welcome to the Interactive Fiction 2006 console" +
-				"\n-- Textual adventures aren't dead, they just smell funny --" +
-				"\n\n press HELP for help";
+		return "Usa HELP per legere i comandi.";
 	}
 
 	@Override

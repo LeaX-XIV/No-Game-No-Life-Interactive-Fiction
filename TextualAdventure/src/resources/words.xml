@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <words>
 <group>
+	<parola>aba-co</parola>
+	<parola>aba-ci</parola>
+</group>
+<group>
 	<parola>a-ba-te</parola>
 	<parola>a-ba-ti</parola>
 </group>
@@ -600,6 +604,10 @@
 <group>
 	<parola>am-bu-la-to-ri</parola>
 	<parola>am-bu-la-to-rio</parola>
+</group>
+<group>
+	<parola>a-mi</parola>
+	<parola>a-mo</parola>
 </group>
 <group>
 	<parola>a-mi-ca</parola>
