@@ -16,7 +16,7 @@ public abstract class Gioco extends GenericConsole {
 	}
 	
 	public boolean getResult() {
-		super.run();
+		run();
 		
 		synchronized (qualcosaPerSincronizzare) {
 			while(win == null) {

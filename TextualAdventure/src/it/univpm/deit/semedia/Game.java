@@ -17,6 +17,7 @@ import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
 import it.univpm.deit.semedia.gameclasses.rooms.Room;
 import it.univpm.deit.semedia.gameclasses.rooms.Trigger;
+import it.univpm.deit.semedia.gameclasses.rooms.TriggerMethods;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -58,6 +59,8 @@ public class Game extends GenericConsole implements Serializable {
 		game.registerCommand(new ConsoleCommand("start") {
 			@Override
 			public void run(Object[] args, Class[] types, InputStream in, PrintStream out) {
+				
+				mc = new Person("[]", 100);
 
 				//				Room room1 = new Room("the white room");
 				//				room1.setDescription("Its a white room, with black curtains, near the station.");
@@ -116,25 +119,7 @@ public class Game extends GenericConsole implements Serializable {
 				Room throneHall = new Room("Sala del trono");
 				throneHall.setDescription("La sala del trono del palazzo");
 
-				Trigger prologue = new Trigger(mountainPass);
-//				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
-				Trigger innTrigger = new Trigger(inn);
-//				innTrigger.init(1,ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
-				Trigger throneEvent = new Trigger(throneHall);
-//				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
-
-				// TODO: AGGIUNGERE TRIGGER IN ELCHEA LIBRARY E SULLE LIBRERIE .
-
-
-
-
-
-
-				Trigger federationTrigger = new Trigger(easternUnion);
-				Credit credit = new Credit(false);
-				credit.setText(credit.getText() + "|You lost lol");
-				federationTrigger.init(1, null, new TestaCroce(in, out), credit);
-
+				
 				Door d1 = new Door(true);
 				Door d2 = new Door(true);
 				Door d3 = new Door(true);
@@ -271,8 +256,23 @@ public class Game extends GenericConsole implements Serializable {
 
 				// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
 				elchea.add(secretKey);
+				
+				
+				Trigger prologue = new Trigger(mountainPass);
+				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+				Trigger innTrigger = new Trigger(inn);
+				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+				Trigger throneEvent = new Trigger(throneHall);
+				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
+				Trigger libraryEvent = new Trigger(library);
+				libraryEvent.init(1, ScrollableText.readFromXml("libraryEvent"), new ConnectedWords(in, out), null);
+				libraryEvent.setMethod(TriggerMethods.class, "libraryEvent", mc, secretKey);
+				// TODO: AGGIUNGERE TRIGGER SULLE LIBRERIE .
 
-				mc = new Person("[]", 100);
+				Trigger federationTrigger = new Trigger(easternUnion);
+				Credit credit = new Credit(false);
+				credit.setText(credit.getText() + "|You lost lol");
+				federationTrigger.init(1, null, new TestaCroce(in, out), credit);
 
 				world.get(0).enter(mc);
 			}

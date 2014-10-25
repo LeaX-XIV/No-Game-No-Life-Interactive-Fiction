@@ -39,8 +39,6 @@ public class ConnectedWords extends Gioco{
 	public ConnectedWords(InputStream in, PrintStream out) {
 		super(in, out);
 
-		initTimer();
-
 		ConsoleCommand say = new ConsoleCommand("say") {
 
 			@Override
@@ -98,8 +96,6 @@ public class ConnectedWords extends Gioco{
 		super.setDefaultCommand(say);
 
 		init();
-
-		timer.schedule(endTurn, turnTime);
 
 	}
 
@@ -289,6 +285,13 @@ public class ConnectedWords extends Gioco{
 		return choosenOne;
 	}
 
+	@Override
+	public void run() {
+		initTimer();
+		timer.schedule(endTurn, turnTime);
+		
+		super.run();
+	}
 	@Override
 	protected String consolePrompt() {
 		return lastSyllabe!=null? lastSyllabe + " > " : "> ";
