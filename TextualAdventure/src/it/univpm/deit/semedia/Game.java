@@ -87,6 +87,8 @@ public class Game extends GenericConsole implements Serializable {
 				//				room5.add(new Banana());
 				
 				
+				// ROOMS
+				
 				Room mountainPass = new Room("Sentiero Montano");
 				mountainPass.setDescription("Il sentiero in cui ti ritrovi dopo essere stato trasportato in un mondo\nfantastico.");
 
@@ -119,6 +121,7 @@ public class Game extends GenericConsole implements Serializable {
 				Room throneHall = new Room("Sala del trono");
 				throneHall.setDescription("La sala del trono del palazzo");
 
+				// DOORS
 				
 				Door d1 = new Door(true);
 				Door d2 = new Door(true);
@@ -151,6 +154,8 @@ public class Game extends GenericConsole implements Serializable {
 				world.add(secretRoom);
 				world.add(easternUnion);
 				world.add(throneHall);
+				
+				// ITEMS
 
 				CollectableItem rock;
 				GameObject throne;
@@ -257,6 +262,8 @@ public class Game extends GenericConsole implements Serializable {
 				// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
 				elchea.add(secretKey);
 				
+				
+				// TRIGGERS
 				
 				Trigger prologue = new Trigger(mountainPass);
 				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
