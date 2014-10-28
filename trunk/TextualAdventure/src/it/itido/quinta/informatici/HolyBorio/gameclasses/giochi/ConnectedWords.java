@@ -294,7 +294,7 @@ public class ConnectedWords extends Gioco{
 	}
 	@Override
 	protected String consolePrompt() {
-		return lastSyllabe!=null? lastSyllabe + " > " : "> ";
+		return lastSyllabe!=null? getLastSyllabe() + " > " : "> ";
 	}
 
 	public static void main(String[] args) {

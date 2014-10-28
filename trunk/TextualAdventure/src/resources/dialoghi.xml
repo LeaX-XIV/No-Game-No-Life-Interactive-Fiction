@@ -132,8 +132,6 @@ Dato che nelle partite di poker che Stephanie stava giocando prima hai notato ch
 Pensi a qualcosa di più semplice, dove non si possa barare.
 Come la Morra Cinese.
 Giurate sui comandamenti.
-"Aschente!"
-
 
 </innEvent>
 	<janKenLost>"Ahah, nessuno può battermi!" esclamò Stephanie, dando l'impressione di stare emettendo laser dagli occhi.
@@ -235,7 +233,7 @@ Ci riprenderemo i nostri territori!"
 Un boato si alza nella stanza.
 Tutti applaudono, speranzosi che questi buoni propositi non finiscano come con il precedente re.
 
-Finita la cerimonia, Steph ti si avvicina scoinvolta, urlandoti contro.
+Finita la cerimonia, Steph ti si avvicina sconvolta, urlandoti contro.
 "Che cos'hai combinato?!
 Era proprio necessario dichiarare guerra?
 Al mondo intero per di più!
@@ -283,7 +281,7 @@ E le porgi il tuo tablet pieno di ebook scaricati per i giochi di trivia.
 Dizionari, libri di medicina, di filosofia...
 ogni genere di informazione sul tuo mondo precedente era contenuta all'interno della memoria di quell'oggetto che il Flügel guardava con occhi ricolmi di gelosia e stupore, come se non riuscisse a capire come possano così tanti libri essere racchiusi in uno spazio così ristretto.
 Dopotutto era la prima volta che in Disboard qualcuno vedeva uno strumento tecnologico;
-infatti, con i 10 comandamenti, era stata bloccata qualsiasi possibilità di sviluppo, che nel mondo reale era stata raggiungibile attraverso le guerre.
+infatti, con i 10 comandamenti, era stata bloccata qualsiasi possibilità di sviluppo tecnologico, che nel mondo reale era stata raggiungibile attraverso le guerre.
 
 Jibril, però, non si lascia incantare troppo, e afferma che è impossibile essere evocati da un altro mondo.
 Per dimostrare che la tua tesi è vera, le mostri uno dei libri, facendole notare che non è in grado di leggerlo perchè scritto in una lingua di un altro mondo.
@@ -307,9 +305,160 @@ Il Flügel continua:
 "Puoi avere la prima mossa.
 Scegli pure la parola che preferisci e dai sfoggio alla tua cultura."
 
-"Aschente!"
-
 </libraryEvent>
-	<conntectedWordsWin>
-</conntectedWordsWin>
+	<connectedWordsWin>Le parole si susseguono come un fiume in piena.
+Alla fine ti aggiudichi la vittoria con maestria.
+Jibril, del tutto in pace con se stessa, si prostra ai tuoi piedi:
+"Ora il fine ultimo della mia vita sarà quella di servire il mio padrone.
+Vi prego di accettare i miei servigi."
+"Non è necessario essere così formali.", ribatti tu
+"Per quanto riguarda i libri sul tablet, quellli erano solo un'esca, puoi leggerli a tuo piacimento.
+E potrai continuare a utilizzare la biblioteca a tuo piacimento."
+
+Steph, che ha osservato l'intero gioco da lontano, si avvicina.
+Tiene in mano una chiave, e ha un'aria dispiaciuta.
+Te la porge, chinando il capo.
+"Mi dispiace non avertela data prima.
+Questa è la chiave che mi ha affidato mio nonno.
+Avrei dovuto consegnarla immediatamente al suo successore.
+Ma non avevo completamente fiducia nei tuoi confronti.
+Potrai mai perdonarmi?"
+Prendi la chiave dalle sue mani mentre le accarezzi la testa per consolarla.
+"Stai tranquilla Steph.
+Quella che mi hai appena dato sarrà un elemento fondamentale per la conquista del mondo."
+Gli occhi della ragazza si illuminano.
+"Infatti questa chiave aprirà..." continui
+"LA STANZA DEI PORNO DEL PRECEDENTE RE."
+Steph sobbalza per lo spavento, mentre tu prosegui con i tuoi ragionamenti ad alta voce.
+"Essendo un re deve sicuramente aver avuto molto materiale, quindi aveva bisogno di un'intera stanza per tenere il tutto ben nascosto.
+In più, data la presunta frequenza con cui ne avrebbe fatto utilizzo, si può facilmente dedurre che la stanza è nascosta nella sua vecchia camera.
+Che la ricerca abbia inizio!"
+"Yeeah!!!" fa coro da dietro Jibril.
+
+
+
+</connectedWordsWin>
+	<connectedWordsLost>Hai perso.
+Non so che scrivere. （笑）
+</connectedWordsLost>
+	<easternUnionEvent>Giungi nel paese straniero della Federazione dell'Est, abitato dai Werebeast.
+Guardandoti intorno, noti subito la differenza tra la razza degli Imanity e quella degli uomini bestia:
+sono ragazze con orecchie e coda di animali.
+Innamorato perdutamente di questo paese, chiedi subito a Jibril di trasportarti alla capitale con la magia del teletrasporto per sfidare il rappresentante e vincerne i territori.
+L'angelo, felice di poter essere utile, casta l'incantesimo, e vi ritrovate tutti - tu, Steph e Jibril - davanti al palazzo reale della Federazione dell'Est.
+L'edificio è molto diverso dal palazzo di Elchea, che ricorda un castello medievale.
+Quello dei Werebeast è simile ad una ville in stile giapponese.
+Ad attendervi sul portone d'ingresso compare una donna-volpe.
+La donna sconosciuta comincia a parlare con tono altezzoso:
+"Benvenuti, Imanity e Flügel. Io sono Miko, la sacerdotessa suprema, nonchè rappresentante, dei Werebeast.
+So già perchè siete qui. Avete intenzione di conquistare il mio territorio con i giochi.
+Ma io non ve lo permetterò.
+Negli ultimi 50 anni ho riunito le varie tribù dei Werebeast sparse per il mondo in quella che oggi è conosciuta come la Federazione dell'Est, terzo paese per estensione.
+Se vuoi ottenerlo, dovrai prima vincere."
+Con queste parole estrae dalla tasca del kimono una moneta.
+"Giocheremo a testa o croce. 
+Metteremo in palio i nostri territori e tutti i loro abitanti.
+Il vincitore deciderà cosa farne."
+"Bene, allora" rispondi tu con una voce decisa che non ha intenzione di perdere
+"Giuriamo sui comandamenti."
+
+
+</easternUnionEvent>
+	<headTailWin>La moneta comincia a ruotare, lanciata dalle mano di Miko.
+Cade a terra con un tintinnio.
+La parte scoperta è quella che hai scelto tu.
+Ti rivolgi a Miko, che è rimasta impietrita:
+"Sei stata ingenua, sacerdotessa.
+Sapevo perfettamente che l'abilità di voi Werebeast di vedere il futuro è solo un bluff.
+L'unica cosa che potete fare è sapere se stiamo mentendo controllando il battito cardiaco, non è così?"
+Miko annuisce, e domanda:
+"Cosa hai intenzione di fare adesso con il nostro popolo?
+Hai la possibilità di annientarci tutti, dato ch ho perso."
+"E perchè dovrei distruggere un importantissimo pezzo della scacchiera?" controbatti.
+I presenti ti guardano con aria interrogativa.
+"Ma come, non l'avete ancora capito?
+Lo scopo di questo mondo è quello di riunire tutte le pedine cardine sotto un unico rappresentante.
+In questo modo si guadagna la possibilità di sfidare Tet per diventare il nuovo Dio.
+Ora capisco perchè Tet era così annoiato da essere costretto a chiamarmi da un altro mondo...
+Non ho intenzione di rubare la vostra pedina cardine.
+Altrimenti il decimo comandamento sarebbe infondato.
+'10. Divertiamoci e giochiamo tutti insieme!'
+Significa che per guadagnare il diritto per sfidare Dio tutte le 16 razze intelligenti devono divertirsi e collaborare.
+Per quanto riguarda la politica, stai tranquilla.
+Semplicemente uniremo i nostri regni nella Federazione di Elchea.
+Che ne dici?"
+"Ci hai tenuto in pugno fin dall'inizio, non è vero, scimmia spelacchiata?"
+Entrambi sorridete, mentre il sole comincia a sorgere all'orizzonte.
+
+Un raggio ti colpisce negli occhi, e per un attimo vedi bianco.
+E lì il ricordo riaffiora.
+Il ricordo di Shiro, la sorellina di Sora.
+E finalmente la vedi lì, al tuo fianco...
+
+
+
+
+
+
+
+
+</headTailWin>
+	<headTailLost>La moneta comincia a ruotare, lanciata dalle mano di Miko.
+Cade a terra con un tintinnio.
+La parte scoperta è quella che ha scelto Miko.
+Evidentemente hai sottovalutato i Werebeast.
+Ti ritornano in mente le parole del libro sulle razze:
+"Hanno grandi percezioni sensoriali, che gli permettono di prevedere il futuro."
+Te ne saresti dovuto accorgere prima, era impossibile batterli a testa o croce.
+Ormai il danno è fatto.
+Sei stato completamente fregato.
+Miko prende la parola:
+"Ora, dato che il regno di Elchea mi appartiene, insieme a tutti i suoi abitanti, do l'ordine ni annientare la razza degli Imanity, primi tra tutti i due che si trovano di fronte a me."
+Tu e Steph venite presi dalle guardie reali e portati nelle segrete.
+Lì venite entrambi trafitti al petto con delle lance.
+Cadi a terra.
+I sensi si annebbiano e non riesci più a vedere.
+La forza comincia ad abbandonare il tuo corpo.
+Il battito cardiaco si ferma.
+Tutto è silenzio.
+
+
+Il re è stato spezzato.
+Il gioco non potrà continuare.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</headTailLost>
 </dialogs>

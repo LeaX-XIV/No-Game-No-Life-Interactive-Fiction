@@ -55,11 +55,6 @@ public class TestaCroce extends Gioco {
 	}
 	
 	@Override
-	protected String welcomeMsg() {
-		return "";
-	}
-	
-	@Override
 	protected String consolePrompt() {
 		return "> ";
 	}
