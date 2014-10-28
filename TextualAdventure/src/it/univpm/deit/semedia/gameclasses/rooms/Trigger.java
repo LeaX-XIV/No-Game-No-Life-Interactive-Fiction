@@ -3,6 +3,7 @@ package it.univpm.deit.semedia.gameclasses.rooms;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.BadEnd;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
@@ -43,6 +44,10 @@ public class Trigger {
 		setEvent(event);
 		setEndTrigger(endTrigger);
 		this.initialized = true;
+	}
+
+	public Room getRoom() {
+		return triggerRoom;
 	}
 
 	public void setTriggerCount(int triggerCount) {
@@ -102,6 +107,8 @@ public class Trigger {
 						}
 						endTrigger.show(eventResult);
 					}
+				}
+				if(fatal) {
 					if(eventResult) {
 						if(endMethod != null) {
 							try {
@@ -112,15 +119,22 @@ public class Trigger {
 							}
 						}
 					}
+					else {
+						new BadEnd().DIE();
+						System.exit(0);
+					}
 				}
-			}
-			if(fatal) {
-				if(!eventResult) {
-					System.exit(0);
+				else {
+					if(endMethod != null) {
+						try {
+							endMethod.invoke(null, this.args);
+						} catch (IllegalAccessException e) {
+						} catch (IllegalArgumentException e) {
+						} catch (InvocationTargetException e) {
+						}
+					}
 				}
 			}
 		}
 	}
-
-
 }

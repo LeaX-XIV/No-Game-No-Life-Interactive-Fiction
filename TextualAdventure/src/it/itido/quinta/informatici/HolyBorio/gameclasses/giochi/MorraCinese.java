@@ -114,11 +114,6 @@ public class MorraCinese extends Gioco {
 	}
 	
 	@Override
-	protected String welcomeMsg() {
-		return "Ready to play rock-paper-scissors?";
-	}
-	
-	@Override
 	protected String consolePrompt() {
 		return "> ";
 	}

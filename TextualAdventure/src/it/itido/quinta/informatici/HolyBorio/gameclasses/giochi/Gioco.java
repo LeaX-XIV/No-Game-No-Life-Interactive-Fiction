@@ -41,5 +41,10 @@ public abstract class Gioco extends GenericConsole {
 		
 		executeLine("exit");
 	}
+	
+	@Override
+	protected String welcomeMsg() {
+		return "\"Aschente!\"\n\n";
+	}
 
 }

@@ -1,6 +1,5 @@
 package it.univpm.deit.semedia;
 
-import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.MusicPlayer;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.ConnectedWords;
@@ -10,8 +9,8 @@ import it.univpm.deit.semedia.gameclasses.CollectableItem;
 import it.univpm.deit.semedia.gameclasses.ContainerImpl;
 import it.univpm.deit.semedia.gameclasses.GameObject;
 import it.univpm.deit.semedia.gameclasses.IContainer;
-import it.univpm.deit.semedia.gameclasses.objects.Key;
 import it.univpm.deit.semedia.gameclasses.objects.Libro;
+import it.univpm.deit.semedia.gameclasses.objects.SecretKey;
 import it.univpm.deit.semedia.gameclasses.persons.Person;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
 import it.univpm.deit.semedia.gameclasses.rooms.Lock;
@@ -165,7 +164,7 @@ public class Game extends GenericConsole implements Serializable {
 					Libro historyBook;
 				ContainerImpl rightBookshelf;
 					Libro racesBook;
-				Key secretKey;
+				SecretKey secretKey;
 				GameObject book;		
 
 				throne = new GameObject("trono");
@@ -193,38 +192,12 @@ public class Game extends GenericConsole implements Serializable {
 					}
 				};
 				leftBookshelf = new ContainerImpl("libreria_sinistra");
-				historyBook = new Libro("libro_storia", ScrollableText.readFromXml("historyBook"));
+				historyBook = new Libro("libro_storia", ScrollableText.readFromXml("historyBook")) {
+					
+				};
 				rightBookshelf = new ContainerImpl("libreria_destra");
 				racesBook = new Libro("libro_razze", ScrollableText.readFromXml("racesBook"));
-				secretKey = new Key("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24}))) {
-					// TODO: Rendere inutilizzabile
-					@Override
-					public String use(Person who) {
-						boolean b = new ConnectedWords(in, out).getResult();
-						if(b) {
-							out.println("Hai Vinto");
-						}
-						else {
-							out.println("Hai perso");
-						}
-						return super.use(who);
-					}
-
-					@Override
-					public String use(Person who, GameObject target) {
-						if(target != null) {
-							if(target == leftBookshelf) {
-								return super.use(who);
-							}
-							else {
-								return "Non so cosa tu voglia aprire, ma non sembra una buona idea.";
-							}
-						}
-						else {
-							return "Non puoi usare la chiave qui.";
-						}
-					}
-				};
+				secretKey = new SecretKey("chiave", new ArrayList<Byte>(Arrays.asList(new Byte[]{31, (byte) 192, 116, 24})), leftBookshelf);
 				book = new GameObject("libro") {
 					@Override
 					public String use(Person who) {
@@ -258,28 +231,25 @@ public class Game extends GenericConsole implements Serializable {
 				rightBookshelf.add(racesBook);
 				kingRoom.add(rightBookshelf);
 				secretRoom.add(book);
-
-				// TODO: ELIMINARE UNA VOLTA COMPLETATO IL TEST DI PAROLE CONCATENATE
-				elchea.add(secretKey);
 				
 				
 				// TRIGGERS
 				
 				Trigger prologue = new Trigger(mountainPass);
-				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+//				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 				Trigger innTrigger = new Trigger(inn);
-				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+//				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 				Trigger throneEvent = new Trigger(throneHall);
 				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
 				Trigger libraryEvent = new Trigger(library);
-				libraryEvent.init(1, ScrollableText.readFromXml("libraryEvent"), new ConnectedWords(in, out), null);
+				throneEvent.setMethod(TriggerMethods.class, "throneEvent", libraryEvent);
+				throneEvent.setFatal(false);
+				libraryEvent.init(0, ScrollableText.readFromXml("libraryEvent"), new ConnectedWords(in, out), new ScrollableText(ScrollableText.readFromXml("connectedWordsWin") + "|" + ScrollableText.readFromXml("connectedWordsLost")));
 				libraryEvent.setMethod(TriggerMethods.class, "libraryEvent", mc, secretKey);
-				// TODO: AGGIUNGERE TRIGGER SULLE LIBRERIE .
 
 				Trigger federationTrigger = new Trigger(easternUnion);
-				Credit credit = new Credit(false);
-				credit.setText(credit.getText() + "|You lost lol");
-				federationTrigger.init(1, null, new TestaCroce(in, out), credit);
+				federationTrigger.init(1, ScrollableText.readFromXml("easternUnionEvent"), new TestaCroce(in, out), new ScrollableText(ScrollableText.readFromXml("headTailWin") + "|" + ScrollableText.readFromXml("headTailLost")));
+				federationTrigger.setMethod(TriggerMethods.class, "federationEvent");
 
 				world.get(0).enter(mc);
 			}
