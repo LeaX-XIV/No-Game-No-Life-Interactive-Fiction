@@ -19,6 +19,7 @@ public class TriggerMethods {
 	
 	public static void federationEvent() {
 		new Credit(false).show();
+		System.exit(0);
 	}
 
 }
