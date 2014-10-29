@@ -7,7 +7,6 @@ import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.BadEnd;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
-import it.univpm.deit.semedia.GenericConsole;
 
 public class Trigger {
 
@@ -35,7 +34,7 @@ public class Trigger {
 		setEvent(null);
 		this.eventResult = false;
 		setEndTrigger(null);
-		setFatal(false);
+		setFatal(true);
 	}
 
 	public void init(int triggerCount, String startText, Gioco event, ScrollableText endTrigger) {
@@ -108,6 +107,7 @@ public class Trigger {
 						endTrigger.show(eventResult);
 					}
 				}
+				
 				if(fatal) {
 					if(eventResult) {
 						if(endMethod != null) {

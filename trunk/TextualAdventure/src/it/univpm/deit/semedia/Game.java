@@ -236,9 +236,9 @@ public class Game extends GenericConsole implements Serializable {
 				// TRIGGERS
 				
 				Trigger prologue = new Trigger(mountainPass);
-//				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 				Trigger innTrigger = new Trigger(inn);
-//				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
+				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 				Trigger throneEvent = new Trigger(throneHall);
 				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
 				Trigger libraryEvent = new Trigger(library);
