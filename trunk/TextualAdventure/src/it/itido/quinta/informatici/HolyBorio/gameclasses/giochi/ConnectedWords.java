@@ -19,7 +19,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import it.univpm.deit.semedia.ConsoleCommand;
-import it.univpm.deit.semedia.GenericConsole;
 import it.univpm.deit.semedia.gameclasses.rooms.Door;
 
 public class ConnectedWords extends Gioco{
@@ -299,5 +298,6 @@ public class ConnectedWords extends Gioco{
 
 	public static void main(String[] args) {
 		ConnectedWords game = new ConnectedWords(System.in, System.out);
+		game.run();
 	}
 }
