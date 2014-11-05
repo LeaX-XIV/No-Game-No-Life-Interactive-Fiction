@@ -35,8 +35,8 @@
 	<parola>ab-ba-stan-za</parola>
 </group>
 <group>
-	<parola>ab-ba-zia</parola>
-	<parola>ab-ba-zie</parola>
+	<parola>ab-ba-zi-a</parola>
+	<parola>ab-ba-zi-e</parola>
 </group>
 <group>
 	<parola>ab-boz-zi</parola>
@@ -146,7 +146,6 @@
 </group>
 <group>
 	<parola>ac-ces-so-ri</parola>
-	<parola>ac-ces-so-rie</parola>
 	<parola>ac-ces-so-rio</parola>
 </group>
 <group>
@@ -158,8 +157,8 @@
 	<parola>ac-ciac-co</parola>
 </group>
 <group>
-	<parola>ac-cia-ie-ria</parola>
-	<parola>ac-cia-ie-rie</parola>
+	<parola>ac-cia-ie-ri-a</parola>
+	<parola>ac-cia-ie-ri-e</parola>
 </group>
 <group>
 	<parola>ac-ciai</parola>
@@ -254,8 +253,8 @@
 	<parola>ad-den-do</parola>
 </group>
 <group>
-	<parola>ad-dii</parola>
-	<parola>ad-dio</parola>
+	<parola>ad-di-i</parola>
+	<parola>ad-di-o</parola>
 </group>
 <group>
 	<parola>ad-di-zio-ne</parola>
@@ -271,6 +270,7 @@
 </group>
 <group>
 	<parola>a-de-ren-za</parola>
+	<parola>aderen-ze</parola>
 </group>
 <group>
 	<parola>a-de-sio-ne</parola>
@@ -285,8 +285,8 @@
 	<parola>a-dia-cen-ze</parola>
 </group>
 <group>
-	<parola>a-di-ti</parola>
-	<parola>a-di-to</parola>
+	<parola>ad-di-ti-vo</parola>
+	<parola>ad-di-ti-vi</parola>
 </group>
 <group>
 	<parola>a-do-ra-to-re</parola>
@@ -326,14 +326,7 @@
 	<parola>af-fa-ri-sti</parola>
 </group>
 <group>
-	<parola>af-fia-ta</parola>
-	<parola>af-fia-te</parola>
-	<parola>af-fia-ti</parola>
-	<parola>af-fia-to</parola>
-</group>
-<group>
-	<parola>af-fi-di</parola>
-	<parola>af-fi-do</parola>
+	<parola>af-fi-da-bi-li-tà</parola>
 </group>
 <group>
 	<parola>af-fit-ti</parola>
@@ -342,10 +335,6 @@
 <group>
 	<parola>af-fit-tu-a-ri</parola>
 	<parola>af-fit-tu-a-rio</parola>
-</group>
-<group>
-	<parola>af-flit-ti</parola>
-	<parola>af-flit-to</parola>
 </group>
 <group>
 	<parola>af-fli-zio-ne</parola>
@@ -372,15 +361,14 @@
 	<parola>a-gen-ti</parola>
 </group>
 <group>
-	<parola>a-gen-zia</parola>
-	<parola>a-gen-zie</parola>
+	<parola>a-gen-zi-a</parola>
+	<parola>a-gen-zi-e</parola>
 </group>
 <group>
 	<parola>ag-gan-ci</parola>
 	<parola>ag-gan-cio</parola>
 </group>
 <group>
-	<parola></parola>
 	<parola>ag-get-ti-vi</parola>
 	<parola>ag-get-ti-vo</parola>
 </group>
@@ -409,8 +397,8 @@
 	<parola>a-gnel-lo</parola>
 </group>
 <group>
-	<parola>a-go-nia</parola>
-	<parola>a-go-nie</parola>
+	<parola>a-go-ni-a</parola>
+	<parola>a-go-ni-e</parola>
 </group>
 <group>
 	<parola>a-go-sto</parola>
@@ -444,15 +432,7 @@
 	<parola>al-bi-coc-che</parola>
 </group>
 <group>
-	<parola>al-bi-na</parola>
-	<parola>al-bi-ne</parola>
-	<parola>al-bi-ni</parola>
-	<parola>al-bi-no</parola>
-</group>
-<group>
 	<parola>al-col</parola>
-	<parola>al-co-li</parola>
-	<parola>al-co-ol</parola>
 </group>
 <group>
 	<parola>al-fa</parola>
@@ -467,6 +447,7 @@
 </group>
 <group>
 	<parola>al-ge-bra</parola>
+	<parola>alge-bre</parola>
 </group>
 <group>
 	<parola>al-go-ri-tmi</parola>
@@ -503,18 +484,22 @@
 <group>
 	<parola>al-le-a-ti</parola>
 	<parola>al-le-a-to</parola>
+	<parola>allea-ta</parola>
+	<parola>allea-te</parola>
 </group>
 <group>
 	<parola>al-le-ga-ti</parola>
 	<parola>al-le-ga-to</parola>
 </group>
 <group>
-	<parola>al-le-gria</parola>
-	<parola>al-le-grie</parola>
+	<parola>al-le-gri-a</parola>
+	<parola>al-le-gri-e</parola>
 </group>
 <group>
 	<parola>al-le-na-to-re</parola>
 	<parola>al-le-na-to-ri</parola>
+	<parola>allenatri-ce</parola>
+	<parola>allenatri-ci</parola>
 </group>
 <group>
 	<parola>al-lie-va</parola>
@@ -571,12 +556,6 @@
 	<parola>al-tu-re</parola>
 </group>
 <group>
-	<parola>a-lun-na</parola>
-	<parola>a-lun-ne</parola>
-	<parola>a-lun-ni</parola>
-	<parola>a-lun-no</parola>
-</group>
-<group>
 	<parola>al-ve-a-re</parola>
 	<parola>al-ve-a-ri</parola>
 </group>
@@ -589,6 +568,7 @@
 </group>
 <group>
 	<parola>am-bi-to</parola>
+	<parola>ambi-ti</parola>
 </group>
 <group>
 	<parola>am-bi-zio-ne</parola>
@@ -669,12 +649,12 @@
 	<parola>a-na-li-si</parola>
 </group>
 <group>
-	<parola>a-nar-chia</parola>
-	<parola>a-nar-chie</parola>
+	<parola>a-nar-chi-a</parola>
+	<parola>a-nar-chi-e</parola>
 </group>
 <group>
-	<parola>a-na-to-mia</parola>
-	<parola>a-na-to-mie</parola>
+	<parola>a-na-to-mi-a</parola>
+	<parola>a-na-to-mi-e</parola>
 </group>
 <group>
 	<parola>a-na-tra</parola>
@@ -753,10 +733,6 @@
 	<parola>a-no-ni-mo</parola>
 </group>
 <group>
-	<parola>a-nor-ma-le</parola>
-	<parola>a-nor-ma-li</parola>
-</group>
-<group>
 	<parola>an-sia</parola>
 	<parola>an-sie</parola>
 </group>
@@ -767,16 +743,19 @@
 <group>
 	<parola>an-te-na-ti</parola>
 	<parola>an-te-na-to</parola>
+	<parola>antena-ta</parola>
+	<parola>antena-te</parola>
 </group>
 <group>
 	<parola>an-ti-ca-me-ra</parola>
 	<parola>an-ti-ca-me-re</parola>
 </group>
 <group>
-	<parola>an-ti-chi-ta</parola>
+	<parola>an-ti-chi-tà</parola>
 </group>
 <group>
 	<parola>an-ti-ci-po</parola>
+	<parola>antici-pi</parola>
 </group>
 <group>
 	<parola>an-ti-lo-pe</parola>
@@ -787,10 +766,6 @@
 	<parola>an-ti-pa-sto</parola>
 </group>
 <group>
-	<parola>an-ti-pa-tia</parola>
-	<parola>an-ti-pa-tie</parola>
-</group>
-<group>
 	<parola>an-ti-qua-ri</parola>
 	<parola>an-ti-qua-rio</parola>
 </group>
@@ -798,22 +773,23 @@
 	<parola>an-ti-te-si</parola>
 </group>
 <group>
-	<parola>an-to-lo-gia</parola>
-	<parola>an-to-lo-gie</parola>
+	<parola>an-to-lo-gi-a</parola>
+	<parola>an-to-lo-gi-e</parola>
 </group>
 <group>
 	<parola>an-tri</parola>
 	<parola>an-tro</parola>
 </group>
 <group>
-	<parola>an-zia-ni-ta</parola>
+	<parola>an-zia-ni-tà</parola>
 </group>
 <group>
-	<parola>a-pa-tia</parola>
-	<parola>a-pa-tie</parola>
+	<parola>a-pa-ti-a</parola>
+	<parola>a-pa-ti-e</parola>
 </group>
 <group>
 	<parola>a-pe</parola>
+	<parola>a-pi</parola>
 </group>
 <group>
 	<parola>a-per-tu-ra</parola>
@@ -824,12 +800,8 @@
 	<parola>a-pi-ci</parola>
 </group>
 <group>
-	<parola>a-po-lo-gia</parola>
-	<parola>a-po-lo-gie</parola>
-</group>
-<group>
-	<parola>a-po-sta-ta</parola>
-	<parola>a-po-sta-te</parola>
+	<parola>a-po-lo-gi-a</parola>
+	<parola>a-po-lo-gi-e</parola>
 </group>
 <group>
 	<parola>a-po-sto-lo</parola>
@@ -854,10 +826,6 @@
 <group>
 	<parola>ap-pen-di-ce</parola>
 	<parola>ap-pen-di-ci</parola>
-</group>
-<group>
-	<parola>ap-pe-ti-ti</parola>
-	<parola>ap-pe-ti-to</parola>
 </group>
 <group>
 	<parola>ap-pi-gli</parola>
@@ -916,6 +884,10 @@
 	<parola>ar-che-o-lo-go</parola>
 </group>
 <group>
+	<parola>archeologi-a</parola>
+	<parola>archeologi-e</parola>
+</group>
+<group>
 	<parola>ar-chi</parola>
 	<parola>ar-co</parola>
 </group>
@@ -956,13 +928,11 @@
 	<parola>a-rie</parola>
 </group>
 <group>
-	<parola>a-ri-di-ta</parola>
+	<parola>a-ri-di-tà</parola>
 </group>
 <group>
 	<parola>a-ri-tme-ti-ca</parola>
 	<parola>a-ri-tme-ti-che</parola>
-	<parola>a-ri-tme-ti-ci</parola>
-	<parola>a-ri-tme-ti-co</parola>
 </group>
 <group>
 	<parola>ar-ma</parola>
@@ -973,8 +943,8 @@
 	<parola>ar-ma-dio</parola>
 </group>
 <group>
-	<parola>ar-mo-nia</parola>
-	<parola>ar-mo-nie</parola>
+	<parola>ar-mo-ni-a</parola>
+	<parola>ar-mo-ni-e</parola>
 </group>
 <group>
 	<parola>ar-ne-se</parola>
@@ -1014,9 +984,6 @@
 	<parola>ar-ti-co-lo</parola>
 </group>
 <group>
-	<parola>ar-ti-fi-cia-le</parola>
-</group>
-<group>
 	<parola>ar-ti-gia-ni</parola>
 	<parola>ar-ti-gia-no</parola>
 </group>
@@ -1045,7 +1012,6 @@
 	<parola>a-sces-so</parola>
 </group>
 <group>
-	<parola></parola>
 	<parola>as-fal-ti</parola>
 	<parola>as-fal-to</parola>
 </group>
@@ -1091,7 +1057,7 @@
 	<parola>as-so</parola>
 </group>
 <group>
-	<parola>as-se-dii</parola>
+	<parola>as-se-di</parola>
 	<parola>as-se-dio</parola>
 </group>
 <group>
@@ -1104,6 +1070,9 @@
 </group>
 <group>
 	<parola>as-sem-bla-to-re</parola>
+	<parola>assemblatri-ce</parola>
+	<parola>assemblato-ri</parola>
+	<parola>assemblatri-ci</parola>
 </group>
 <group>
 	<parola>as-sem-ble-a</parola>
@@ -1145,7 +1114,6 @@
 	<parola>as-si-sten-ze</parola>
 </group>
 <group>
-	<parola></parola>
 	<parola>as-so-cia-zio-ne</parola>
 	<parola>as-so-cia-zio-ni</parola>
 </group>
@@ -1182,6 +1150,10 @@
 	<parola>a-tle-ti</parola>
 </group>
 <group>
+	<parola>atleti-ca</parola>
+	<parola>atleti-che</parola>
+</group>
+<group>
 	<parola>a-tmos-fe-ra</parola>
 	<parola>a-tmos-fe-re</parola>
 </group>
@@ -1192,6 +1164,10 @@
 <group>
 	<parola>a-tri</parola>
 	<parola>a-trio</parola>
+</group>
+<group>
+	<parola>atteggiamn-to</parola>
+	<parola>atteggiamen-ti</parola>
 </group>
 <group>
 	<parola>at-ten-zio-ne</parola>
@@ -1218,7 +1194,7 @@
 	<parola>at-ti-va-zio-ni</parola>
 </group>
 <group>
-	<parola>at-ti-vi-ta</parola>
+	<parola>at-ti-vi-tà</parola>
 </group>
 <group>
 	<parola>at-to-re</parola>
@@ -1236,6 +1212,7 @@
 </group>
 <group>
 	<parola>at-tu-a-liz-za-zio-ne</parola>
+	<parola>attualizzazio-ni</parola>
 </group>
 <group>
 	<parola>au-da-cia</parola>
@@ -1253,7 +1230,6 @@
 	<parola>a-u-re-e</parola>
 </group>
 <group>
-	<parola></parola>
 	<parola>a-u-ro-ra</parola>
 	<parola>a-u-ro-re</parola>
 </group>
@@ -1281,18 +1257,23 @@
 <group>
 	<parola>au-to-re</parola>
 	<parola>au-to-ri</parola>
+	<parola>autri-ce</parola>
+	<parola>autri-ci</parola>
 </group>
 <group>
 	<parola>au-to-re-fe-ren-za</parola>
+	<parola>autoreferen-ze</parola>
 </group>
 <group>
-	<parola>au-to-ri-ta</parola>
+	<parola>au-to-ri-tà</parola>
 </group>
 <group>
 	<parola>au-to-riz-za-zio-ne</parola>
+	<parola>autorizzazio-ni</parola>
 </group>
 <group>
 	<parola>au-to-va-lu-ta-zio-ne</parola>
+	<parola>autovalutazio-ni</parola>
 </group>
 <group>
 	<parola>au-tun-ni</parola>
@@ -1303,8 +1284,8 @@
 	<parola>a-van-zo</parola>
 </group>
 <group>
-	<parola>a-va-ria</parola>
-	<parola>a-va-rie</parola>
+	<parola>a-va-ri-a</parola>
+	<parola>a-va-ri-e</parola>
 </group>
 <group>
 	<parola>a-va-ri-zia</parola>
