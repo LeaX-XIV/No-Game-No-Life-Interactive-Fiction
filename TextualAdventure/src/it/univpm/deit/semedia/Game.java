@@ -237,6 +237,7 @@ public class Game extends GenericConsole implements Serializable {
 				
 				Trigger prologue = new Trigger(mountainPass);
 				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
+				prologue.setStartMusic(new MusicPlayer(MusicPlayer.class.getResource("/resources/audio/Prologue.mp3").getFile()));
 				Trigger innTrigger = new Trigger(inn);
 				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
 				Trigger throneEvent = new Trigger(throneHall);
@@ -595,7 +596,7 @@ public class Game extends GenericConsole implements Serializable {
 
 	@Override
 	protected String welcomeMsg() {
-		return "Usa HELP per legere i comandi.";
+		return "Usa HELP per leggere i comandi.";
 	}
 
 	@Override

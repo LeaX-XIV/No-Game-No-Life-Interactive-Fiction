@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.BadEnd;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.Credit;
+import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.MusicPlayer;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.endgame.ScrollableText;
 import it.itido.quinta.informatici.HolyBorio.gameclasses.giochi.Gioco;
 
@@ -24,6 +25,10 @@ public class Trigger {
 	private Object[] args;
 
 	private boolean fatal;
+	
+	private MusicPlayer startMusic;
+	private MusicPlayer winMusic;
+	private MusicPlayer loseMusic;
 
 	public Trigger(Room room) {
 		this.initialized = false;
@@ -35,6 +40,9 @@ public class Trigger {
 		this.eventResult = false;
 		setEndTrigger(null);
 		setFatal(true);
+		setStartMusic(null);
+		setWinMusic(null);
+		setLoseMusic(null);
 	}
 
 	public void init(int triggerCount, String startText, Gioco event, ScrollableText endTrigger) {
@@ -87,21 +95,39 @@ public class Trigger {
 		} catch (SecurityException e) {
 		}		
 	}
+	
+	public void setStartMusic(MusicPlayer mp) {
+		this.startMusic = mp;
+	}
+	
+	public void setWinMusic(MusicPlayer mp) {
+		this.winMusic = mp;
+	}
+	
+	public void setLoseMusic(MusicPlayer mp) {
+		this.loseMusic = mp;
+	}
 
 	public void execute() {
 		if(initialized) {
 			if(triggerCount == triggerRoom.getCount()) {
 				if(startTrigger != null) {
+					if(startMusic != null) {
+						startMusic.start();
+					}
 					startTrigger.showDinamicWait();
 				}
 				if(event != null) {
 					eventResult = event.getResult();
 					if(endTrigger != null) {
-						if (endTrigger instanceof Credit) {
-							Credit credit = (Credit) endTrigger;
-							if(eventResult) {
-								credit.setText(credit.getText().split("\\|")[1]);
-								credit.show();
+						if(eventResult) {
+							if(winMusic != null) {
+								winMusic.start();
+							}
+						}
+						else {
+							if(loseMusic != null) {
+								loseMusic.start();
 							}
 						}
 						endTrigger.show(eventResult);

@@ -36,7 +36,7 @@ public class MusicPlayer extends Thread{
 		}
 	}
 	
-	public long getDurationAudioFile(){
+	public long getDurationAudioFile() {
 
 		AudioInputStream audioInputStream;
 		try {
