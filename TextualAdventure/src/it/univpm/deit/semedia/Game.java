@@ -238,19 +238,23 @@ public class Game extends GenericConsole implements Serializable {
 				Trigger prologue = new Trigger(mountainPass);
 				prologue.init(1, ScrollableText.readFromXml("prologue"), null, null);
 				prologue.setStartMusic(new MusicPlayer(MusicPlayer.class.getResource("/resources/audio/Prologue.mp3").getFile()));
+				
 				Trigger innTrigger = new Trigger(inn);
 				innTrigger.init(1, ScrollableText.readFromXml("innEvent"), new MorraCinese(in, out), new ScrollableText(ScrollableText.readFromXml("janKenWin") + "|" + ScrollableText.readFromXml("janKenLost")));
-				Trigger throneEvent = new Trigger(throneHall);
-				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
+				
 				Trigger libraryEvent = new Trigger(library);
-				throneEvent.setMethod(TriggerMethods.class, "throneEvent", libraryEvent);
-				throneEvent.setFatal(false);
 				libraryEvent.init(0, ScrollableText.readFromXml("libraryEvent"), new ConnectedWords(in, out), new ScrollableText(ScrollableText.readFromXml("connectedWordsWin") + "|" + ScrollableText.readFromXml("connectedWordsLost")));
 				libraryEvent.setMethod(TriggerMethods.class, "libraryEvent", mc, secretKey);
-
+				
+				Trigger throneEvent = new Trigger(throneHall);
+				throneEvent.init(1, ScrollableText.readFromXml("throneEvent"), null, null);
+				throneEvent.setMethod(TriggerMethods.class, "throneEvent", libraryEvent);
+				throneEvent.setFatal(false);
+				
 				Trigger federationTrigger = new Trigger(easternUnion);
 				federationTrigger.init(1, ScrollableText.readFromXml("easternUnionEvent"), new TestaCroce(in, out), new ScrollableText(ScrollableText.readFromXml("headTailWin") + "|" + ScrollableText.readFromXml("headTailLost")));
 				federationTrigger.setMethod(TriggerMethods.class, "federationEvent");
+				federationTrigger.setLoseMusic(new MusicPlayer(MusicPlayer.class.getResource("/resources/audio/HeadTailLost.mp3").getFile()));
 
 				world.get(0).enter(mc);
 			}
@@ -471,6 +475,7 @@ public class Game extends GenericConsole implements Serializable {
 
 		});
 
+		/*
 		game.registerCommand(new ConsoleCommand("save") {
 
 			@Override
