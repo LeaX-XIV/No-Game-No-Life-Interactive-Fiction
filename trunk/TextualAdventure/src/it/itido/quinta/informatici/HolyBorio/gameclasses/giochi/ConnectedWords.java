@@ -33,8 +33,6 @@ public class ConnectedWords extends Gioco{
 	private TimerTask endTurn;
 	private static final long turnTime = 30000;
 
-	// TODO: RENDERE synchronized PER LEGGERE RISULTATO GIOCO
-
 	public ConnectedWords(InputStream in, PrintStream out) {
 		super(in, out);
 
